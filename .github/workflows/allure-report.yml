@@ -59,9 +59,9 @@ jobs:
       - name: Install allurectl
         uses: allure-framework/setup-allurectl@v1
         with:
-          allure-endpoint: https://demo.qatools.cloud/
+          allure-endpoint: https://volvenkovroman.qatools.cloud/
           allure-token: ${{ secrets.ALLURE_TOKEN }}
-          allure-project-id: 284
+          allure-project-id: 1
           
       - name: Run tests
         run: allurectl watch -- pytest --alluredir=${ALLURE_RESULTS} --capture=no
