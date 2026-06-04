@@ -53,7 +53,7 @@ jobs:
         with:
           allure-endpoint: https://demo.qatools.cloud/
           allure-token: ${{ secrets.ALLURE_TOKEN }}
-          allure-project-id: 127
+          allure-project-id: 531
           
       - name: Run tests
         run: allurectl watch -- pytest --alluredir=${ALLURE_RESULTS} --capture=no
