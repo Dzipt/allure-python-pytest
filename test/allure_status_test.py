@@ -4,6 +4,8 @@ from allure import attachment_type
 from allure_commons.types import Severity
 
 @allure.epic("Allure TestOps")
+@allure.tag("smokeT", "check")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_passed():
     pass
 
