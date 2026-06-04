@@ -5,7 +5,7 @@ from allure_commons.types import Severity
 
 @allure.epic("Allure TestOps")
 @allure.tag("smokeT", "check")
-@allure.severity(Severity.CRITICAL)
+@allure.severity(allure.severity_level.CRITICAL)
 def test_passed():
     pass
 
