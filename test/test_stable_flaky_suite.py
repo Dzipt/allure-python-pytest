@@ -1,4 +1,5 @@
 import random
+import time
 
 import allure
 import pytest
@@ -12,6 +13,7 @@ def unstable_api_response() -> None:
 
 @pytest.mark.parametrize("value", list(range(1, 1000)))
 def test_stable_pass(value):
+    time.sleep(1)
     assert value * 2 == value + value
 
 
