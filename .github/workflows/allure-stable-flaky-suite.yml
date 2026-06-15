@@ -30,7 +30,7 @@ on:
         description: "ALLURE_USERNAME service parameter. Leave blank"
         required: false
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */6 * * *'
 
 env:
   ALLURE_ENDPOINT: https://demo.qatools.cloud/
