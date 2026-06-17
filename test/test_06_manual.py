@@ -2,6 +2,7 @@ import allure
 import pytest
 
 @allure.title("Визуальная проверка главной страницы")
+@allure.manual(True)
 @allure.description("""
 ## Ручной тест-кейс
 
