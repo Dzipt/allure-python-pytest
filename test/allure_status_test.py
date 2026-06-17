@@ -36,3 +36,4 @@ def test_xfail():
 @allure.epic("Allure TestOps")
 def test_xpass():
     pass
+
