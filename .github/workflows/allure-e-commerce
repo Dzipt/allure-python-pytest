@@ -1,0 +1,186 @@
+name: E-Commerce Test Suite
+
+on:
+  workflow_dispatch:
+    inputs:
+      ALLURE_JOB_RUN_ID:
+        description: "Allure Job Run ID (service parameter - leave blank)"
+        required: false
+      ENDPOINT:
+        description: "Target Environment"
+        required: false
+        default: "demo.qatools.cloud"
+      BROWSER:
+        description: "Browser"
+        required: false
+        default: "Chrome"
+      OS:
+        description: "Operating System"
+        required: false
+        default: "Ubuntu 22.04"
+      ASR_DEVICE:
+        description: "Mobile Device"
+        required: false
+        default: "Galaxy S25 Plus"
+      ASR_LANGUAGE:
+        description: "UI Language"
+        required: false
+        default: "en-US"
+      ALLURE_USERNAME:
+        description: "Allure Username (service parameter - leave blank)"
+        required: false
+      # Дополнительные параметры для контроля тестов
+      TEST_SUITE:
+        description: "Test suite to run (all / auth / catalog / cart / payment / order / profile)"
+        required: false
+        default: "all"
+      FLAKY_RETRIES:
+        description: "Number of retries for flaky tests"
+        required: false
+        default: "2"
+
+env:
+  ALLURE_ENDPOINT: https://demo.qatools.cloud/
+  ALLURE_PROJECT_ID: 533
+  ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
+  ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID || github.run_id }}
+  ALLURE_RESULTS: "allure-results"
+  # Переменные для тестов
+  ENDPOINT: ${{ github.event.inputs.ENDPOINT }}
+  BROWSER: ${{ github.event.inputs.BROWSER }}
+  OS: ${{ github.event.inputs.OS }}
+  ASR_DEVICE: ${{ github.event.inputs.ASR_DEVICE }}
+  ASR_LANGUAGE: ${{ github.event.inputs.ASR_LANGUAGE }}
+  TEST_SUITE: ${{ github.event.inputs.TEST_SUITE }}
+  FLAKY_RETRIES: ${{ github.event.inputs.FLAKY_RETRIES }}
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  ecommerce_tests:
+    name: Run E-Commerce Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Allure CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y allure
+          
+      - name: Install allurectl
+        uses: allure-framework/setup-allurectl@v1
+        with:
+          allurectl-version: latest
+
+      - name: Run E-Commerce Test Suite
+        id: test_run
+        run: |
+          allurectl watch -- \
+            pytest test_demo_ecommerce.py \
+            --alluredir=${ALLURE_RESULTS} \
+            --capture=no \
+            --tb=short \
+            --maxfail=100
+        env:
+          ALLURE_JOB_RUN_ID: ${{ env.ALLURE_JOB_RUN_ID }}
+
+      - name: Generate Test Statistics
+        id: stats
+        if: always()
+        run: |
+          python - <<EOF
+          import json
+          import glob
+          import os
+          
+          # Подсчёт результатов из Allure
+          results_dir = os.environ.get('ALLURE_RESULTS', 'allure-results')
+          result_files = glob.glob(f"{results_dir}/*-result.json")
+          
+          total = len(result_files)
+          passed = 0
+          failed = 0
+          broken = 0
+          
+          for f in result_files:
+              with open(f) as file:
+                  data = json.load(file)
+                  status = data.get('status', 'unknown')
+                  if status == 'passed':
+                      passed += 1
+                  elif status == 'failed':
+                      failed += 1
+                  elif status == 'broken':
+                      broken += 1
+          
+          print(f"total={total}")
+          print(f"passed={passed}")
+          print(f"failed={failed}")
+          print(f"broken={broken}")
+          
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f"total={total}\n")
+              out.write(f"passed={passed}\n")
+              out.write(f"failed={failed}\n")
+              out.write(f"broken={broken}\n")
+          EOF
+        env:
+          ALLURE_RESULTS: ${{ env.ALLURE_RESULTS }}
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ github.run_id }}
+          path: ${{ env.ALLURE_RESULTS }}
+          retention-days: 7
+
+      - name: Upload Test Logs (if failed)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs-${{ github.run_id }}
+          path: |
+            pytest.log
+            .pytest_cache/
+          retention-days: 3
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🧪 E-Commerce Test Suite Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Total Tests | ${{ steps.stats.outputs.total }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Passed | ${{ steps.stats.outputs.passed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Failed | ${{ steps.stats.outputs.failed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 💥 Broken | ${{ steps.stats.outputs.broken }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Allure Report:** https://demo.qatools.cloud/project/${{ env.ALLURE_PROJECT_ID }}/launches" >> $GITHUB_STEP_SUMMARY
+
+      - name: Check for Rerun Trigger
+        id: rerun_check
+        if: always()
+        run: |
+          # Проверяем, был ли запуск триггерт из Allure TestOps
+          if [ -n "${{ env.ALLURE_JOB_RUN_ID }}" ]; then
+            echo "rerun_triggered=true" >> $GITHUB_OUTPUT
+            echo "✅ Job was triggered by Allure TestOps rerun" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "rerun_triggered=false" >> $GITHUB_OUTPUT
+          fi
