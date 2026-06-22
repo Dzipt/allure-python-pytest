@@ -1,14 +1,11 @@
-name: Selective Rerun from Allure
+name: E-Commerce Test Suite
 
 on:
   workflow_dispatch:
     inputs:
       ALLURE_JOB_RUN_ID:
-        description: "Allure Job Run ID (required for rerun)"
-        required: true
-      TEST_LIST:
-        description: "Comma-separated test IDs to rerun (e.g., PAY-001,CART-005)"
-        required: true
+        description: "Allure Job Run ID (service parameter - leave blank)"
+        required: false
       ENDPOINT:
         description: "Target Environment"
         required: false
@@ -21,29 +18,57 @@ on:
         description: "Operating System"
         required: false
         default: "Ubuntu 22.04"
+      ASR_DEVICE:
+        description: "Mobile Device"
+        required: false
+        default: "Galaxy S25 Plus"
+      ASR_LANGUAGE:
+        description: "UI Language"
+        required: false
+        default: "en-US"
+      ALLURE_USERNAME:
+        description: "Allure Username (service parameter - leave blank)"
+        required: false
+      TEST_SUITE:
+        description: "Test suite to run (all / auth / catalog / cart / payment / order / profile)"
+        required: false
+        default: "all"
+      FLAKY_RETRIES:
+        description: "Number of retries for flaky tests"
+        required: false
+        default: "2"
 
 env:
   ALLURE_ENDPOINT: https://demo.qatools.cloud/
   ALLURE_PROJECT_ID: 533
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_RESULTS: "allure-results"
-  ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
-  ALLURE_LAUNCH_NAME: "Rerun - ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}"
+  ALLURE_LAUNCH_NAME: "E-Commerce Demo Launch ${{ github.run_number }}"
+  # Переменные для тестов
+  ENDPOINT: ${{ github.event.inputs.ENDPOINT }}
+  BROWSER: ${{ github.event.inputs.BROWSER }}
+  OS: ${{ github.event.inputs.OS }}
+  ASR_DEVICE: ${{ github.event.inputs.ASR_DEVICE }}
+  ASR_LANGUAGE: ${{ github.event.inputs.ASR_LANGUAGE }}
+  TEST_SUITE: ${{ github.event.inputs.TEST_SUITE }}
+  FLAKY_RETRIES: ${{ github.event.inputs.FLAKY_RETRIES }}
+  PYTHONUNBUFFERED: "1"
 
 jobs:
-  selective_rerun:
-    name: Selective Rerun
+  ecommerce_tests:
+    name: Run E-Commerce Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
@@ -52,72 +77,60 @@ jobs:
 
       - name: Install allurectl
         uses: allure-framework/setup-allurectl@v1
+        with:
+          allurectl-version: latest
 
-      - name: Get launch info from Allure
-        id: get_launch
-        run: |
-          # Получаем информацию о запуске по ALLURE_JOB_RUN_ID
-          LAUNCH_INFO=$(curl -s \
-            -H "Authorization: Bearer ${{ env.ALLURE_TOKEN }}" \
-            "${{ env.ALLURE_ENDPOINT }}/api/rs/launch/${{ env.ALLURE_JOB_RUN_ID }}")
-          
-          echo "Launch info: $LAUNCH_INFO"
-
-      - name: Create rerun launch
+      # ========== ВАЖНО: Сначала создаём запуск в TestOps ==========
+      - name: Create launch in Allure TestOps
         id: create_launch
         run: |
-          # Создаём новый launch для результатов перезапуска
+          # Создаём launch через API
           RESPONSE=$(curl -s -X POST \
             -H "Authorization: Bearer ${{ env.ALLURE_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d '{
               "projectId": ${{ env.ALLURE_PROJECT_ID }},
               "name": "${{ env.ALLURE_LAUNCH_NAME }}",
-              "tags": ["rerun", "selective"],
-              "parentLaunchId": ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+              "tags": ["ecommerce", "demo", "github-actions"]
             }' \
             "${{ env.ALLURE_ENDPOINT }}/api/rs/launch")
           
+          # Извлекаем ID запуска
           LAUNCH_ID=$(echo $RESPONSE | jq -r '.id')
           echo "LAUNCH_ID=$LAUNCH_ID" >> $GITHUB_ENV
           echo "launch_id=$LAUNCH_ID" >> $GITHUB_OUTPUT
           
-          echo "✅ Created rerun launch with ID: $LAUNCH_ID"
+          echo "✅ Created launch with ID: $LAUNCH_ID"
 
-      - name: Run selected tests
+      # ========== Запускаем тесты без allurectl watch ==========
+      - name: Run E-Commerce Test Suite
+        id: test_run
         run: |
-          # Преобразуем список тестов в параметры pytest
-          IFS=',' read -ra TESTS <<< "${{ env.TEST_LIST }}"
-          TEST_FILTER=""
-          for test in "${TESTS[@]}"; do
-            # Ищем тест по ID в сгенерированных функциях
-            # test_PAY_001_payment -> test_PAY_001_card_payment
-            TEST_FILTER="$TEST_FILTER -k $test"
-          done
-          
-          echo "Running tests: $TEST_FILTER"
-          
-          pytest test_demo_ecommerce.py $TEST_FILTER \
+          # Просто запускаем pytest, собираем результаты
+          pytest test_demo_ecommerce.py \
             --alluredir=${ALLURE_RESULTS} \
             --capture=no \
             --tb=short \
+            --maxfail=100 \
+            --junitxml=junit-report.xml \
             2>&1 | tee pytest.log
-        env:
-          TEST_LIST: ${{ github.event.inputs.TEST_LIST }}
-          ENDPOINT: ${{ github.event.inputs.ENDPOINT }}
-          BROWSER: ${{ github.event.inputs.BROWSER }}
-          OS: ${{ github.event.inputs.OS }}
-        continue-on-error: true
+        continue-on-error: true  # Не падаем, чтобы загрузить результаты
 
-      - name: Upload results to rerun launch
+      # ========== Загружаем результаты в созданный launch ==========
+      - name: Upload results to Allure TestOps
+        id: upload_results
         if: always()
         run: |
+          # Загружаем результаты в созданный launch
           allurectl upload \
             --project-id ${{ env.ALLURE_PROJECT_ID }} \
             --launch-id ${{ env.LAUNCH_ID }} \
             ${ALLURE_RESULTS}
+          
+          echo "✅ Results uploaded to launch ID: ${{ env.LAUNCH_ID }}"
 
-      - name: Close rerun launch
+      # ========== Закрываем launch ==========
+      - name: Close launch
         if: always()
         run: |
           curl -s -X PATCH \
@@ -125,11 +138,84 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{"closed": true}' \
             "${{ env.ALLURE_ENDPOINT }}/api/rs/launch/${{ env.LAUNCH_ID }}"
+          
+          echo "✅ Launch closed"
 
-      - name: Upload artifacts
+      # ========== Генерируем статистику ==========
+      - name: Generate Test Statistics
+        id: stats
+        if: always()
+        run: |
+          python - <<EOF
+          import json
+          import glob
+          import os
+          
+          results_dir = os.environ.get('ALLURE_RESULTS', 'allure-results')
+          result_files = glob.glob(f"{results_dir}/*-result.json")
+          
+          total = len(result_files)
+          passed = 0
+          failed = 0
+          broken = 0
+          skipped = 0
+          
+          for f in result_files:
+              with open(f) as file:
+                  data = json.load(file)
+                  status = data.get('status', 'unknown')
+                  if status == 'passed':
+                      passed += 1
+                  elif status == 'failed':
+                      failed += 1
+                  elif status == 'broken':
+                      broken += 1
+                  elif status == 'skipped':
+                      skipped += 1
+          
+          print(f"total={total}")
+          print(f"passed={passed}")
+          print(f"failed={failed}")
+          print(f"broken={broken}")
+          print(f"skipped={skipped}")
+          
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write(f"total={total}\n")
+              out.write(f"passed={passed}\n")
+              out.write(f"failed={failed}\n")
+              out.write(f"broken={broken}\n")
+              out.write(f"skipped={skipped}\n")
+          EOF
+
+      - name: Upload Allure Results Artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results-rerun-${{ github.run_id }}
+          name: allure-results-${{ github.run_id }}
           path: ${{ env.ALLURE_RESULTS }}
           retention-days: 7
+
+      - name: Upload Test Logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs-${{ github.run_id }}
+          path: |
+            pytest.log
+            junit-report.xml
+          retention-days: 3
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🧪 E-Commerce Test Suite Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Total Tests | ${{ steps.stats.outputs.total }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ✅ Passed | ${{ steps.stats.outputs.passed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ❌ Failed | ${{ steps.stats.outputs.failed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 💥 Broken | ${{ steps.stats.outputs.broken }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| ⏭️ Skipped | ${{ steps.stats.outputs.skipped }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 **Allure Launch:** ${{ env.ALLURE_ENDPOINT }}project/${{ env.ALLURE_PROJECT_ID }}/launches/${{ env.LAUNCH_ID }}" >> $GITHUB_STEP_SUMMARY
