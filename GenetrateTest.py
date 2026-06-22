@@ -4,6 +4,7 @@ import random
 
 os.makedirs("tests", exist_ok=True)
 
+# Шаблон файла - правильные отступы
 TEMPLATE = '''# tests/test_{module}.py
 import random
 import allure
@@ -16,10 +17,10 @@ from allure_commons.types import Severity
 @allure.feature("{feature}")
 class Test{feature_class}:
     """Tests for {feature}"""
-    
 {tests}
 '''
 
+# Шаблон одного теста - 4 пробела внутри класса
 TEST_TEMPLATE = '''
     @allure.id("{test_id}")
     @allure.story("{story}")
@@ -29,10 +30,8 @@ TEST_TEMPLATE = '''
         """{title}"""
         with allure.step("Prepare test data"):
             allure.attach("Test ID: {test_id}", "Test Info", allure.attachment_type.TEXT)
-        
         with allure.step("Execute business logic"):
             {execution_logic}
-        
         with allure.step("Verify result"):
             {assertion}
 '''
@@ -47,27 +46,20 @@ def generate_auth_tests():
         if i <= 20:
             story = "Registration"
             title = f"User registration with {random.choice(['valid', 'invalid', 'existing'])} credentials"
-            logic = f'''result = {{"status": "processing"}}
-if random.random() < 0.1:
-    pytest.fail("Registration failed: email already exists")'''
+            logic = 'pass'
         elif i <= 40:
             story = "Login"
             title = f"User login with {random.choice(['correct', 'incorrect', 'locked'])} credentials"
-            logic = f'''result = {{"status": "processing"}}
-if random.random() < 0.15:
-    pytest.fail("Login failed: invalid credentials")'''
+            logic = 'pass'
         else:
             story = "Password Reset"
             title = f"Password reset for {random.choice(['existing', 'nonexistent'])} user"
-            logic = f'''result = {{"status": "processing"}}
-if random.random() < 0.1:
-    pytest.fail("Password reset failed: user not found")'''
+            logic = 'pass'
         
         if not is_pass:
             logic = f'pytest.fail("Deterministic failure in AUTH-{i:03d}")'
         elif is_flake:
-            logic = f'''if random.random() < 0.4:
-    pytest.fail("Flaky failure in AUTH-{i:03d} - retry may succeed")'''
+            logic = f'if random.random() < 0.4: pytest.fail("Flaky failure in AUTH-{i:03d}")'
         
         tests.append({
             "id": f"AUTH-{i:03d}",
@@ -86,17 +78,13 @@ def generate_catalog_tests():
         is_flake = i in [20, 40, 60, 80]
         
         story = random.choice(["Search", "Filters", "Product Details"])
-        title = f"Catalog {story.lower()} with {random.choice(['laptop', 'mouse', 'monitor', 'headphones'])}"
-        
-        logic = f'''result = {{"status": "success", "items": 5}}
-if random.random() < 0.02:
-    pytest.fail("Search timeout")'''
+        title = f"Catalog {story.lower()} with {random.choice(['laptop', 'mouse', 'monitor'])}"
+        logic = 'pass'
         
         if not is_pass:
             logic = f'pytest.fail("Catalog failure in CAT-{i:03d}")'
         elif is_flake:
-            logic = f'''if random.random() < 0.35:
-    pytest.fail("Flaky catalog failure in CAT-{i:03d}")'''
+            logic = f'if random.random() < 0.35: pytest.fail("Flaky catalog failure in CAT-{i:03d}")'
         
         tests.append({
             "id": f"CAT-{i:03d}",
@@ -116,16 +104,12 @@ def generate_cart_tests():
         
         story = random.choice(["Add to Cart", "Remove from Cart", "Update Cart"])
         title = f"Cart {story.lower()} for product {i % 10 + 1}"
-        
-        logic = f'''product_id = {i % 10 + 1}
-if random.random() < 0.01:
-    raise ValueError("Product not found")'''
+        logic = 'pass'
         
         if not is_pass:
             logic = f'pytest.fail("Cart failure in CART-{i:03d}")'
         elif is_flake:
-            logic = f'''if random.random() < 0.35:
-    pytest.fail("Flaky cart failure in CART-{i:03d}")'''
+            logic = f'if random.random() < 0.35: pytest.fail("Flaky cart failure in CART-{i:03d}")'
         
         tests.append({
             "id": f"CART-{i:03d}",
@@ -141,25 +125,21 @@ def generate_payment_tests():
     tests = []
     for i in range(1, 301):
         is_pass = i not in [
-            5, 12, 19, 27, 34, 42, 49, 57, 64, 72, 79, 87, 94, 102, 
-            109, 117, 124, 132, 139, 147, 154, 162, 169, 177, 184, 
-            192, 199, 207, 214, 222, 229, 237, 244, 252, 259, 267, 
+            5, 12, 19, 27, 34, 42, 49, 57, 64, 72, 79, 87, 94, 102,
+            109, 117, 124, 132, 139, 147, 154, 162, 169, 177, 184,
+            192, 199, 207, 214, 222, 229, 237, 244, 252, 259, 267,
             274, 282, 289, 297
         ]
         is_flake = i in [50, 100, 150, 200, 250]
         
         story = random.choice(["Credit Card", "PayPal", "Bank Transfer", "Refunds"])
         title = f"Payment {story.lower()} for ${round(random.uniform(10, 500), 2)}"
-        
-        logic = f'''amount = {round(random.uniform(10, 500), 2)}
-if random.random() < 0.01:
-    raise TimeoutError("Gateway timeout")'''
+        logic = 'pass'
         
         if not is_pass:
             logic = f'pytest.fail("Payment failure in PAY-{i:03d}")'
         elif is_flake:
-            logic = f'''if random.random() < 0.4:
-    pytest.fail("Flaky payment failure in PAY-{i:03d}")'''
+            logic = f'if random.random() < 0.4: pytest.fail("Flaky payment failure in PAY-{i:03d}")'
         
         tests.append({
             "id": f"PAY-{i:03d}",
@@ -175,23 +155,19 @@ def generate_order_tests():
     tests = []
     for i in range(1, 151):
         is_pass = i not in [
-            5, 12, 18, 23, 29, 34, 40, 45, 50, 55, 
+            5, 12, 18, 23, 29, 34, 40, 45, 50, 55,
             60, 65, 70, 75, 80, 85, 90, 95, 100, 105
         ]
         is_flake = i in [30, 60, 90, 120]
         
         story = random.choice(["Order Creation", "Order Status", "Order History"])
         title = f"Order {story.lower()} for order #{i}"
-        
-        logic = f'''order_id = {i+1000}
-if random.random() < 0.01:
-    raise ValueError("Invalid order data")'''
+        logic = 'pass'
         
         if not is_pass:
             logic = f'pytest.fail("Order failure in ORD-{i:03d}")'
         elif is_flake:
-            logic = f'''if random.random() < 0.3:
-    pytest.fail("Flaky order failure in ORD-{i:03d}")'''
+            logic = f'if random.random() < 0.3: pytest.fail("Flaky order failure in ORD-{i:03d}")'
         
         tests.append({
             "id": f"ORD-{i:03d}",
@@ -212,7 +188,7 @@ def write_test_file(filename, feature, tests, imports=""):
             story=test["story"],
             title=test["title"],
             execution_logic=test["logic"],
-            assertion="assert True" if "pytest.fail" not in test["logic"] else "pass"
+            assertion="assert True"
         )
     
     feature_class = feature.replace(" ", "")
