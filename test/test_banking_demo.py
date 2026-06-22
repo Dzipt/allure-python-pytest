@@ -4,7 +4,6 @@ import allure
 
 RUN_NUMBER = int(os.getenv("RUN_NUMBER", "1"))
 
-@allure.id("10001")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10001():
@@ -15,7 +14,6 @@ def test_customer_can_view_account_details_10001():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10002")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10002():
@@ -26,7 +24,6 @@ def test_customer_can_download_statement_10002():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10003")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10003():
@@ -37,7 +34,6 @@ def test_customer_can_filter_transactions_10003():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10004")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10004():
@@ -48,7 +44,6 @@ def test_customer_can_search_transaction_history_10004():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10005")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10005():
@@ -59,7 +54,6 @@ def test_customer_can_view_account_balance_10005():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10006")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10006():
@@ -70,7 +64,6 @@ def test_customer_can_view_account_currency_10006():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10007")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10007():
@@ -81,7 +74,6 @@ def test_customer_can_view_account_iban_10007():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10008")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10008():
@@ -92,7 +84,6 @@ def test_customer_can_rename_account_10008():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10009")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10009():
@@ -103,7 +94,6 @@ def test_customer_can_archive_account_10009():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10010")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10010():
@@ -114,7 +104,6 @@ def test_customer_can_restore_account_10010():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10011")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10011():
@@ -125,7 +114,6 @@ def test_cardholder_can_block_card_10011():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10012")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10012():
@@ -136,7 +124,6 @@ def test_cardholder_can_unblock_card_10012():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10013")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10013():
@@ -147,7 +134,6 @@ def test_cardholder_can_change_pin_10013():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10014")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10014():
@@ -158,7 +144,6 @@ def test_cardholder_can_view_card_limits_10014():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10015")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10015():
@@ -169,7 +154,6 @@ def test_cardholder_can_enable_online_payments_10015():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10016")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10016():
@@ -180,7 +164,6 @@ def test_cardholder_can_disable_online_payments_10016():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10017")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10017():
@@ -191,7 +174,6 @@ def test_cardholder_can_view_card_details_10017():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10018")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10018():
@@ -202,7 +184,6 @@ def test_cardholder_can_replace_card_10018():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10019")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10019():
@@ -213,7 +194,6 @@ def test_cardholder_can_set_spending_limit_10019():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10020")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10020():
@@ -224,7 +204,6 @@ def test_cardholder_can_view_card_transactions_10020():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10021")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10021():
@@ -235,7 +214,6 @@ def test_customer_can_make_internal_transfer_10021():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10022")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10022():
@@ -246,7 +224,6 @@ def test_customer_can_make_external_transfer_10022():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10023")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10023():
@@ -257,7 +234,6 @@ def test_customer_can_pay_utility_bill_10023():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10024")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10024():
@@ -268,7 +244,6 @@ def test_customer_can_schedule_payment_10024():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10025")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10025():
@@ -279,7 +254,6 @@ def test_customer_can_cancel_scheduled_payment_10025():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10026")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10026():
@@ -290,7 +264,6 @@ def test_customer_can_repeat_payment_10026():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10027")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10027():
@@ -301,7 +274,6 @@ def test_customer_can_save_payment_template_10027():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10028")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10028():
@@ -312,7 +284,6 @@ def test_customer_can_delete_payment_template_10028():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10029")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10029():
@@ -323,7 +294,6 @@ def test_customer_can_view_payment_status_10029():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10030")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10030():
@@ -334,7 +304,6 @@ def test_customer_can_download_payment_receipt_10030():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10031")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10031():
@@ -345,7 +314,6 @@ def test_customer_can_transfer_between_own_accounts_10031():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10032")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10032():
@@ -356,7 +324,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10032():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10033")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10033():
@@ -367,7 +334,6 @@ def test_customer_can_add_beneficiary_10033():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10034")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10034():
@@ -378,7 +344,6 @@ def test_customer_can_delete_beneficiary_10034():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10035")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10035():
@@ -389,7 +354,6 @@ def test_customer_can_edit_beneficiary_10035():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10036")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10036():
@@ -400,7 +364,6 @@ def test_customer_can_view_transfer_history_10036():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10037")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10037():
@@ -411,7 +374,6 @@ def test_customer_can_export_transfer_history_10037():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10038")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10038():
@@ -422,7 +384,6 @@ def test_customer_can_search_transfer_10038():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10039")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10039():
@@ -433,7 +394,6 @@ def test_customer_can_repeat_transfer_10039():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10040")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10040():
@@ -444,7 +404,6 @@ def test_customer_can_cancel_transfer_10040():
         pytest.fail("Known defect in business logic")
 
 
-@allure.id("10041")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10041():
@@ -456,7 +415,6 @@ def test_customer_can_view_loan_schedule_10041():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10042")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10042():
@@ -468,7 +426,6 @@ def test_customer_can_make_loan_payment_10042():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10043")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10043():
@@ -480,7 +437,6 @@ def test_customer_can_download_loan_statement_10043():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10044")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10044():
@@ -492,7 +448,6 @@ def test_customer_can_view_interest_rate_10044():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10045")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10045():
@@ -504,7 +459,6 @@ def test_customer_can_request_early_repayment_10045():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10046")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10046():
@@ -516,7 +470,6 @@ def test_customer_can_view_remaining_balance_10046():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10047")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10047():
@@ -528,7 +481,6 @@ def test_customer_can_view_next_payment_date_10047():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10048")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10048():
@@ -540,7 +492,6 @@ def test_customer_can_download_amortization_table_10048():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10049")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10049():
@@ -552,7 +503,6 @@ def test_customer_can_request_loan_certificate_10049():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10050")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10050():
@@ -564,7 +514,6 @@ def test_customer_can_view_loan_history_10050():
             pytest.fail("Intermittent timeout in external service")
 
 
-@allure.id("10051")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10051():
@@ -575,7 +524,6 @@ def test_customer_receives_sms_notification_10051():
         assert True
 
 
-@allure.id("10052")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10052():
@@ -586,7 +534,6 @@ def test_customer_receives_email_notification_10052():
         assert True
 
 
-@allure.id("10053")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10053():
@@ -597,7 +544,6 @@ def test_customer_receives_push_notification_10053():
         assert True
 
 
-@allure.id("10054")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10054():
@@ -608,7 +554,6 @@ def test_customer_can_manage_notification_preferences_10054():
         assert True
 
 
-@allure.id("10055")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10055():
@@ -619,7 +564,6 @@ def test_customer_can_disable_marketing_messages_10055():
         assert True
 
 
-@allure.id("10056")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10056():
@@ -630,7 +574,6 @@ def test_customer_can_enable_security_alerts_10056():
         assert True
 
 
-@allure.id("10057")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10057():
@@ -641,7 +584,6 @@ def test_customer_can_disable_security_alerts_10057():
         assert True
 
 
-@allure.id("10058")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10058():
@@ -652,7 +594,6 @@ def test_customer_can_view_notification_history_10058():
         assert True
 
 
-@allure.id("10059")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10059():
@@ -663,7 +604,6 @@ def test_customer_can_mark_notification_as_read_10059():
         assert True
 
 
-@allure.id("10060")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10060():
@@ -674,7 +614,6 @@ def test_customer_can_delete_notification_10060():
         assert True
 
 
-@allure.id("10061")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10061():
@@ -685,7 +624,6 @@ def test_customer_can_enable_two_factor_authentication_10061():
         assert True
 
 
-@allure.id("10062")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10062():
@@ -696,7 +634,6 @@ def test_customer_can_disable_two_factor_authentication_10062():
         assert True
 
 
-@allure.id("10063")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10063():
@@ -707,7 +644,6 @@ def test_customer_can_reset_password_10063():
         assert True
 
 
-@allure.id("10064")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10064():
@@ -718,7 +654,6 @@ def test_customer_can_change_password_10064():
         assert True
 
 
-@allure.id("10065")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10065():
@@ -729,7 +664,6 @@ def test_customer_can_change_security_question_10065():
         assert True
 
 
-@allure.id("10066")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10066():
@@ -740,7 +674,6 @@ def test_customer_can_view_login_history_10066():
         assert True
 
 
-@allure.id("10067")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10067():
@@ -751,7 +684,6 @@ def test_customer_session_expires_after_timeout_10067():
         assert True
 
 
-@allure.id("10068")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10068():
@@ -762,7 +694,6 @@ def test_customer_can_logout_from_all_devices_10068():
         assert True
 
 
-@allure.id("10069")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10069():
@@ -773,7 +704,6 @@ def test_customer_can_register_trusted_device_10069():
         assert True
 
 
-@allure.id("10070")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10070():
@@ -784,7 +714,6 @@ def test_customer_can_remove_trusted_device_10070():
         assert True
 
 
-@allure.id("10071")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10071():
@@ -795,7 +724,6 @@ def test_customer_can_generate_monthly_report_10071():
         assert True
 
 
-@allure.id("10072")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10072():
@@ -806,7 +734,6 @@ def test_customer_can_generate_yearly_report_10072():
         assert True
 
 
-@allure.id("10073")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10073():
@@ -817,7 +744,6 @@ def test_customer_can_export_report_pdf_10073():
         assert True
 
 
-@allure.id("10074")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10074():
@@ -828,7 +754,6 @@ def test_customer_can_export_report_xlsx_10074():
         assert True
 
 
-@allure.id("10075")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10075():
@@ -839,7 +764,6 @@ def test_customer_can_filter_report_by_period_10075():
         assert True
 
 
-@allure.id("10076")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10076():
@@ -850,7 +774,6 @@ def test_customer_can_filter_report_by_account_10076():
         assert True
 
 
-@allure.id("10077")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10077():
@@ -861,7 +784,6 @@ def test_customer_can_download_tax_report_10077():
         assert True
 
 
-@allure.id("10078")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10078():
@@ -872,7 +794,6 @@ def test_customer_can_generate_spending_report_10078():
         assert True
 
 
-@allure.id("10079")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10079():
@@ -883,7 +804,6 @@ def test_customer_can_generate_income_report_10079():
         assert True
 
 
-@allure.id("10080")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10080():
@@ -894,7 +814,6 @@ def test_customer_can_schedule_report_10080():
         assert True
 
 
-@allure.id("10081")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10081():
@@ -905,7 +824,6 @@ def test_customer_can_view_portfolio_10081():
         assert True
 
 
-@allure.id("10082")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10082():
@@ -916,7 +834,6 @@ def test_customer_can_buy_asset_10082():
         assert True
 
 
-@allure.id("10083")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10083():
@@ -927,7 +844,6 @@ def test_customer_can_sell_asset_10083():
         assert True
 
 
-@allure.id("10084")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10084():
@@ -938,7 +854,6 @@ def test_customer_can_view_asset_price_10084():
         assert True
 
 
-@allure.id("10085")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10085():
@@ -949,7 +864,6 @@ def test_customer_can_view_portfolio_performance_10085():
         assert True
 
 
-@allure.id("10086")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10086():
@@ -960,7 +874,6 @@ def test_customer_can_view_dividend_history_10086():
         assert True
 
 
-@allure.id("10087")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10087():
@@ -971,7 +884,6 @@ def test_customer_can_download_portfolio_report_10087():
         assert True
 
 
-@allure.id("10088")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10088():
@@ -982,7 +894,6 @@ def test_customer_can_filter_assets_10088():
         assert True
 
 
-@allure.id("10089")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10089():
@@ -993,7 +904,6 @@ def test_customer_can_search_asset_10089():
         assert True
 
 
-@allure.id("10090")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10090():
@@ -1004,7 +914,6 @@ def test_customer_can_view_asset_details_10090():
         assert True
 
 
-@allure.id("10091")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10091():
@@ -1015,7 +924,6 @@ def test_customer_can_create_support_ticket_10091():
         assert True
 
 
-@allure.id("10092")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10092():
@@ -1026,7 +934,6 @@ def test_customer_can_view_ticket_status_10092():
         assert True
 
 
-@allure.id("10093")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10093():
@@ -1037,7 +944,6 @@ def test_customer_can_add_ticket_comment_10093():
         assert True
 
 
-@allure.id("10094")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10094():
@@ -1048,7 +954,6 @@ def test_customer_can_close_ticket_10094():
         assert True
 
 
-@allure.id("10095")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10095():
@@ -1059,7 +964,6 @@ def test_customer_can_reopen_ticket_10095():
         assert True
 
 
-@allure.id("10096")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10096():
@@ -1070,7 +974,6 @@ def test_customer_can_upload_attachment_10096():
         assert True
 
 
-@allure.id("10097")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10097():
@@ -1081,7 +984,6 @@ def test_customer_can_download_attachment_10097():
         assert True
 
 
-@allure.id("10098")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10098():
@@ -1092,7 +994,6 @@ def test_customer_can_rate_support_request_10098():
         assert True
 
 
-@allure.id("10099")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10099():
@@ -1103,7 +1004,6 @@ def test_customer_can_view_support_history_10099():
         assert True
 
 
-@allure.id("10100")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10100():
@@ -1114,7 +1014,6 @@ def test_customer_can_contact_support_10100():
         assert True
 
 
-@allure.id("10101")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10101():
@@ -1125,7 +1024,6 @@ def test_customer_can_view_account_details_10101():
         assert True
 
 
-@allure.id("10102")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10102():
@@ -1136,7 +1034,6 @@ def test_customer_can_download_statement_10102():
         assert True
 
 
-@allure.id("10103")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10103():
@@ -1147,7 +1044,6 @@ def test_customer_can_filter_transactions_10103():
         assert True
 
 
-@allure.id("10104")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10104():
@@ -1158,7 +1054,6 @@ def test_customer_can_search_transaction_history_10104():
         assert True
 
 
-@allure.id("10105")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10105():
@@ -1169,7 +1064,6 @@ def test_customer_can_view_account_balance_10105():
         assert True
 
 
-@allure.id("10106")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10106():
@@ -1180,7 +1074,6 @@ def test_customer_can_view_account_currency_10106():
         assert True
 
 
-@allure.id("10107")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10107():
@@ -1191,7 +1084,6 @@ def test_customer_can_view_account_iban_10107():
         assert True
 
 
-@allure.id("10108")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10108():
@@ -1202,7 +1094,6 @@ def test_customer_can_rename_account_10108():
         assert True
 
 
-@allure.id("10109")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10109():
@@ -1213,7 +1104,6 @@ def test_customer_can_archive_account_10109():
         assert True
 
 
-@allure.id("10110")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10110():
@@ -1224,7 +1114,6 @@ def test_customer_can_restore_account_10110():
         assert True
 
 
-@allure.id("10111")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10111():
@@ -1235,7 +1124,6 @@ def test_cardholder_can_block_card_10111():
         assert True
 
 
-@allure.id("10112")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10112():
@@ -1246,7 +1134,6 @@ def test_cardholder_can_unblock_card_10112():
         assert True
 
 
-@allure.id("10113")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10113():
@@ -1257,7 +1144,6 @@ def test_cardholder_can_change_pin_10113():
         assert True
 
 
-@allure.id("10114")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10114():
@@ -1268,7 +1154,6 @@ def test_cardholder_can_view_card_limits_10114():
         assert True
 
 
-@allure.id("10115")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10115():
@@ -1279,7 +1164,6 @@ def test_cardholder_can_enable_online_payments_10115():
         assert True
 
 
-@allure.id("10116")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10116():
@@ -1290,7 +1174,6 @@ def test_cardholder_can_disable_online_payments_10116():
         assert True
 
 
-@allure.id("10117")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10117():
@@ -1301,7 +1184,6 @@ def test_cardholder_can_view_card_details_10117():
         assert True
 
 
-@allure.id("10118")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10118():
@@ -1312,7 +1194,6 @@ def test_cardholder_can_replace_card_10118():
         assert True
 
 
-@allure.id("10119")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10119():
@@ -1323,7 +1204,6 @@ def test_cardholder_can_set_spending_limit_10119():
         assert True
 
 
-@allure.id("10120")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10120():
@@ -1334,7 +1214,6 @@ def test_cardholder_can_view_card_transactions_10120():
         assert True
 
 
-@allure.id("10121")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10121():
@@ -1345,7 +1224,6 @@ def test_customer_can_make_internal_transfer_10121():
         assert True
 
 
-@allure.id("10122")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10122():
@@ -1356,7 +1234,6 @@ def test_customer_can_make_external_transfer_10122():
         assert True
 
 
-@allure.id("10123")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10123():
@@ -1367,7 +1244,6 @@ def test_customer_can_pay_utility_bill_10123():
         assert True
 
 
-@allure.id("10124")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10124():
@@ -1378,7 +1254,6 @@ def test_customer_can_schedule_payment_10124():
         assert True
 
 
-@allure.id("10125")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10125():
@@ -1389,7 +1264,6 @@ def test_customer_can_cancel_scheduled_payment_10125():
         assert True
 
 
-@allure.id("10126")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10126():
@@ -1400,7 +1274,6 @@ def test_customer_can_repeat_payment_10126():
         assert True
 
 
-@allure.id("10127")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10127():
@@ -1411,7 +1284,6 @@ def test_customer_can_save_payment_template_10127():
         assert True
 
 
-@allure.id("10128")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10128():
@@ -1422,7 +1294,6 @@ def test_customer_can_delete_payment_template_10128():
         assert True
 
 
-@allure.id("10129")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10129():
@@ -1433,7 +1304,6 @@ def test_customer_can_view_payment_status_10129():
         assert True
 
 
-@allure.id("10130")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10130():
@@ -1444,7 +1314,6 @@ def test_customer_can_download_payment_receipt_10130():
         assert True
 
 
-@allure.id("10131")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10131():
@@ -1455,7 +1324,6 @@ def test_customer_can_transfer_between_own_accounts_10131():
         assert True
 
 
-@allure.id("10132")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10132():
@@ -1466,7 +1334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10132():
         assert True
 
 
-@allure.id("10133")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10133():
@@ -1477,7 +1344,6 @@ def test_customer_can_add_beneficiary_10133():
         assert True
 
 
-@allure.id("10134")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10134():
@@ -1488,7 +1354,6 @@ def test_customer_can_delete_beneficiary_10134():
         assert True
 
 
-@allure.id("10135")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10135():
@@ -1499,7 +1364,6 @@ def test_customer_can_edit_beneficiary_10135():
         assert True
 
 
-@allure.id("10136")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10136():
@@ -1510,7 +1374,6 @@ def test_customer_can_view_transfer_history_10136():
         assert True
 
 
-@allure.id("10137")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10137():
@@ -1521,7 +1384,6 @@ def test_customer_can_export_transfer_history_10137():
         assert True
 
 
-@allure.id("10138")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10138():
@@ -1532,7 +1394,6 @@ def test_customer_can_search_transfer_10138():
         assert True
 
 
-@allure.id("10139")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10139():
@@ -1543,7 +1404,6 @@ def test_customer_can_repeat_transfer_10139():
         assert True
 
 
-@allure.id("10140")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10140():
@@ -1554,7 +1414,6 @@ def test_customer_can_cancel_transfer_10140():
         assert True
 
 
-@allure.id("10141")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10141():
@@ -1565,7 +1424,6 @@ def test_customer_can_view_loan_schedule_10141():
         assert True
 
 
-@allure.id("10142")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10142():
@@ -1576,7 +1434,6 @@ def test_customer_can_make_loan_payment_10142():
         assert True
 
 
-@allure.id("10143")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10143():
@@ -1587,7 +1444,6 @@ def test_customer_can_download_loan_statement_10143():
         assert True
 
 
-@allure.id("10144")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10144():
@@ -1598,7 +1454,6 @@ def test_customer_can_view_interest_rate_10144():
         assert True
 
 
-@allure.id("10145")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10145():
@@ -1609,7 +1464,6 @@ def test_customer_can_request_early_repayment_10145():
         assert True
 
 
-@allure.id("10146")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10146():
@@ -1620,7 +1474,6 @@ def test_customer_can_view_remaining_balance_10146():
         assert True
 
 
-@allure.id("10147")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10147():
@@ -1631,7 +1484,6 @@ def test_customer_can_view_next_payment_date_10147():
         assert True
 
 
-@allure.id("10148")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10148():
@@ -1642,7 +1494,6 @@ def test_customer_can_download_amortization_table_10148():
         assert True
 
 
-@allure.id("10149")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10149():
@@ -1653,7 +1504,6 @@ def test_customer_can_request_loan_certificate_10149():
         assert True
 
 
-@allure.id("10150")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10150():
@@ -1664,7 +1514,6 @@ def test_customer_can_view_loan_history_10150():
         assert True
 
 
-@allure.id("10151")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10151():
@@ -1675,7 +1524,6 @@ def test_customer_receives_sms_notification_10151():
         assert True
 
 
-@allure.id("10152")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10152():
@@ -1686,7 +1534,6 @@ def test_customer_receives_email_notification_10152():
         assert True
 
 
-@allure.id("10153")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10153():
@@ -1697,7 +1544,6 @@ def test_customer_receives_push_notification_10153():
         assert True
 
 
-@allure.id("10154")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10154():
@@ -1708,7 +1554,6 @@ def test_customer_can_manage_notification_preferences_10154():
         assert True
 
 
-@allure.id("10155")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10155():
@@ -1719,7 +1564,6 @@ def test_customer_can_disable_marketing_messages_10155():
         assert True
 
 
-@allure.id("10156")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10156():
@@ -1730,7 +1574,6 @@ def test_customer_can_enable_security_alerts_10156():
         assert True
 
 
-@allure.id("10157")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10157():
@@ -1741,7 +1584,6 @@ def test_customer_can_disable_security_alerts_10157():
         assert True
 
 
-@allure.id("10158")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10158():
@@ -1752,7 +1594,6 @@ def test_customer_can_view_notification_history_10158():
         assert True
 
 
-@allure.id("10159")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10159():
@@ -1763,7 +1604,6 @@ def test_customer_can_mark_notification_as_read_10159():
         assert True
 
 
-@allure.id("10160")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10160():
@@ -1774,7 +1614,6 @@ def test_customer_can_delete_notification_10160():
         assert True
 
 
-@allure.id("10161")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10161():
@@ -1785,7 +1624,6 @@ def test_customer_can_enable_two_factor_authentication_10161():
         assert True
 
 
-@allure.id("10162")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10162():
@@ -1796,7 +1634,6 @@ def test_customer_can_disable_two_factor_authentication_10162():
         assert True
 
 
-@allure.id("10163")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10163():
@@ -1807,7 +1644,6 @@ def test_customer_can_reset_password_10163():
         assert True
 
 
-@allure.id("10164")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10164():
@@ -1818,7 +1654,6 @@ def test_customer_can_change_password_10164():
         assert True
 
 
-@allure.id("10165")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10165():
@@ -1829,7 +1664,6 @@ def test_customer_can_change_security_question_10165():
         assert True
 
 
-@allure.id("10166")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10166():
@@ -1840,7 +1674,6 @@ def test_customer_can_view_login_history_10166():
         assert True
 
 
-@allure.id("10167")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10167():
@@ -1851,7 +1684,6 @@ def test_customer_session_expires_after_timeout_10167():
         assert True
 
 
-@allure.id("10168")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10168():
@@ -1862,7 +1694,6 @@ def test_customer_can_logout_from_all_devices_10168():
         assert True
 
 
-@allure.id("10169")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10169():
@@ -1873,7 +1704,6 @@ def test_customer_can_register_trusted_device_10169():
         assert True
 
 
-@allure.id("10170")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10170():
@@ -1884,7 +1714,6 @@ def test_customer_can_remove_trusted_device_10170():
         assert True
 
 
-@allure.id("10171")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10171():
@@ -1895,7 +1724,6 @@ def test_customer_can_generate_monthly_report_10171():
         assert True
 
 
-@allure.id("10172")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10172():
@@ -1906,7 +1734,6 @@ def test_customer_can_generate_yearly_report_10172():
         assert True
 
 
-@allure.id("10173")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10173():
@@ -1917,7 +1744,6 @@ def test_customer_can_export_report_pdf_10173():
         assert True
 
 
-@allure.id("10174")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10174():
@@ -1928,7 +1754,6 @@ def test_customer_can_export_report_xlsx_10174():
         assert True
 
 
-@allure.id("10175")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10175():
@@ -1939,7 +1764,6 @@ def test_customer_can_filter_report_by_period_10175():
         assert True
 
 
-@allure.id("10176")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10176():
@@ -1950,7 +1774,6 @@ def test_customer_can_filter_report_by_account_10176():
         assert True
 
 
-@allure.id("10177")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10177():
@@ -1961,7 +1784,6 @@ def test_customer_can_download_tax_report_10177():
         assert True
 
 
-@allure.id("10178")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10178():
@@ -1972,7 +1794,6 @@ def test_customer_can_generate_spending_report_10178():
         assert True
 
 
-@allure.id("10179")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10179():
@@ -1983,7 +1804,6 @@ def test_customer_can_generate_income_report_10179():
         assert True
 
 
-@allure.id("10180")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10180():
@@ -1994,7 +1814,6 @@ def test_customer_can_schedule_report_10180():
         assert True
 
 
-@allure.id("10181")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10181():
@@ -2005,7 +1824,6 @@ def test_customer_can_view_portfolio_10181():
         assert True
 
 
-@allure.id("10182")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10182():
@@ -2016,7 +1834,6 @@ def test_customer_can_buy_asset_10182():
         assert True
 
 
-@allure.id("10183")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10183():
@@ -2027,7 +1844,6 @@ def test_customer_can_sell_asset_10183():
         assert True
 
 
-@allure.id("10184")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10184():
@@ -2038,7 +1854,6 @@ def test_customer_can_view_asset_price_10184():
         assert True
 
 
-@allure.id("10185")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10185():
@@ -2049,7 +1864,6 @@ def test_customer_can_view_portfolio_performance_10185():
         assert True
 
 
-@allure.id("10186")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10186():
@@ -2060,7 +1874,6 @@ def test_customer_can_view_dividend_history_10186():
         assert True
 
 
-@allure.id("10187")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10187():
@@ -2071,7 +1884,6 @@ def test_customer_can_download_portfolio_report_10187():
         assert True
 
 
-@allure.id("10188")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10188():
@@ -2082,7 +1894,6 @@ def test_customer_can_filter_assets_10188():
         assert True
 
 
-@allure.id("10189")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10189():
@@ -2093,7 +1904,6 @@ def test_customer_can_search_asset_10189():
         assert True
 
 
-@allure.id("10190")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10190():
@@ -2104,7 +1914,6 @@ def test_customer_can_view_asset_details_10190():
         assert True
 
 
-@allure.id("10191")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10191():
@@ -2115,7 +1924,6 @@ def test_customer_can_create_support_ticket_10191():
         assert True
 
 
-@allure.id("10192")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10192():
@@ -2126,7 +1934,6 @@ def test_customer_can_view_ticket_status_10192():
         assert True
 
 
-@allure.id("10193")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10193():
@@ -2137,7 +1944,6 @@ def test_customer_can_add_ticket_comment_10193():
         assert True
 
 
-@allure.id("10194")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10194():
@@ -2148,7 +1954,6 @@ def test_customer_can_close_ticket_10194():
         assert True
 
 
-@allure.id("10195")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10195():
@@ -2159,7 +1964,6 @@ def test_customer_can_reopen_ticket_10195():
         assert True
 
 
-@allure.id("10196")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10196():
@@ -2170,7 +1974,6 @@ def test_customer_can_upload_attachment_10196():
         assert True
 
 
-@allure.id("10197")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10197():
@@ -2181,7 +1984,6 @@ def test_customer_can_download_attachment_10197():
         assert True
 
 
-@allure.id("10198")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10198():
@@ -2192,7 +1994,6 @@ def test_customer_can_rate_support_request_10198():
         assert True
 
 
-@allure.id("10199")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10199():
@@ -2203,7 +2004,6 @@ def test_customer_can_view_support_history_10199():
         assert True
 
 
-@allure.id("10200")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10200():
@@ -2214,7 +2014,6 @@ def test_customer_can_contact_support_10200():
         assert True
 
 
-@allure.id("10201")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10201():
@@ -2225,7 +2024,6 @@ def test_customer_can_view_account_details_10201():
         assert True
 
 
-@allure.id("10202")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10202():
@@ -2236,7 +2034,6 @@ def test_customer_can_download_statement_10202():
         assert True
 
 
-@allure.id("10203")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10203():
@@ -2247,7 +2044,6 @@ def test_customer_can_filter_transactions_10203():
         assert True
 
 
-@allure.id("10204")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10204():
@@ -2258,7 +2054,6 @@ def test_customer_can_search_transaction_history_10204():
         assert True
 
 
-@allure.id("10205")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10205():
@@ -2269,7 +2064,6 @@ def test_customer_can_view_account_balance_10205():
         assert True
 
 
-@allure.id("10206")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10206():
@@ -2280,7 +2074,6 @@ def test_customer_can_view_account_currency_10206():
         assert True
 
 
-@allure.id("10207")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10207():
@@ -2291,7 +2084,6 @@ def test_customer_can_view_account_iban_10207():
         assert True
 
 
-@allure.id("10208")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10208():
@@ -2302,7 +2094,6 @@ def test_customer_can_rename_account_10208():
         assert True
 
 
-@allure.id("10209")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10209():
@@ -2313,7 +2104,6 @@ def test_customer_can_archive_account_10209():
         assert True
 
 
-@allure.id("10210")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10210():
@@ -2324,7 +2114,6 @@ def test_customer_can_restore_account_10210():
         assert True
 
 
-@allure.id("10211")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10211():
@@ -2335,7 +2124,6 @@ def test_cardholder_can_block_card_10211():
         assert True
 
 
-@allure.id("10212")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10212():
@@ -2346,7 +2134,6 @@ def test_cardholder_can_unblock_card_10212():
         assert True
 
 
-@allure.id("10213")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10213():
@@ -2357,7 +2144,6 @@ def test_cardholder_can_change_pin_10213():
         assert True
 
 
-@allure.id("10214")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10214():
@@ -2368,7 +2154,6 @@ def test_cardholder_can_view_card_limits_10214():
         assert True
 
 
-@allure.id("10215")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10215():
@@ -2379,7 +2164,6 @@ def test_cardholder_can_enable_online_payments_10215():
         assert True
 
 
-@allure.id("10216")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10216():
@@ -2390,7 +2174,6 @@ def test_cardholder_can_disable_online_payments_10216():
         assert True
 
 
-@allure.id("10217")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10217():
@@ -2401,7 +2184,6 @@ def test_cardholder_can_view_card_details_10217():
         assert True
 
 
-@allure.id("10218")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10218():
@@ -2412,7 +2194,6 @@ def test_cardholder_can_replace_card_10218():
         assert True
 
 
-@allure.id("10219")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10219():
@@ -2423,7 +2204,6 @@ def test_cardholder_can_set_spending_limit_10219():
         assert True
 
 
-@allure.id("10220")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10220():
@@ -2434,7 +2214,6 @@ def test_cardholder_can_view_card_transactions_10220():
         assert True
 
 
-@allure.id("10221")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10221():
@@ -2445,7 +2224,6 @@ def test_customer_can_make_internal_transfer_10221():
         assert True
 
 
-@allure.id("10222")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10222():
@@ -2456,7 +2234,6 @@ def test_customer_can_make_external_transfer_10222():
         assert True
 
 
-@allure.id("10223")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10223():
@@ -2467,7 +2244,6 @@ def test_customer_can_pay_utility_bill_10223():
         assert True
 
 
-@allure.id("10224")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10224():
@@ -2478,7 +2254,6 @@ def test_customer_can_schedule_payment_10224():
         assert True
 
 
-@allure.id("10225")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10225():
@@ -2489,7 +2264,6 @@ def test_customer_can_cancel_scheduled_payment_10225():
         assert True
 
 
-@allure.id("10226")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10226():
@@ -2500,7 +2274,6 @@ def test_customer_can_repeat_payment_10226():
         assert True
 
 
-@allure.id("10227")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10227():
@@ -2511,7 +2284,6 @@ def test_customer_can_save_payment_template_10227():
         assert True
 
 
-@allure.id("10228")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10228():
@@ -2522,7 +2294,6 @@ def test_customer_can_delete_payment_template_10228():
         assert True
 
 
-@allure.id("10229")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10229():
@@ -2533,7 +2304,6 @@ def test_customer_can_view_payment_status_10229():
         assert True
 
 
-@allure.id("10230")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10230():
@@ -2544,7 +2314,6 @@ def test_customer_can_download_payment_receipt_10230():
         assert True
 
 
-@allure.id("10231")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10231():
@@ -2555,7 +2324,6 @@ def test_customer_can_transfer_between_own_accounts_10231():
         assert True
 
 
-@allure.id("10232")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10232():
@@ -2566,7 +2334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10232():
         assert True
 
 
-@allure.id("10233")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10233():
@@ -2577,7 +2344,6 @@ def test_customer_can_add_beneficiary_10233():
         assert True
 
 
-@allure.id("10234")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10234():
@@ -2588,7 +2354,6 @@ def test_customer_can_delete_beneficiary_10234():
         assert True
 
 
-@allure.id("10235")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10235():
@@ -2599,7 +2364,6 @@ def test_customer_can_edit_beneficiary_10235():
         assert True
 
 
-@allure.id("10236")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10236():
@@ -2610,7 +2374,6 @@ def test_customer_can_view_transfer_history_10236():
         assert True
 
 
-@allure.id("10237")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10237():
@@ -2621,7 +2384,6 @@ def test_customer_can_export_transfer_history_10237():
         assert True
 
 
-@allure.id("10238")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10238():
@@ -2632,7 +2394,6 @@ def test_customer_can_search_transfer_10238():
         assert True
 
 
-@allure.id("10239")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10239():
@@ -2643,7 +2404,6 @@ def test_customer_can_repeat_transfer_10239():
         assert True
 
 
-@allure.id("10240")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10240():
@@ -2654,7 +2414,6 @@ def test_customer_can_cancel_transfer_10240():
         assert True
 
 
-@allure.id("10241")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10241():
@@ -2665,7 +2424,6 @@ def test_customer_can_view_loan_schedule_10241():
         assert True
 
 
-@allure.id("10242")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10242():
@@ -2676,7 +2434,6 @@ def test_customer_can_make_loan_payment_10242():
         assert True
 
 
-@allure.id("10243")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10243():
@@ -2687,7 +2444,6 @@ def test_customer_can_download_loan_statement_10243():
         assert True
 
 
-@allure.id("10244")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10244():
@@ -2698,7 +2454,6 @@ def test_customer_can_view_interest_rate_10244():
         assert True
 
 
-@allure.id("10245")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10245():
@@ -2709,7 +2464,6 @@ def test_customer_can_request_early_repayment_10245():
         assert True
 
 
-@allure.id("10246")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10246():
@@ -2720,7 +2474,6 @@ def test_customer_can_view_remaining_balance_10246():
         assert True
 
 
-@allure.id("10247")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10247():
@@ -2731,7 +2484,6 @@ def test_customer_can_view_next_payment_date_10247():
         assert True
 
 
-@allure.id("10248")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10248():
@@ -2742,7 +2494,6 @@ def test_customer_can_download_amortization_table_10248():
         assert True
 
 
-@allure.id("10249")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10249():
@@ -2753,7 +2504,6 @@ def test_customer_can_request_loan_certificate_10249():
         assert True
 
 
-@allure.id("10250")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10250():
@@ -2764,7 +2514,6 @@ def test_customer_can_view_loan_history_10250():
         assert True
 
 
-@allure.id("10251")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10251():
@@ -2775,7 +2524,6 @@ def test_customer_receives_sms_notification_10251():
         assert True
 
 
-@allure.id("10252")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10252():
@@ -2786,7 +2534,6 @@ def test_customer_receives_email_notification_10252():
         assert True
 
 
-@allure.id("10253")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10253():
@@ -2797,7 +2544,6 @@ def test_customer_receives_push_notification_10253():
         assert True
 
 
-@allure.id("10254")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10254():
@@ -2808,7 +2554,6 @@ def test_customer_can_manage_notification_preferences_10254():
         assert True
 
 
-@allure.id("10255")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10255():
@@ -2819,7 +2564,6 @@ def test_customer_can_disable_marketing_messages_10255():
         assert True
 
 
-@allure.id("10256")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10256():
@@ -2830,7 +2574,6 @@ def test_customer_can_enable_security_alerts_10256():
         assert True
 
 
-@allure.id("10257")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10257():
@@ -2841,7 +2584,6 @@ def test_customer_can_disable_security_alerts_10257():
         assert True
 
 
-@allure.id("10258")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10258():
@@ -2852,7 +2594,6 @@ def test_customer_can_view_notification_history_10258():
         assert True
 
 
-@allure.id("10259")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10259():
@@ -2863,7 +2604,6 @@ def test_customer_can_mark_notification_as_read_10259():
         assert True
 
 
-@allure.id("10260")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10260():
@@ -2874,7 +2614,6 @@ def test_customer_can_delete_notification_10260():
         assert True
 
 
-@allure.id("10261")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10261():
@@ -2885,7 +2624,6 @@ def test_customer_can_enable_two_factor_authentication_10261():
         assert True
 
 
-@allure.id("10262")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10262():
@@ -2896,7 +2634,6 @@ def test_customer_can_disable_two_factor_authentication_10262():
         assert True
 
 
-@allure.id("10263")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10263():
@@ -2907,7 +2644,6 @@ def test_customer_can_reset_password_10263():
         assert True
 
 
-@allure.id("10264")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10264():
@@ -2918,7 +2654,6 @@ def test_customer_can_change_password_10264():
         assert True
 
 
-@allure.id("10265")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10265():
@@ -2929,7 +2664,6 @@ def test_customer_can_change_security_question_10265():
         assert True
 
 
-@allure.id("10266")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10266():
@@ -2940,7 +2674,6 @@ def test_customer_can_view_login_history_10266():
         assert True
 
 
-@allure.id("10267")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10267():
@@ -2951,7 +2684,6 @@ def test_customer_session_expires_after_timeout_10267():
         assert True
 
 
-@allure.id("10268")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10268():
@@ -2962,7 +2694,6 @@ def test_customer_can_logout_from_all_devices_10268():
         assert True
 
 
-@allure.id("10269")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10269():
@@ -2973,7 +2704,6 @@ def test_customer_can_register_trusted_device_10269():
         assert True
 
 
-@allure.id("10270")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10270():
@@ -2984,7 +2714,6 @@ def test_customer_can_remove_trusted_device_10270():
         assert True
 
 
-@allure.id("10271")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10271():
@@ -2995,7 +2724,6 @@ def test_customer_can_generate_monthly_report_10271():
         assert True
 
 
-@allure.id("10272")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10272():
@@ -3006,7 +2734,6 @@ def test_customer_can_generate_yearly_report_10272():
         assert True
 
 
-@allure.id("10273")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10273():
@@ -3017,7 +2744,6 @@ def test_customer_can_export_report_pdf_10273():
         assert True
 
 
-@allure.id("10274")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10274():
@@ -3028,7 +2754,6 @@ def test_customer_can_export_report_xlsx_10274():
         assert True
 
 
-@allure.id("10275")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10275():
@@ -3039,7 +2764,6 @@ def test_customer_can_filter_report_by_period_10275():
         assert True
 
 
-@allure.id("10276")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10276():
@@ -3050,7 +2774,6 @@ def test_customer_can_filter_report_by_account_10276():
         assert True
 
 
-@allure.id("10277")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10277():
@@ -3061,7 +2784,6 @@ def test_customer_can_download_tax_report_10277():
         assert True
 
 
-@allure.id("10278")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10278():
@@ -3072,7 +2794,6 @@ def test_customer_can_generate_spending_report_10278():
         assert True
 
 
-@allure.id("10279")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10279():
@@ -3083,7 +2804,6 @@ def test_customer_can_generate_income_report_10279():
         assert True
 
 
-@allure.id("10280")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10280():
@@ -3094,7 +2814,6 @@ def test_customer_can_schedule_report_10280():
         assert True
 
 
-@allure.id("10281")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10281():
@@ -3105,7 +2824,6 @@ def test_customer_can_view_portfolio_10281():
         assert True
 
 
-@allure.id("10282")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10282():
@@ -3116,7 +2834,6 @@ def test_customer_can_buy_asset_10282():
         assert True
 
 
-@allure.id("10283")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10283():
@@ -3127,7 +2844,6 @@ def test_customer_can_sell_asset_10283():
         assert True
 
 
-@allure.id("10284")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10284():
@@ -3138,7 +2854,6 @@ def test_customer_can_view_asset_price_10284():
         assert True
 
 
-@allure.id("10285")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10285():
@@ -3149,7 +2864,6 @@ def test_customer_can_view_portfolio_performance_10285():
         assert True
 
 
-@allure.id("10286")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10286():
@@ -3160,7 +2874,6 @@ def test_customer_can_view_dividend_history_10286():
         assert True
 
 
-@allure.id("10287")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10287():
@@ -3171,7 +2884,6 @@ def test_customer_can_download_portfolio_report_10287():
         assert True
 
 
-@allure.id("10288")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10288():
@@ -3182,7 +2894,6 @@ def test_customer_can_filter_assets_10288():
         assert True
 
 
-@allure.id("10289")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10289():
@@ -3193,7 +2904,6 @@ def test_customer_can_search_asset_10289():
         assert True
 
 
-@allure.id("10290")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10290():
@@ -3204,7 +2914,6 @@ def test_customer_can_view_asset_details_10290():
         assert True
 
 
-@allure.id("10291")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10291():
@@ -3215,7 +2924,6 @@ def test_customer_can_create_support_ticket_10291():
         assert True
 
 
-@allure.id("10292")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10292():
@@ -3226,7 +2934,6 @@ def test_customer_can_view_ticket_status_10292():
         assert True
 
 
-@allure.id("10293")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10293():
@@ -3237,7 +2944,6 @@ def test_customer_can_add_ticket_comment_10293():
         assert True
 
 
-@allure.id("10294")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10294():
@@ -3248,7 +2954,6 @@ def test_customer_can_close_ticket_10294():
         assert True
 
 
-@allure.id("10295")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10295():
@@ -3259,7 +2964,6 @@ def test_customer_can_reopen_ticket_10295():
         assert True
 
 
-@allure.id("10296")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10296():
@@ -3270,7 +2974,6 @@ def test_customer_can_upload_attachment_10296():
         assert True
 
 
-@allure.id("10297")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10297():
@@ -3281,7 +2984,6 @@ def test_customer_can_download_attachment_10297():
         assert True
 
 
-@allure.id("10298")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10298():
@@ -3292,7 +2994,6 @@ def test_customer_can_rate_support_request_10298():
         assert True
 
 
-@allure.id("10299")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10299():
@@ -3303,7 +3004,6 @@ def test_customer_can_view_support_history_10299():
         assert True
 
 
-@allure.id("10300")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10300():
@@ -3314,7 +3014,6 @@ def test_customer_can_contact_support_10300():
         assert True
 
 
-@allure.id("10301")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10301():
@@ -3325,7 +3024,6 @@ def test_customer_can_view_account_details_10301():
         assert True
 
 
-@allure.id("10302")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10302():
@@ -3336,7 +3034,6 @@ def test_customer_can_download_statement_10302():
         assert True
 
 
-@allure.id("10303")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10303():
@@ -3347,7 +3044,6 @@ def test_customer_can_filter_transactions_10303():
         assert True
 
 
-@allure.id("10304")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10304():
@@ -3358,7 +3054,6 @@ def test_customer_can_search_transaction_history_10304():
         assert True
 
 
-@allure.id("10305")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10305():
@@ -3369,7 +3064,6 @@ def test_customer_can_view_account_balance_10305():
         assert True
 
 
-@allure.id("10306")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10306():
@@ -3380,7 +3074,6 @@ def test_customer_can_view_account_currency_10306():
         assert True
 
 
-@allure.id("10307")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10307():
@@ -3391,7 +3084,6 @@ def test_customer_can_view_account_iban_10307():
         assert True
 
 
-@allure.id("10308")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10308():
@@ -3402,7 +3094,6 @@ def test_customer_can_rename_account_10308():
         assert True
 
 
-@allure.id("10309")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10309():
@@ -3413,7 +3104,6 @@ def test_customer_can_archive_account_10309():
         assert True
 
 
-@allure.id("10310")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10310():
@@ -3424,7 +3114,6 @@ def test_customer_can_restore_account_10310():
         assert True
 
 
-@allure.id("10311")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10311():
@@ -3435,7 +3124,6 @@ def test_cardholder_can_block_card_10311():
         assert True
 
 
-@allure.id("10312")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10312():
@@ -3446,7 +3134,6 @@ def test_cardholder_can_unblock_card_10312():
         assert True
 
 
-@allure.id("10313")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10313():
@@ -3457,7 +3144,6 @@ def test_cardholder_can_change_pin_10313():
         assert True
 
 
-@allure.id("10314")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10314():
@@ -3468,7 +3154,6 @@ def test_cardholder_can_view_card_limits_10314():
         assert True
 
 
-@allure.id("10315")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10315():
@@ -3479,7 +3164,6 @@ def test_cardholder_can_enable_online_payments_10315():
         assert True
 
 
-@allure.id("10316")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10316():
@@ -3490,7 +3174,6 @@ def test_cardholder_can_disable_online_payments_10316():
         assert True
 
 
-@allure.id("10317")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10317():
@@ -3501,7 +3184,6 @@ def test_cardholder_can_view_card_details_10317():
         assert True
 
 
-@allure.id("10318")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10318():
@@ -3512,7 +3194,6 @@ def test_cardholder_can_replace_card_10318():
         assert True
 
 
-@allure.id("10319")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10319():
@@ -3523,7 +3204,6 @@ def test_cardholder_can_set_spending_limit_10319():
         assert True
 
 
-@allure.id("10320")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10320():
@@ -3534,7 +3214,6 @@ def test_cardholder_can_view_card_transactions_10320():
         assert True
 
 
-@allure.id("10321")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10321():
@@ -3545,7 +3224,6 @@ def test_customer_can_make_internal_transfer_10321():
         assert True
 
 
-@allure.id("10322")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10322():
@@ -3556,7 +3234,6 @@ def test_customer_can_make_external_transfer_10322():
         assert True
 
 
-@allure.id("10323")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10323():
@@ -3567,7 +3244,6 @@ def test_customer_can_pay_utility_bill_10323():
         assert True
 
 
-@allure.id("10324")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10324():
@@ -3578,7 +3254,6 @@ def test_customer_can_schedule_payment_10324():
         assert True
 
 
-@allure.id("10325")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10325():
@@ -3589,7 +3264,6 @@ def test_customer_can_cancel_scheduled_payment_10325():
         assert True
 
 
-@allure.id("10326")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10326():
@@ -3600,7 +3274,6 @@ def test_customer_can_repeat_payment_10326():
         assert True
 
 
-@allure.id("10327")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10327():
@@ -3611,7 +3284,6 @@ def test_customer_can_save_payment_template_10327():
         assert True
 
 
-@allure.id("10328")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10328():
@@ -3622,7 +3294,6 @@ def test_customer_can_delete_payment_template_10328():
         assert True
 
 
-@allure.id("10329")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10329():
@@ -3633,7 +3304,6 @@ def test_customer_can_view_payment_status_10329():
         assert True
 
 
-@allure.id("10330")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10330():
@@ -3644,7 +3314,6 @@ def test_customer_can_download_payment_receipt_10330():
         assert True
 
 
-@allure.id("10331")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10331():
@@ -3655,7 +3324,6 @@ def test_customer_can_transfer_between_own_accounts_10331():
         assert True
 
 
-@allure.id("10332")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10332():
@@ -3666,7 +3334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10332():
         assert True
 
 
-@allure.id("10333")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10333():
@@ -3677,7 +3344,6 @@ def test_customer_can_add_beneficiary_10333():
         assert True
 
 
-@allure.id("10334")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10334():
@@ -3688,7 +3354,6 @@ def test_customer_can_delete_beneficiary_10334():
         assert True
 
 
-@allure.id("10335")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10335():
@@ -3699,7 +3364,6 @@ def test_customer_can_edit_beneficiary_10335():
         assert True
 
 
-@allure.id("10336")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10336():
@@ -3710,7 +3374,6 @@ def test_customer_can_view_transfer_history_10336():
         assert True
 
 
-@allure.id("10337")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10337():
@@ -3721,7 +3384,6 @@ def test_customer_can_export_transfer_history_10337():
         assert True
 
 
-@allure.id("10338")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10338():
@@ -3732,7 +3394,6 @@ def test_customer_can_search_transfer_10338():
         assert True
 
 
-@allure.id("10339")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10339():
@@ -3743,7 +3404,6 @@ def test_customer_can_repeat_transfer_10339():
         assert True
 
 
-@allure.id("10340")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10340():
@@ -3754,7 +3414,6 @@ def test_customer_can_cancel_transfer_10340():
         assert True
 
 
-@allure.id("10341")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10341():
@@ -3765,7 +3424,6 @@ def test_customer_can_view_loan_schedule_10341():
         assert True
 
 
-@allure.id("10342")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10342():
@@ -3776,7 +3434,6 @@ def test_customer_can_make_loan_payment_10342():
         assert True
 
 
-@allure.id("10343")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10343():
@@ -3787,7 +3444,6 @@ def test_customer_can_download_loan_statement_10343():
         assert True
 
 
-@allure.id("10344")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10344():
@@ -3798,7 +3454,6 @@ def test_customer_can_view_interest_rate_10344():
         assert True
 
 
-@allure.id("10345")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10345():
@@ -3809,7 +3464,6 @@ def test_customer_can_request_early_repayment_10345():
         assert True
 
 
-@allure.id("10346")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10346():
@@ -3820,7 +3474,6 @@ def test_customer_can_view_remaining_balance_10346():
         assert True
 
 
-@allure.id("10347")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10347():
@@ -3831,7 +3484,6 @@ def test_customer_can_view_next_payment_date_10347():
         assert True
 
 
-@allure.id("10348")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10348():
@@ -3842,7 +3494,6 @@ def test_customer_can_download_amortization_table_10348():
         assert True
 
 
-@allure.id("10349")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10349():
@@ -3853,7 +3504,6 @@ def test_customer_can_request_loan_certificate_10349():
         assert True
 
 
-@allure.id("10350")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10350():
@@ -3864,7 +3514,6 @@ def test_customer_can_view_loan_history_10350():
         assert True
 
 
-@allure.id("10351")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10351():
@@ -3875,7 +3524,6 @@ def test_customer_receives_sms_notification_10351():
         assert True
 
 
-@allure.id("10352")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10352():
@@ -3886,7 +3534,6 @@ def test_customer_receives_email_notification_10352():
         assert True
 
 
-@allure.id("10353")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10353():
@@ -3897,7 +3544,6 @@ def test_customer_receives_push_notification_10353():
         assert True
 
 
-@allure.id("10354")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10354():
@@ -3908,7 +3554,6 @@ def test_customer_can_manage_notification_preferences_10354():
         assert True
 
 
-@allure.id("10355")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10355():
@@ -3919,7 +3564,6 @@ def test_customer_can_disable_marketing_messages_10355():
         assert True
 
 
-@allure.id("10356")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10356():
@@ -3930,7 +3574,6 @@ def test_customer_can_enable_security_alerts_10356():
         assert True
 
 
-@allure.id("10357")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10357():
@@ -3941,7 +3584,6 @@ def test_customer_can_disable_security_alerts_10357():
         assert True
 
 
-@allure.id("10358")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10358():
@@ -3952,7 +3594,6 @@ def test_customer_can_view_notification_history_10358():
         assert True
 
 
-@allure.id("10359")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10359():
@@ -3963,7 +3604,6 @@ def test_customer_can_mark_notification_as_read_10359():
         assert True
 
 
-@allure.id("10360")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10360():
@@ -3974,7 +3614,6 @@ def test_customer_can_delete_notification_10360():
         assert True
 
 
-@allure.id("10361")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10361():
@@ -3985,7 +3624,6 @@ def test_customer_can_enable_two_factor_authentication_10361():
         assert True
 
 
-@allure.id("10362")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10362():
@@ -3996,7 +3634,6 @@ def test_customer_can_disable_two_factor_authentication_10362():
         assert True
 
 
-@allure.id("10363")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10363():
@@ -4007,7 +3644,6 @@ def test_customer_can_reset_password_10363():
         assert True
 
 
-@allure.id("10364")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10364():
@@ -4018,7 +3654,6 @@ def test_customer_can_change_password_10364():
         assert True
 
 
-@allure.id("10365")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10365():
@@ -4029,7 +3664,6 @@ def test_customer_can_change_security_question_10365():
         assert True
 
 
-@allure.id("10366")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10366():
@@ -4040,7 +3674,6 @@ def test_customer_can_view_login_history_10366():
         assert True
 
 
-@allure.id("10367")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10367():
@@ -4051,7 +3684,6 @@ def test_customer_session_expires_after_timeout_10367():
         assert True
 
 
-@allure.id("10368")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10368():
@@ -4062,7 +3694,6 @@ def test_customer_can_logout_from_all_devices_10368():
         assert True
 
 
-@allure.id("10369")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10369():
@@ -4073,7 +3704,6 @@ def test_customer_can_register_trusted_device_10369():
         assert True
 
 
-@allure.id("10370")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10370():
@@ -4084,7 +3714,6 @@ def test_customer_can_remove_trusted_device_10370():
         assert True
 
 
-@allure.id("10371")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10371():
@@ -4095,7 +3724,6 @@ def test_customer_can_generate_monthly_report_10371():
         assert True
 
 
-@allure.id("10372")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10372():
@@ -4106,7 +3734,6 @@ def test_customer_can_generate_yearly_report_10372():
         assert True
 
 
-@allure.id("10373")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10373():
@@ -4117,7 +3744,6 @@ def test_customer_can_export_report_pdf_10373():
         assert True
 
 
-@allure.id("10374")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10374():
@@ -4128,7 +3754,6 @@ def test_customer_can_export_report_xlsx_10374():
         assert True
 
 
-@allure.id("10375")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10375():
@@ -4139,7 +3764,6 @@ def test_customer_can_filter_report_by_period_10375():
         assert True
 
 
-@allure.id("10376")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10376():
@@ -4150,7 +3774,6 @@ def test_customer_can_filter_report_by_account_10376():
         assert True
 
 
-@allure.id("10377")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10377():
@@ -4161,7 +3784,6 @@ def test_customer_can_download_tax_report_10377():
         assert True
 
 
-@allure.id("10378")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10378():
@@ -4172,7 +3794,6 @@ def test_customer_can_generate_spending_report_10378():
         assert True
 
 
-@allure.id("10379")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10379():
@@ -4183,7 +3804,6 @@ def test_customer_can_generate_income_report_10379():
         assert True
 
 
-@allure.id("10380")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10380():
@@ -4194,7 +3814,6 @@ def test_customer_can_schedule_report_10380():
         assert True
 
 
-@allure.id("10381")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10381():
@@ -4205,7 +3824,6 @@ def test_customer_can_view_portfolio_10381():
         assert True
 
 
-@allure.id("10382")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10382():
@@ -4216,7 +3834,6 @@ def test_customer_can_buy_asset_10382():
         assert True
 
 
-@allure.id("10383")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10383():
@@ -4227,7 +3844,6 @@ def test_customer_can_sell_asset_10383():
         assert True
 
 
-@allure.id("10384")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10384():
@@ -4238,7 +3854,6 @@ def test_customer_can_view_asset_price_10384():
         assert True
 
 
-@allure.id("10385")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10385():
@@ -4249,7 +3864,6 @@ def test_customer_can_view_portfolio_performance_10385():
         assert True
 
 
-@allure.id("10386")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10386():
@@ -4260,7 +3874,6 @@ def test_customer_can_view_dividend_history_10386():
         assert True
 
 
-@allure.id("10387")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10387():
@@ -4271,7 +3884,6 @@ def test_customer_can_download_portfolio_report_10387():
         assert True
 
 
-@allure.id("10388")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10388():
@@ -4282,7 +3894,6 @@ def test_customer_can_filter_assets_10388():
         assert True
 
 
-@allure.id("10389")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10389():
@@ -4293,7 +3904,6 @@ def test_customer_can_search_asset_10389():
         assert True
 
 
-@allure.id("10390")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10390():
@@ -4304,7 +3914,6 @@ def test_customer_can_view_asset_details_10390():
         assert True
 
 
-@allure.id("10391")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10391():
@@ -4315,7 +3924,6 @@ def test_customer_can_create_support_ticket_10391():
         assert True
 
 
-@allure.id("10392")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10392():
@@ -4326,7 +3934,6 @@ def test_customer_can_view_ticket_status_10392():
         assert True
 
 
-@allure.id("10393")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10393():
@@ -4337,7 +3944,6 @@ def test_customer_can_add_ticket_comment_10393():
         assert True
 
 
-@allure.id("10394")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10394():
@@ -4348,7 +3954,6 @@ def test_customer_can_close_ticket_10394():
         assert True
 
 
-@allure.id("10395")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10395():
@@ -4359,7 +3964,6 @@ def test_customer_can_reopen_ticket_10395():
         assert True
 
 
-@allure.id("10396")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10396():
@@ -4370,7 +3974,6 @@ def test_customer_can_upload_attachment_10396():
         assert True
 
 
-@allure.id("10397")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10397():
@@ -4381,7 +3984,6 @@ def test_customer_can_download_attachment_10397():
         assert True
 
 
-@allure.id("10398")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10398():
@@ -4392,7 +3994,6 @@ def test_customer_can_rate_support_request_10398():
         assert True
 
 
-@allure.id("10399")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10399():
@@ -4403,7 +4004,6 @@ def test_customer_can_view_support_history_10399():
         assert True
 
 
-@allure.id("10400")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10400():
@@ -4414,7 +4014,6 @@ def test_customer_can_contact_support_10400():
         assert True
 
 
-@allure.id("10401")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10401():
@@ -4425,7 +4024,6 @@ def test_customer_can_view_account_details_10401():
         assert True
 
 
-@allure.id("10402")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10402():
@@ -4436,7 +4034,6 @@ def test_customer_can_download_statement_10402():
         assert True
 
 
-@allure.id("10403")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10403():
@@ -4447,7 +4044,6 @@ def test_customer_can_filter_transactions_10403():
         assert True
 
 
-@allure.id("10404")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10404():
@@ -4458,7 +4054,6 @@ def test_customer_can_search_transaction_history_10404():
         assert True
 
 
-@allure.id("10405")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10405():
@@ -4469,7 +4064,6 @@ def test_customer_can_view_account_balance_10405():
         assert True
 
 
-@allure.id("10406")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10406():
@@ -4480,7 +4074,6 @@ def test_customer_can_view_account_currency_10406():
         assert True
 
 
-@allure.id("10407")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10407():
@@ -4491,7 +4084,6 @@ def test_customer_can_view_account_iban_10407():
         assert True
 
 
-@allure.id("10408")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10408():
@@ -4502,7 +4094,6 @@ def test_customer_can_rename_account_10408():
         assert True
 
 
-@allure.id("10409")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10409():
@@ -4513,7 +4104,6 @@ def test_customer_can_archive_account_10409():
         assert True
 
 
-@allure.id("10410")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10410():
@@ -4524,7 +4114,6 @@ def test_customer_can_restore_account_10410():
         assert True
 
 
-@allure.id("10411")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10411():
@@ -4535,7 +4124,6 @@ def test_cardholder_can_block_card_10411():
         assert True
 
 
-@allure.id("10412")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10412():
@@ -4546,7 +4134,6 @@ def test_cardholder_can_unblock_card_10412():
         assert True
 
 
-@allure.id("10413")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10413():
@@ -4557,7 +4144,6 @@ def test_cardholder_can_change_pin_10413():
         assert True
 
 
-@allure.id("10414")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10414():
@@ -4568,7 +4154,6 @@ def test_cardholder_can_view_card_limits_10414():
         assert True
 
 
-@allure.id("10415")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10415():
@@ -4579,7 +4164,6 @@ def test_cardholder_can_enable_online_payments_10415():
         assert True
 
 
-@allure.id("10416")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10416():
@@ -4590,7 +4174,6 @@ def test_cardholder_can_disable_online_payments_10416():
         assert True
 
 
-@allure.id("10417")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10417():
@@ -4601,7 +4184,6 @@ def test_cardholder_can_view_card_details_10417():
         assert True
 
 
-@allure.id("10418")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10418():
@@ -4612,7 +4194,6 @@ def test_cardholder_can_replace_card_10418():
         assert True
 
 
-@allure.id("10419")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10419():
@@ -4623,7 +4204,6 @@ def test_cardholder_can_set_spending_limit_10419():
         assert True
 
 
-@allure.id("10420")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10420():
@@ -4634,7 +4214,6 @@ def test_cardholder_can_view_card_transactions_10420():
         assert True
 
 
-@allure.id("10421")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10421():
@@ -4645,7 +4224,6 @@ def test_customer_can_make_internal_transfer_10421():
         assert True
 
 
-@allure.id("10422")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10422():
@@ -4656,7 +4234,6 @@ def test_customer_can_make_external_transfer_10422():
         assert True
 
 
-@allure.id("10423")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10423():
@@ -4667,7 +4244,6 @@ def test_customer_can_pay_utility_bill_10423():
         assert True
 
 
-@allure.id("10424")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10424():
@@ -4678,7 +4254,6 @@ def test_customer_can_schedule_payment_10424():
         assert True
 
 
-@allure.id("10425")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10425():
@@ -4689,7 +4264,6 @@ def test_customer_can_cancel_scheduled_payment_10425():
         assert True
 
 
-@allure.id("10426")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10426():
@@ -4700,7 +4274,6 @@ def test_customer_can_repeat_payment_10426():
         assert True
 
 
-@allure.id("10427")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10427():
@@ -4711,7 +4284,6 @@ def test_customer_can_save_payment_template_10427():
         assert True
 
 
-@allure.id("10428")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10428():
@@ -4722,7 +4294,6 @@ def test_customer_can_delete_payment_template_10428():
         assert True
 
 
-@allure.id("10429")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10429():
@@ -4733,7 +4304,6 @@ def test_customer_can_view_payment_status_10429():
         assert True
 
 
-@allure.id("10430")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10430():
@@ -4744,7 +4314,6 @@ def test_customer_can_download_payment_receipt_10430():
         assert True
 
 
-@allure.id("10431")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10431():
@@ -4755,7 +4324,6 @@ def test_customer_can_transfer_between_own_accounts_10431():
         assert True
 
 
-@allure.id("10432")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10432():
@@ -4766,7 +4334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10432():
         assert True
 
 
-@allure.id("10433")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10433():
@@ -4777,7 +4344,6 @@ def test_customer_can_add_beneficiary_10433():
         assert True
 
 
-@allure.id("10434")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10434():
@@ -4788,7 +4354,6 @@ def test_customer_can_delete_beneficiary_10434():
         assert True
 
 
-@allure.id("10435")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10435():
@@ -4799,7 +4364,6 @@ def test_customer_can_edit_beneficiary_10435():
         assert True
 
 
-@allure.id("10436")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10436():
@@ -4810,7 +4374,6 @@ def test_customer_can_view_transfer_history_10436():
         assert True
 
 
-@allure.id("10437")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10437():
@@ -4821,7 +4384,6 @@ def test_customer_can_export_transfer_history_10437():
         assert True
 
 
-@allure.id("10438")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10438():
@@ -4832,7 +4394,6 @@ def test_customer_can_search_transfer_10438():
         assert True
 
 
-@allure.id("10439")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10439():
@@ -4843,7 +4404,6 @@ def test_customer_can_repeat_transfer_10439():
         assert True
 
 
-@allure.id("10440")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10440():
@@ -4854,7 +4414,6 @@ def test_customer_can_cancel_transfer_10440():
         assert True
 
 
-@allure.id("10441")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10441():
@@ -4865,7 +4424,6 @@ def test_customer_can_view_loan_schedule_10441():
         assert True
 
 
-@allure.id("10442")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10442():
@@ -4876,7 +4434,6 @@ def test_customer_can_make_loan_payment_10442():
         assert True
 
 
-@allure.id("10443")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10443():
@@ -4887,7 +4444,6 @@ def test_customer_can_download_loan_statement_10443():
         assert True
 
 
-@allure.id("10444")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10444():
@@ -4898,7 +4454,6 @@ def test_customer_can_view_interest_rate_10444():
         assert True
 
 
-@allure.id("10445")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10445():
@@ -4909,7 +4464,6 @@ def test_customer_can_request_early_repayment_10445():
         assert True
 
 
-@allure.id("10446")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10446():
@@ -4920,7 +4474,6 @@ def test_customer_can_view_remaining_balance_10446():
         assert True
 
 
-@allure.id("10447")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10447():
@@ -4931,7 +4484,6 @@ def test_customer_can_view_next_payment_date_10447():
         assert True
 
 
-@allure.id("10448")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10448():
@@ -4942,7 +4494,6 @@ def test_customer_can_download_amortization_table_10448():
         assert True
 
 
-@allure.id("10449")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10449():
@@ -4953,7 +4504,6 @@ def test_customer_can_request_loan_certificate_10449():
         assert True
 
 
-@allure.id("10450")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10450():
@@ -4964,7 +4514,6 @@ def test_customer_can_view_loan_history_10450():
         assert True
 
 
-@allure.id("10451")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10451():
@@ -4975,7 +4524,6 @@ def test_customer_receives_sms_notification_10451():
         assert True
 
 
-@allure.id("10452")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10452():
@@ -4986,7 +4534,6 @@ def test_customer_receives_email_notification_10452():
         assert True
 
 
-@allure.id("10453")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10453():
@@ -4997,7 +4544,6 @@ def test_customer_receives_push_notification_10453():
         assert True
 
 
-@allure.id("10454")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10454():
@@ -5008,7 +4554,6 @@ def test_customer_can_manage_notification_preferences_10454():
         assert True
 
 
-@allure.id("10455")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10455():
@@ -5019,7 +4564,6 @@ def test_customer_can_disable_marketing_messages_10455():
         assert True
 
 
-@allure.id("10456")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10456():
@@ -5030,7 +4574,6 @@ def test_customer_can_enable_security_alerts_10456():
         assert True
 
 
-@allure.id("10457")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10457():
@@ -5041,7 +4584,6 @@ def test_customer_can_disable_security_alerts_10457():
         assert True
 
 
-@allure.id("10458")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10458():
@@ -5052,7 +4594,6 @@ def test_customer_can_view_notification_history_10458():
         assert True
 
 
-@allure.id("10459")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10459():
@@ -5063,7 +4604,6 @@ def test_customer_can_mark_notification_as_read_10459():
         assert True
 
 
-@allure.id("10460")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10460():
@@ -5074,7 +4614,6 @@ def test_customer_can_delete_notification_10460():
         assert True
 
 
-@allure.id("10461")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10461():
@@ -5085,7 +4624,6 @@ def test_customer_can_enable_two_factor_authentication_10461():
         assert True
 
 
-@allure.id("10462")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10462():
@@ -5096,7 +4634,6 @@ def test_customer_can_disable_two_factor_authentication_10462():
         assert True
 
 
-@allure.id("10463")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10463():
@@ -5107,7 +4644,6 @@ def test_customer_can_reset_password_10463():
         assert True
 
 
-@allure.id("10464")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10464():
@@ -5118,7 +4654,6 @@ def test_customer_can_change_password_10464():
         assert True
 
 
-@allure.id("10465")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10465():
@@ -5129,7 +4664,6 @@ def test_customer_can_change_security_question_10465():
         assert True
 
 
-@allure.id("10466")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10466():
@@ -5140,7 +4674,6 @@ def test_customer_can_view_login_history_10466():
         assert True
 
 
-@allure.id("10467")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10467():
@@ -5151,7 +4684,6 @@ def test_customer_session_expires_after_timeout_10467():
         assert True
 
 
-@allure.id("10468")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10468():
@@ -5162,7 +4694,6 @@ def test_customer_can_logout_from_all_devices_10468():
         assert True
 
 
-@allure.id("10469")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10469():
@@ -5173,7 +4704,6 @@ def test_customer_can_register_trusted_device_10469():
         assert True
 
 
-@allure.id("10470")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10470():
@@ -5184,7 +4714,6 @@ def test_customer_can_remove_trusted_device_10470():
         assert True
 
 
-@allure.id("10471")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10471():
@@ -5195,7 +4724,6 @@ def test_customer_can_generate_monthly_report_10471():
         assert True
 
 
-@allure.id("10472")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10472():
@@ -5206,7 +4734,6 @@ def test_customer_can_generate_yearly_report_10472():
         assert True
 
 
-@allure.id("10473")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10473():
@@ -5217,7 +4744,6 @@ def test_customer_can_export_report_pdf_10473():
         assert True
 
 
-@allure.id("10474")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10474():
@@ -5228,7 +4754,6 @@ def test_customer_can_export_report_xlsx_10474():
         assert True
 
 
-@allure.id("10475")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10475():
@@ -5239,7 +4764,6 @@ def test_customer_can_filter_report_by_period_10475():
         assert True
 
 
-@allure.id("10476")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10476():
@@ -5250,7 +4774,6 @@ def test_customer_can_filter_report_by_account_10476():
         assert True
 
 
-@allure.id("10477")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10477():
@@ -5261,7 +4784,6 @@ def test_customer_can_download_tax_report_10477():
         assert True
 
 
-@allure.id("10478")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10478():
@@ -5272,7 +4794,6 @@ def test_customer_can_generate_spending_report_10478():
         assert True
 
 
-@allure.id("10479")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10479():
@@ -5283,7 +4804,6 @@ def test_customer_can_generate_income_report_10479():
         assert True
 
 
-@allure.id("10480")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10480():
@@ -5294,7 +4814,6 @@ def test_customer_can_schedule_report_10480():
         assert True
 
 
-@allure.id("10481")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10481():
@@ -5305,7 +4824,6 @@ def test_customer_can_view_portfolio_10481():
         assert True
 
 
-@allure.id("10482")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10482():
@@ -5316,7 +4834,6 @@ def test_customer_can_buy_asset_10482():
         assert True
 
 
-@allure.id("10483")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10483():
@@ -5327,7 +4844,6 @@ def test_customer_can_sell_asset_10483():
         assert True
 
 
-@allure.id("10484")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10484():
@@ -5338,7 +4854,6 @@ def test_customer_can_view_asset_price_10484():
         assert True
 
 
-@allure.id("10485")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10485():
@@ -5349,7 +4864,6 @@ def test_customer_can_view_portfolio_performance_10485():
         assert True
 
 
-@allure.id("10486")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10486():
@@ -5360,7 +4874,6 @@ def test_customer_can_view_dividend_history_10486():
         assert True
 
 
-@allure.id("10487")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10487():
@@ -5371,7 +4884,6 @@ def test_customer_can_download_portfolio_report_10487():
         assert True
 
 
-@allure.id("10488")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10488():
@@ -5382,7 +4894,6 @@ def test_customer_can_filter_assets_10488():
         assert True
 
 
-@allure.id("10489")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10489():
@@ -5393,7 +4904,6 @@ def test_customer_can_search_asset_10489():
         assert True
 
 
-@allure.id("10490")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10490():
@@ -5404,7 +4914,6 @@ def test_customer_can_view_asset_details_10490():
         assert True
 
 
-@allure.id("10491")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10491():
@@ -5415,7 +4924,6 @@ def test_customer_can_create_support_ticket_10491():
         assert True
 
 
-@allure.id("10492")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10492():
@@ -5426,7 +4934,6 @@ def test_customer_can_view_ticket_status_10492():
         assert True
 
 
-@allure.id("10493")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10493():
@@ -5437,7 +4944,6 @@ def test_customer_can_add_ticket_comment_10493():
         assert True
 
 
-@allure.id("10494")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10494():
@@ -5448,7 +4954,6 @@ def test_customer_can_close_ticket_10494():
         assert True
 
 
-@allure.id("10495")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10495():
@@ -5459,7 +4964,6 @@ def test_customer_can_reopen_ticket_10495():
         assert True
 
 
-@allure.id("10496")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10496():
@@ -5470,7 +4974,6 @@ def test_customer_can_upload_attachment_10496():
         assert True
 
 
-@allure.id("10497")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10497():
@@ -5481,7 +4984,6 @@ def test_customer_can_download_attachment_10497():
         assert True
 
 
-@allure.id("10498")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10498():
@@ -5492,7 +4994,6 @@ def test_customer_can_rate_support_request_10498():
         assert True
 
 
-@allure.id("10499")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10499():
@@ -5503,7 +5004,6 @@ def test_customer_can_view_support_history_10499():
         assert True
 
 
-@allure.id("10500")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10500():
@@ -5514,7 +5014,6 @@ def test_customer_can_contact_support_10500():
         assert True
 
 
-@allure.id("10501")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10501():
@@ -5525,7 +5024,6 @@ def test_customer_can_view_account_details_10501():
         assert True
 
 
-@allure.id("10502")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10502():
@@ -5536,7 +5034,6 @@ def test_customer_can_download_statement_10502():
         assert True
 
 
-@allure.id("10503")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10503():
@@ -5547,7 +5044,6 @@ def test_customer_can_filter_transactions_10503():
         assert True
 
 
-@allure.id("10504")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10504():
@@ -5558,7 +5054,6 @@ def test_customer_can_search_transaction_history_10504():
         assert True
 
 
-@allure.id("10505")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10505():
@@ -5569,7 +5064,6 @@ def test_customer_can_view_account_balance_10505():
         assert True
 
 
-@allure.id("10506")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10506():
@@ -5580,7 +5074,6 @@ def test_customer_can_view_account_currency_10506():
         assert True
 
 
-@allure.id("10507")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10507():
@@ -5591,7 +5084,6 @@ def test_customer_can_view_account_iban_10507():
         assert True
 
 
-@allure.id("10508")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10508():
@@ -5602,7 +5094,6 @@ def test_customer_can_rename_account_10508():
         assert True
 
 
-@allure.id("10509")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10509():
@@ -5613,7 +5104,6 @@ def test_customer_can_archive_account_10509():
         assert True
 
 
-@allure.id("10510")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10510():
@@ -5624,7 +5114,6 @@ def test_customer_can_restore_account_10510():
         assert True
 
 
-@allure.id("10511")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10511():
@@ -5635,7 +5124,6 @@ def test_cardholder_can_block_card_10511():
         assert True
 
 
-@allure.id("10512")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10512():
@@ -5646,7 +5134,6 @@ def test_cardholder_can_unblock_card_10512():
         assert True
 
 
-@allure.id("10513")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10513():
@@ -5657,7 +5144,6 @@ def test_cardholder_can_change_pin_10513():
         assert True
 
 
-@allure.id("10514")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10514():
@@ -5668,7 +5154,6 @@ def test_cardholder_can_view_card_limits_10514():
         assert True
 
 
-@allure.id("10515")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10515():
@@ -5679,7 +5164,6 @@ def test_cardholder_can_enable_online_payments_10515():
         assert True
 
 
-@allure.id("10516")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10516():
@@ -5690,7 +5174,6 @@ def test_cardholder_can_disable_online_payments_10516():
         assert True
 
 
-@allure.id("10517")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10517():
@@ -5701,7 +5184,6 @@ def test_cardholder_can_view_card_details_10517():
         assert True
 
 
-@allure.id("10518")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10518():
@@ -5712,7 +5194,6 @@ def test_cardholder_can_replace_card_10518():
         assert True
 
 
-@allure.id("10519")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10519():
@@ -5723,7 +5204,6 @@ def test_cardholder_can_set_spending_limit_10519():
         assert True
 
 
-@allure.id("10520")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10520():
@@ -5734,7 +5214,6 @@ def test_cardholder_can_view_card_transactions_10520():
         assert True
 
 
-@allure.id("10521")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10521():
@@ -5745,7 +5224,6 @@ def test_customer_can_make_internal_transfer_10521():
         assert True
 
 
-@allure.id("10522")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10522():
@@ -5756,7 +5234,6 @@ def test_customer_can_make_external_transfer_10522():
         assert True
 
 
-@allure.id("10523")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10523():
@@ -5767,7 +5244,6 @@ def test_customer_can_pay_utility_bill_10523():
         assert True
 
 
-@allure.id("10524")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10524():
@@ -5778,7 +5254,6 @@ def test_customer_can_schedule_payment_10524():
         assert True
 
 
-@allure.id("10525")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10525():
@@ -5789,7 +5264,6 @@ def test_customer_can_cancel_scheduled_payment_10525():
         assert True
 
 
-@allure.id("10526")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10526():
@@ -5800,7 +5274,6 @@ def test_customer_can_repeat_payment_10526():
         assert True
 
 
-@allure.id("10527")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10527():
@@ -5811,7 +5284,6 @@ def test_customer_can_save_payment_template_10527():
         assert True
 
 
-@allure.id("10528")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10528():
@@ -5822,7 +5294,6 @@ def test_customer_can_delete_payment_template_10528():
         assert True
 
 
-@allure.id("10529")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10529():
@@ -5833,7 +5304,6 @@ def test_customer_can_view_payment_status_10529():
         assert True
 
 
-@allure.id("10530")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10530():
@@ -5844,7 +5314,6 @@ def test_customer_can_download_payment_receipt_10530():
         assert True
 
 
-@allure.id("10531")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10531():
@@ -5855,7 +5324,6 @@ def test_customer_can_transfer_between_own_accounts_10531():
         assert True
 
 
-@allure.id("10532")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10532():
@@ -5866,7 +5334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10532():
         assert True
 
 
-@allure.id("10533")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10533():
@@ -5877,7 +5344,6 @@ def test_customer_can_add_beneficiary_10533():
         assert True
 
 
-@allure.id("10534")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10534():
@@ -5888,7 +5354,6 @@ def test_customer_can_delete_beneficiary_10534():
         assert True
 
 
-@allure.id("10535")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10535():
@@ -5899,7 +5364,6 @@ def test_customer_can_edit_beneficiary_10535():
         assert True
 
 
-@allure.id("10536")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10536():
@@ -5910,7 +5374,6 @@ def test_customer_can_view_transfer_history_10536():
         assert True
 
 
-@allure.id("10537")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10537():
@@ -5921,7 +5384,6 @@ def test_customer_can_export_transfer_history_10537():
         assert True
 
 
-@allure.id("10538")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10538():
@@ -5932,7 +5394,6 @@ def test_customer_can_search_transfer_10538():
         assert True
 
 
-@allure.id("10539")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10539():
@@ -5943,7 +5404,6 @@ def test_customer_can_repeat_transfer_10539():
         assert True
 
 
-@allure.id("10540")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10540():
@@ -5954,7 +5414,6 @@ def test_customer_can_cancel_transfer_10540():
         assert True
 
 
-@allure.id("10541")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10541():
@@ -5965,7 +5424,6 @@ def test_customer_can_view_loan_schedule_10541():
         assert True
 
 
-@allure.id("10542")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10542():
@@ -5976,7 +5434,6 @@ def test_customer_can_make_loan_payment_10542():
         assert True
 
 
-@allure.id("10543")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10543():
@@ -5987,7 +5444,6 @@ def test_customer_can_download_loan_statement_10543():
         assert True
 
 
-@allure.id("10544")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10544():
@@ -5998,7 +5454,6 @@ def test_customer_can_view_interest_rate_10544():
         assert True
 
 
-@allure.id("10545")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10545():
@@ -6009,7 +5464,6 @@ def test_customer_can_request_early_repayment_10545():
         assert True
 
 
-@allure.id("10546")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10546():
@@ -6020,7 +5474,6 @@ def test_customer_can_view_remaining_balance_10546():
         assert True
 
 
-@allure.id("10547")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10547():
@@ -6031,7 +5484,6 @@ def test_customer_can_view_next_payment_date_10547():
         assert True
 
 
-@allure.id("10548")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10548():
@@ -6042,7 +5494,6 @@ def test_customer_can_download_amortization_table_10548():
         assert True
 
 
-@allure.id("10549")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10549():
@@ -6053,7 +5504,6 @@ def test_customer_can_request_loan_certificate_10549():
         assert True
 
 
-@allure.id("10550")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10550():
@@ -6064,7 +5514,6 @@ def test_customer_can_view_loan_history_10550():
         assert True
 
 
-@allure.id("10551")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10551():
@@ -6075,7 +5524,6 @@ def test_customer_receives_sms_notification_10551():
         assert True
 
 
-@allure.id("10552")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10552():
@@ -6086,7 +5534,6 @@ def test_customer_receives_email_notification_10552():
         assert True
 
 
-@allure.id("10553")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10553():
@@ -6097,7 +5544,6 @@ def test_customer_receives_push_notification_10553():
         assert True
 
 
-@allure.id("10554")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10554():
@@ -6108,7 +5554,6 @@ def test_customer_can_manage_notification_preferences_10554():
         assert True
 
 
-@allure.id("10555")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10555():
@@ -6119,7 +5564,6 @@ def test_customer_can_disable_marketing_messages_10555():
         assert True
 
 
-@allure.id("10556")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10556():
@@ -6130,7 +5574,6 @@ def test_customer_can_enable_security_alerts_10556():
         assert True
 
 
-@allure.id("10557")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10557():
@@ -6141,7 +5584,6 @@ def test_customer_can_disable_security_alerts_10557():
         assert True
 
 
-@allure.id("10558")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10558():
@@ -6152,7 +5594,6 @@ def test_customer_can_view_notification_history_10558():
         assert True
 
 
-@allure.id("10559")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10559():
@@ -6163,7 +5604,6 @@ def test_customer_can_mark_notification_as_read_10559():
         assert True
 
 
-@allure.id("10560")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10560():
@@ -6174,7 +5614,6 @@ def test_customer_can_delete_notification_10560():
         assert True
 
 
-@allure.id("10561")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10561():
@@ -6185,7 +5624,6 @@ def test_customer_can_enable_two_factor_authentication_10561():
         assert True
 
 
-@allure.id("10562")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10562():
@@ -6196,7 +5634,6 @@ def test_customer_can_disable_two_factor_authentication_10562():
         assert True
 
 
-@allure.id("10563")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10563():
@@ -6207,7 +5644,6 @@ def test_customer_can_reset_password_10563():
         assert True
 
 
-@allure.id("10564")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10564():
@@ -6218,7 +5654,6 @@ def test_customer_can_change_password_10564():
         assert True
 
 
-@allure.id("10565")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10565():
@@ -6229,7 +5664,6 @@ def test_customer_can_change_security_question_10565():
         assert True
 
 
-@allure.id("10566")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10566():
@@ -6240,7 +5674,6 @@ def test_customer_can_view_login_history_10566():
         assert True
 
 
-@allure.id("10567")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10567():
@@ -6251,7 +5684,6 @@ def test_customer_session_expires_after_timeout_10567():
         assert True
 
 
-@allure.id("10568")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10568():
@@ -6262,7 +5694,6 @@ def test_customer_can_logout_from_all_devices_10568():
         assert True
 
 
-@allure.id("10569")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10569():
@@ -6273,7 +5704,6 @@ def test_customer_can_register_trusted_device_10569():
         assert True
 
 
-@allure.id("10570")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10570():
@@ -6284,7 +5714,6 @@ def test_customer_can_remove_trusted_device_10570():
         assert True
 
 
-@allure.id("10571")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10571():
@@ -6295,7 +5724,6 @@ def test_customer_can_generate_monthly_report_10571():
         assert True
 
 
-@allure.id("10572")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10572():
@@ -6306,7 +5734,6 @@ def test_customer_can_generate_yearly_report_10572():
         assert True
 
 
-@allure.id("10573")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10573():
@@ -6317,7 +5744,6 @@ def test_customer_can_export_report_pdf_10573():
         assert True
 
 
-@allure.id("10574")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10574():
@@ -6328,7 +5754,6 @@ def test_customer_can_export_report_xlsx_10574():
         assert True
 
 
-@allure.id("10575")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10575():
@@ -6339,7 +5764,6 @@ def test_customer_can_filter_report_by_period_10575():
         assert True
 
 
-@allure.id("10576")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10576():
@@ -6350,7 +5774,6 @@ def test_customer_can_filter_report_by_account_10576():
         assert True
 
 
-@allure.id("10577")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10577():
@@ -6361,7 +5784,6 @@ def test_customer_can_download_tax_report_10577():
         assert True
 
 
-@allure.id("10578")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10578():
@@ -6372,7 +5794,6 @@ def test_customer_can_generate_spending_report_10578():
         assert True
 
 
-@allure.id("10579")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10579():
@@ -6383,7 +5804,6 @@ def test_customer_can_generate_income_report_10579():
         assert True
 
 
-@allure.id("10580")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10580():
@@ -6394,7 +5814,6 @@ def test_customer_can_schedule_report_10580():
         assert True
 
 
-@allure.id("10581")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10581():
@@ -6405,7 +5824,6 @@ def test_customer_can_view_portfolio_10581():
         assert True
 
 
-@allure.id("10582")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10582():
@@ -6416,7 +5834,6 @@ def test_customer_can_buy_asset_10582():
         assert True
 
 
-@allure.id("10583")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10583():
@@ -6427,7 +5844,6 @@ def test_customer_can_sell_asset_10583():
         assert True
 
 
-@allure.id("10584")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10584():
@@ -6438,7 +5854,6 @@ def test_customer_can_view_asset_price_10584():
         assert True
 
 
-@allure.id("10585")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10585():
@@ -6449,7 +5864,6 @@ def test_customer_can_view_portfolio_performance_10585():
         assert True
 
 
-@allure.id("10586")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10586():
@@ -6460,7 +5874,6 @@ def test_customer_can_view_dividend_history_10586():
         assert True
 
 
-@allure.id("10587")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10587():
@@ -6471,7 +5884,6 @@ def test_customer_can_download_portfolio_report_10587():
         assert True
 
 
-@allure.id("10588")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10588():
@@ -6482,7 +5894,6 @@ def test_customer_can_filter_assets_10588():
         assert True
 
 
-@allure.id("10589")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10589():
@@ -6493,7 +5904,6 @@ def test_customer_can_search_asset_10589():
         assert True
 
 
-@allure.id("10590")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10590():
@@ -6504,7 +5914,6 @@ def test_customer_can_view_asset_details_10590():
         assert True
 
 
-@allure.id("10591")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10591():
@@ -6515,7 +5924,6 @@ def test_customer_can_create_support_ticket_10591():
         assert True
 
 
-@allure.id("10592")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10592():
@@ -6526,7 +5934,6 @@ def test_customer_can_view_ticket_status_10592():
         assert True
 
 
-@allure.id("10593")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10593():
@@ -6537,7 +5944,6 @@ def test_customer_can_add_ticket_comment_10593():
         assert True
 
 
-@allure.id("10594")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10594():
@@ -6548,7 +5954,6 @@ def test_customer_can_close_ticket_10594():
         assert True
 
 
-@allure.id("10595")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10595():
@@ -6559,7 +5964,6 @@ def test_customer_can_reopen_ticket_10595():
         assert True
 
 
-@allure.id("10596")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10596():
@@ -6570,7 +5974,6 @@ def test_customer_can_upload_attachment_10596():
         assert True
 
 
-@allure.id("10597")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10597():
@@ -6581,7 +5984,6 @@ def test_customer_can_download_attachment_10597():
         assert True
 
 
-@allure.id("10598")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10598():
@@ -6592,7 +5994,6 @@ def test_customer_can_rate_support_request_10598():
         assert True
 
 
-@allure.id("10599")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10599():
@@ -6603,7 +6004,6 @@ def test_customer_can_view_support_history_10599():
         assert True
 
 
-@allure.id("10600")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10600():
@@ -6614,7 +6014,6 @@ def test_customer_can_contact_support_10600():
         assert True
 
 
-@allure.id("10601")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10601():
@@ -6625,7 +6024,6 @@ def test_customer_can_view_account_details_10601():
         assert True
 
 
-@allure.id("10602")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10602():
@@ -6636,7 +6034,6 @@ def test_customer_can_download_statement_10602():
         assert True
 
 
-@allure.id("10603")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10603():
@@ -6647,7 +6044,6 @@ def test_customer_can_filter_transactions_10603():
         assert True
 
 
-@allure.id("10604")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10604():
@@ -6658,7 +6054,6 @@ def test_customer_can_search_transaction_history_10604():
         assert True
 
 
-@allure.id("10605")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10605():
@@ -6669,7 +6064,6 @@ def test_customer_can_view_account_balance_10605():
         assert True
 
 
-@allure.id("10606")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10606():
@@ -6680,7 +6074,6 @@ def test_customer_can_view_account_currency_10606():
         assert True
 
 
-@allure.id("10607")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10607():
@@ -6691,7 +6084,6 @@ def test_customer_can_view_account_iban_10607():
         assert True
 
 
-@allure.id("10608")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10608():
@@ -6702,7 +6094,6 @@ def test_customer_can_rename_account_10608():
         assert True
 
 
-@allure.id("10609")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10609():
@@ -6713,7 +6104,6 @@ def test_customer_can_archive_account_10609():
         assert True
 
 
-@allure.id("10610")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10610():
@@ -6724,7 +6114,6 @@ def test_customer_can_restore_account_10610():
         assert True
 
 
-@allure.id("10611")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10611():
@@ -6735,7 +6124,6 @@ def test_cardholder_can_block_card_10611():
         assert True
 
 
-@allure.id("10612")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10612():
@@ -6746,7 +6134,6 @@ def test_cardholder_can_unblock_card_10612():
         assert True
 
 
-@allure.id("10613")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10613():
@@ -6757,7 +6144,6 @@ def test_cardholder_can_change_pin_10613():
         assert True
 
 
-@allure.id("10614")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10614():
@@ -6768,7 +6154,6 @@ def test_cardholder_can_view_card_limits_10614():
         assert True
 
 
-@allure.id("10615")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10615():
@@ -6779,7 +6164,6 @@ def test_cardholder_can_enable_online_payments_10615():
         assert True
 
 
-@allure.id("10616")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10616():
@@ -6790,7 +6174,6 @@ def test_cardholder_can_disable_online_payments_10616():
         assert True
 
 
-@allure.id("10617")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10617():
@@ -6801,7 +6184,6 @@ def test_cardholder_can_view_card_details_10617():
         assert True
 
 
-@allure.id("10618")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10618():
@@ -6812,7 +6194,6 @@ def test_cardholder_can_replace_card_10618():
         assert True
 
 
-@allure.id("10619")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10619():
@@ -6823,7 +6204,6 @@ def test_cardholder_can_set_spending_limit_10619():
         assert True
 
 
-@allure.id("10620")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10620():
@@ -6834,7 +6214,6 @@ def test_cardholder_can_view_card_transactions_10620():
         assert True
 
 
-@allure.id("10621")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10621():
@@ -6845,7 +6224,6 @@ def test_customer_can_make_internal_transfer_10621():
         assert True
 
 
-@allure.id("10622")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10622():
@@ -6856,7 +6234,6 @@ def test_customer_can_make_external_transfer_10622():
         assert True
 
 
-@allure.id("10623")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10623():
@@ -6867,7 +6244,6 @@ def test_customer_can_pay_utility_bill_10623():
         assert True
 
 
-@allure.id("10624")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10624():
@@ -6878,7 +6254,6 @@ def test_customer_can_schedule_payment_10624():
         assert True
 
 
-@allure.id("10625")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10625():
@@ -6889,7 +6264,6 @@ def test_customer_can_cancel_scheduled_payment_10625():
         assert True
 
 
-@allure.id("10626")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10626():
@@ -6900,7 +6274,6 @@ def test_customer_can_repeat_payment_10626():
         assert True
 
 
-@allure.id("10627")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10627():
@@ -6911,7 +6284,6 @@ def test_customer_can_save_payment_template_10627():
         assert True
 
 
-@allure.id("10628")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10628():
@@ -6922,7 +6294,6 @@ def test_customer_can_delete_payment_template_10628():
         assert True
 
 
-@allure.id("10629")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10629():
@@ -6933,7 +6304,6 @@ def test_customer_can_view_payment_status_10629():
         assert True
 
 
-@allure.id("10630")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10630():
@@ -6944,7 +6314,6 @@ def test_customer_can_download_payment_receipt_10630():
         assert True
 
 
-@allure.id("10631")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10631():
@@ -6955,7 +6324,6 @@ def test_customer_can_transfer_between_own_accounts_10631():
         assert True
 
 
-@allure.id("10632")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10632():
@@ -6966,7 +6334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10632():
         assert True
 
 
-@allure.id("10633")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10633():
@@ -6977,7 +6344,6 @@ def test_customer_can_add_beneficiary_10633():
         assert True
 
 
-@allure.id("10634")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10634():
@@ -6988,7 +6354,6 @@ def test_customer_can_delete_beneficiary_10634():
         assert True
 
 
-@allure.id("10635")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10635():
@@ -6999,7 +6364,6 @@ def test_customer_can_edit_beneficiary_10635():
         assert True
 
 
-@allure.id("10636")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10636():
@@ -7010,7 +6374,6 @@ def test_customer_can_view_transfer_history_10636():
         assert True
 
 
-@allure.id("10637")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10637():
@@ -7021,7 +6384,6 @@ def test_customer_can_export_transfer_history_10637():
         assert True
 
 
-@allure.id("10638")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10638():
@@ -7032,7 +6394,6 @@ def test_customer_can_search_transfer_10638():
         assert True
 
 
-@allure.id("10639")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10639():
@@ -7043,7 +6404,6 @@ def test_customer_can_repeat_transfer_10639():
         assert True
 
 
-@allure.id("10640")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10640():
@@ -7054,7 +6414,6 @@ def test_customer_can_cancel_transfer_10640():
         assert True
 
 
-@allure.id("10641")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10641():
@@ -7065,7 +6424,6 @@ def test_customer_can_view_loan_schedule_10641():
         assert True
 
 
-@allure.id("10642")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10642():
@@ -7076,7 +6434,6 @@ def test_customer_can_make_loan_payment_10642():
         assert True
 
 
-@allure.id("10643")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10643():
@@ -7087,7 +6444,6 @@ def test_customer_can_download_loan_statement_10643():
         assert True
 
 
-@allure.id("10644")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10644():
@@ -7098,7 +6454,6 @@ def test_customer_can_view_interest_rate_10644():
         assert True
 
 
-@allure.id("10645")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10645():
@@ -7109,7 +6464,6 @@ def test_customer_can_request_early_repayment_10645():
         assert True
 
 
-@allure.id("10646")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10646():
@@ -7120,7 +6474,6 @@ def test_customer_can_view_remaining_balance_10646():
         assert True
 
 
-@allure.id("10647")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10647():
@@ -7131,7 +6484,6 @@ def test_customer_can_view_next_payment_date_10647():
         assert True
 
 
-@allure.id("10648")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10648():
@@ -7142,7 +6494,6 @@ def test_customer_can_download_amortization_table_10648():
         assert True
 
 
-@allure.id("10649")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10649():
@@ -7153,7 +6504,6 @@ def test_customer_can_request_loan_certificate_10649():
         assert True
 
 
-@allure.id("10650")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10650():
@@ -7164,7 +6514,6 @@ def test_customer_can_view_loan_history_10650():
         assert True
 
 
-@allure.id("10651")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10651():
@@ -7175,7 +6524,6 @@ def test_customer_receives_sms_notification_10651():
         assert True
 
 
-@allure.id("10652")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10652():
@@ -7186,7 +6534,6 @@ def test_customer_receives_email_notification_10652():
         assert True
 
 
-@allure.id("10653")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10653():
@@ -7197,7 +6544,6 @@ def test_customer_receives_push_notification_10653():
         assert True
 
 
-@allure.id("10654")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10654():
@@ -7208,7 +6554,6 @@ def test_customer_can_manage_notification_preferences_10654():
         assert True
 
 
-@allure.id("10655")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10655():
@@ -7219,7 +6564,6 @@ def test_customer_can_disable_marketing_messages_10655():
         assert True
 
 
-@allure.id("10656")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10656():
@@ -7230,7 +6574,6 @@ def test_customer_can_enable_security_alerts_10656():
         assert True
 
 
-@allure.id("10657")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10657():
@@ -7241,7 +6584,6 @@ def test_customer_can_disable_security_alerts_10657():
         assert True
 
 
-@allure.id("10658")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10658():
@@ -7252,7 +6594,6 @@ def test_customer_can_view_notification_history_10658():
         assert True
 
 
-@allure.id("10659")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10659():
@@ -7263,7 +6604,6 @@ def test_customer_can_mark_notification_as_read_10659():
         assert True
 
 
-@allure.id("10660")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10660():
@@ -7274,7 +6614,6 @@ def test_customer_can_delete_notification_10660():
         assert True
 
 
-@allure.id("10661")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10661():
@@ -7285,7 +6624,6 @@ def test_customer_can_enable_two_factor_authentication_10661():
         assert True
 
 
-@allure.id("10662")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10662():
@@ -7296,7 +6634,6 @@ def test_customer_can_disable_two_factor_authentication_10662():
         assert True
 
 
-@allure.id("10663")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10663():
@@ -7307,7 +6644,6 @@ def test_customer_can_reset_password_10663():
         assert True
 
 
-@allure.id("10664")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10664():
@@ -7318,7 +6654,6 @@ def test_customer_can_change_password_10664():
         assert True
 
 
-@allure.id("10665")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10665():
@@ -7329,7 +6664,6 @@ def test_customer_can_change_security_question_10665():
         assert True
 
 
-@allure.id("10666")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10666():
@@ -7340,7 +6674,6 @@ def test_customer_can_view_login_history_10666():
         assert True
 
 
-@allure.id("10667")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10667():
@@ -7351,7 +6684,6 @@ def test_customer_session_expires_after_timeout_10667():
         assert True
 
 
-@allure.id("10668")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10668():
@@ -7362,7 +6694,6 @@ def test_customer_can_logout_from_all_devices_10668():
         assert True
 
 
-@allure.id("10669")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10669():
@@ -7373,7 +6704,6 @@ def test_customer_can_register_trusted_device_10669():
         assert True
 
 
-@allure.id("10670")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10670():
@@ -7384,7 +6714,6 @@ def test_customer_can_remove_trusted_device_10670():
         assert True
 
 
-@allure.id("10671")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10671():
@@ -7395,7 +6724,6 @@ def test_customer_can_generate_monthly_report_10671():
         assert True
 
 
-@allure.id("10672")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10672():
@@ -7406,7 +6734,6 @@ def test_customer_can_generate_yearly_report_10672():
         assert True
 
 
-@allure.id("10673")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10673():
@@ -7417,7 +6744,6 @@ def test_customer_can_export_report_pdf_10673():
         assert True
 
 
-@allure.id("10674")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10674():
@@ -7428,7 +6754,6 @@ def test_customer_can_export_report_xlsx_10674():
         assert True
 
 
-@allure.id("10675")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10675():
@@ -7439,7 +6764,6 @@ def test_customer_can_filter_report_by_period_10675():
         assert True
 
 
-@allure.id("10676")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10676():
@@ -7450,7 +6774,6 @@ def test_customer_can_filter_report_by_account_10676():
         assert True
 
 
-@allure.id("10677")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10677():
@@ -7461,7 +6784,6 @@ def test_customer_can_download_tax_report_10677():
         assert True
 
 
-@allure.id("10678")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10678():
@@ -7472,7 +6794,6 @@ def test_customer_can_generate_spending_report_10678():
         assert True
 
 
-@allure.id("10679")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10679():
@@ -7483,7 +6804,6 @@ def test_customer_can_generate_income_report_10679():
         assert True
 
 
-@allure.id("10680")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10680():
@@ -7494,7 +6814,6 @@ def test_customer_can_schedule_report_10680():
         assert True
 
 
-@allure.id("10681")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10681():
@@ -7505,7 +6824,6 @@ def test_customer_can_view_portfolio_10681():
         assert True
 
 
-@allure.id("10682")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10682():
@@ -7516,7 +6834,6 @@ def test_customer_can_buy_asset_10682():
         assert True
 
 
-@allure.id("10683")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10683():
@@ -7527,7 +6844,6 @@ def test_customer_can_sell_asset_10683():
         assert True
 
 
-@allure.id("10684")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10684():
@@ -7538,7 +6854,6 @@ def test_customer_can_view_asset_price_10684():
         assert True
 
 
-@allure.id("10685")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10685():
@@ -7549,7 +6864,6 @@ def test_customer_can_view_portfolio_performance_10685():
         assert True
 
 
-@allure.id("10686")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10686():
@@ -7560,7 +6874,6 @@ def test_customer_can_view_dividend_history_10686():
         assert True
 
 
-@allure.id("10687")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10687():
@@ -7571,7 +6884,6 @@ def test_customer_can_download_portfolio_report_10687():
         assert True
 
 
-@allure.id("10688")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10688():
@@ -7582,7 +6894,6 @@ def test_customer_can_filter_assets_10688():
         assert True
 
 
-@allure.id("10689")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10689():
@@ -7593,7 +6904,6 @@ def test_customer_can_search_asset_10689():
         assert True
 
 
-@allure.id("10690")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10690():
@@ -7604,7 +6914,6 @@ def test_customer_can_view_asset_details_10690():
         assert True
 
 
-@allure.id("10691")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10691():
@@ -7615,7 +6924,6 @@ def test_customer_can_create_support_ticket_10691():
         assert True
 
 
-@allure.id("10692")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10692():
@@ -7626,7 +6934,6 @@ def test_customer_can_view_ticket_status_10692():
         assert True
 
 
-@allure.id("10693")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10693():
@@ -7637,7 +6944,6 @@ def test_customer_can_add_ticket_comment_10693():
         assert True
 
 
-@allure.id("10694")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10694():
@@ -7648,7 +6954,6 @@ def test_customer_can_close_ticket_10694():
         assert True
 
 
-@allure.id("10695")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10695():
@@ -7659,7 +6964,6 @@ def test_customer_can_reopen_ticket_10695():
         assert True
 
 
-@allure.id("10696")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10696():
@@ -7670,7 +6974,6 @@ def test_customer_can_upload_attachment_10696():
         assert True
 
 
-@allure.id("10697")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10697():
@@ -7681,7 +6984,6 @@ def test_customer_can_download_attachment_10697():
         assert True
 
 
-@allure.id("10698")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10698():
@@ -7692,7 +6994,6 @@ def test_customer_can_rate_support_request_10698():
         assert True
 
 
-@allure.id("10699")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10699():
@@ -7703,7 +7004,6 @@ def test_customer_can_view_support_history_10699():
         assert True
 
 
-@allure.id("10700")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10700():
@@ -7714,7 +7014,6 @@ def test_customer_can_contact_support_10700():
         assert True
 
 
-@allure.id("10701")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10701():
@@ -7725,7 +7024,6 @@ def test_customer_can_view_account_details_10701():
         assert True
 
 
-@allure.id("10702")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10702():
@@ -7736,7 +7034,6 @@ def test_customer_can_download_statement_10702():
         assert True
 
 
-@allure.id("10703")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10703():
@@ -7747,7 +7044,6 @@ def test_customer_can_filter_transactions_10703():
         assert True
 
 
-@allure.id("10704")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10704():
@@ -7758,7 +7054,6 @@ def test_customer_can_search_transaction_history_10704():
         assert True
 
 
-@allure.id("10705")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10705():
@@ -7769,7 +7064,6 @@ def test_customer_can_view_account_balance_10705():
         assert True
 
 
-@allure.id("10706")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10706():
@@ -7780,7 +7074,6 @@ def test_customer_can_view_account_currency_10706():
         assert True
 
 
-@allure.id("10707")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10707():
@@ -7791,7 +7084,6 @@ def test_customer_can_view_account_iban_10707():
         assert True
 
 
-@allure.id("10708")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10708():
@@ -7802,7 +7094,6 @@ def test_customer_can_rename_account_10708():
         assert True
 
 
-@allure.id("10709")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10709():
@@ -7813,7 +7104,6 @@ def test_customer_can_archive_account_10709():
         assert True
 
 
-@allure.id("10710")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10710():
@@ -7824,7 +7114,6 @@ def test_customer_can_restore_account_10710():
         assert True
 
 
-@allure.id("10711")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10711():
@@ -7835,7 +7124,6 @@ def test_cardholder_can_block_card_10711():
         assert True
 
 
-@allure.id("10712")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10712():
@@ -7846,7 +7134,6 @@ def test_cardholder_can_unblock_card_10712():
         assert True
 
 
-@allure.id("10713")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10713():
@@ -7857,7 +7144,6 @@ def test_cardholder_can_change_pin_10713():
         assert True
 
 
-@allure.id("10714")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10714():
@@ -7868,7 +7154,6 @@ def test_cardholder_can_view_card_limits_10714():
         assert True
 
 
-@allure.id("10715")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10715():
@@ -7879,7 +7164,6 @@ def test_cardholder_can_enable_online_payments_10715():
         assert True
 
 
-@allure.id("10716")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10716():
@@ -7890,7 +7174,6 @@ def test_cardholder_can_disable_online_payments_10716():
         assert True
 
 
-@allure.id("10717")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10717():
@@ -7901,7 +7184,6 @@ def test_cardholder_can_view_card_details_10717():
         assert True
 
 
-@allure.id("10718")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10718():
@@ -7912,7 +7194,6 @@ def test_cardholder_can_replace_card_10718():
         assert True
 
 
-@allure.id("10719")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10719():
@@ -7923,7 +7204,6 @@ def test_cardholder_can_set_spending_limit_10719():
         assert True
 
 
-@allure.id("10720")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10720():
@@ -7934,7 +7214,6 @@ def test_cardholder_can_view_card_transactions_10720():
         assert True
 
 
-@allure.id("10721")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10721():
@@ -7945,7 +7224,6 @@ def test_customer_can_make_internal_transfer_10721():
         assert True
 
 
-@allure.id("10722")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10722():
@@ -7956,7 +7234,6 @@ def test_customer_can_make_external_transfer_10722():
         assert True
 
 
-@allure.id("10723")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10723():
@@ -7967,7 +7244,6 @@ def test_customer_can_pay_utility_bill_10723():
         assert True
 
 
-@allure.id("10724")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10724():
@@ -7978,7 +7254,6 @@ def test_customer_can_schedule_payment_10724():
         assert True
 
 
-@allure.id("10725")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10725():
@@ -7989,7 +7264,6 @@ def test_customer_can_cancel_scheduled_payment_10725():
         assert True
 
 
-@allure.id("10726")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10726():
@@ -8000,7 +7274,6 @@ def test_customer_can_repeat_payment_10726():
         assert True
 
 
-@allure.id("10727")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10727():
@@ -8011,7 +7284,6 @@ def test_customer_can_save_payment_template_10727():
         assert True
 
 
-@allure.id("10728")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10728():
@@ -8022,7 +7294,6 @@ def test_customer_can_delete_payment_template_10728():
         assert True
 
 
-@allure.id("10729")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10729():
@@ -8033,7 +7304,6 @@ def test_customer_can_view_payment_status_10729():
         assert True
 
 
-@allure.id("10730")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10730():
@@ -8044,7 +7314,6 @@ def test_customer_can_download_payment_receipt_10730():
         assert True
 
 
-@allure.id("10731")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10731():
@@ -8055,7 +7324,6 @@ def test_customer_can_transfer_between_own_accounts_10731():
         assert True
 
 
-@allure.id("10732")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10732():
@@ -8066,7 +7334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10732():
         assert True
 
 
-@allure.id("10733")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10733():
@@ -8077,7 +7344,6 @@ def test_customer_can_add_beneficiary_10733():
         assert True
 
 
-@allure.id("10734")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10734():
@@ -8088,7 +7354,6 @@ def test_customer_can_delete_beneficiary_10734():
         assert True
 
 
-@allure.id("10735")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10735():
@@ -8099,7 +7364,6 @@ def test_customer_can_edit_beneficiary_10735():
         assert True
 
 
-@allure.id("10736")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10736():
@@ -8110,7 +7374,6 @@ def test_customer_can_view_transfer_history_10736():
         assert True
 
 
-@allure.id("10737")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10737():
@@ -8121,7 +7384,6 @@ def test_customer_can_export_transfer_history_10737():
         assert True
 
 
-@allure.id("10738")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10738():
@@ -8132,7 +7394,6 @@ def test_customer_can_search_transfer_10738():
         assert True
 
 
-@allure.id("10739")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10739():
@@ -8143,7 +7404,6 @@ def test_customer_can_repeat_transfer_10739():
         assert True
 
 
-@allure.id("10740")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10740():
@@ -8154,7 +7414,6 @@ def test_customer_can_cancel_transfer_10740():
         assert True
 
 
-@allure.id("10741")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10741():
@@ -8165,7 +7424,6 @@ def test_customer_can_view_loan_schedule_10741():
         assert True
 
 
-@allure.id("10742")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10742():
@@ -8176,7 +7434,6 @@ def test_customer_can_make_loan_payment_10742():
         assert True
 
 
-@allure.id("10743")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10743():
@@ -8187,7 +7444,6 @@ def test_customer_can_download_loan_statement_10743():
         assert True
 
 
-@allure.id("10744")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10744():
@@ -8198,7 +7454,6 @@ def test_customer_can_view_interest_rate_10744():
         assert True
 
 
-@allure.id("10745")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10745():
@@ -8209,7 +7464,6 @@ def test_customer_can_request_early_repayment_10745():
         assert True
 
 
-@allure.id("10746")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10746():
@@ -8220,7 +7474,6 @@ def test_customer_can_view_remaining_balance_10746():
         assert True
 
 
-@allure.id("10747")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10747():
@@ -8231,7 +7484,6 @@ def test_customer_can_view_next_payment_date_10747():
         assert True
 
 
-@allure.id("10748")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10748():
@@ -8242,7 +7494,6 @@ def test_customer_can_download_amortization_table_10748():
         assert True
 
 
-@allure.id("10749")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10749():
@@ -8253,7 +7504,6 @@ def test_customer_can_request_loan_certificate_10749():
         assert True
 
 
-@allure.id("10750")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10750():
@@ -8264,7 +7514,6 @@ def test_customer_can_view_loan_history_10750():
         assert True
 
 
-@allure.id("10751")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10751():
@@ -8275,7 +7524,6 @@ def test_customer_receives_sms_notification_10751():
         assert True
 
 
-@allure.id("10752")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10752():
@@ -8286,7 +7534,6 @@ def test_customer_receives_email_notification_10752():
         assert True
 
 
-@allure.id("10753")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10753():
@@ -8297,7 +7544,6 @@ def test_customer_receives_push_notification_10753():
         assert True
 
 
-@allure.id("10754")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10754():
@@ -8308,7 +7554,6 @@ def test_customer_can_manage_notification_preferences_10754():
         assert True
 
 
-@allure.id("10755")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10755():
@@ -8319,7 +7564,6 @@ def test_customer_can_disable_marketing_messages_10755():
         assert True
 
 
-@allure.id("10756")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10756():
@@ -8330,7 +7574,6 @@ def test_customer_can_enable_security_alerts_10756():
         assert True
 
 
-@allure.id("10757")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10757():
@@ -8341,7 +7584,6 @@ def test_customer_can_disable_security_alerts_10757():
         assert True
 
 
-@allure.id("10758")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10758():
@@ -8352,7 +7594,6 @@ def test_customer_can_view_notification_history_10758():
         assert True
 
 
-@allure.id("10759")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10759():
@@ -8363,7 +7604,6 @@ def test_customer_can_mark_notification_as_read_10759():
         assert True
 
 
-@allure.id("10760")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10760():
@@ -8374,7 +7614,6 @@ def test_customer_can_delete_notification_10760():
         assert True
 
 
-@allure.id("10761")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10761():
@@ -8385,7 +7624,6 @@ def test_customer_can_enable_two_factor_authentication_10761():
         assert True
 
 
-@allure.id("10762")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10762():
@@ -8396,7 +7634,6 @@ def test_customer_can_disable_two_factor_authentication_10762():
         assert True
 
 
-@allure.id("10763")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10763():
@@ -8407,7 +7644,6 @@ def test_customer_can_reset_password_10763():
         assert True
 
 
-@allure.id("10764")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10764():
@@ -8418,7 +7654,6 @@ def test_customer_can_change_password_10764():
         assert True
 
 
-@allure.id("10765")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10765():
@@ -8429,7 +7664,6 @@ def test_customer_can_change_security_question_10765():
         assert True
 
 
-@allure.id("10766")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10766():
@@ -8440,7 +7674,6 @@ def test_customer_can_view_login_history_10766():
         assert True
 
 
-@allure.id("10767")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10767():
@@ -8451,7 +7684,6 @@ def test_customer_session_expires_after_timeout_10767():
         assert True
 
 
-@allure.id("10768")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10768():
@@ -8462,7 +7694,6 @@ def test_customer_can_logout_from_all_devices_10768():
         assert True
 
 
-@allure.id("10769")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10769():
@@ -8473,7 +7704,6 @@ def test_customer_can_register_trusted_device_10769():
         assert True
 
 
-@allure.id("10770")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10770():
@@ -8484,7 +7714,6 @@ def test_customer_can_remove_trusted_device_10770():
         assert True
 
 
-@allure.id("10771")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10771():
@@ -8495,7 +7724,6 @@ def test_customer_can_generate_monthly_report_10771():
         assert True
 
 
-@allure.id("10772")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10772():
@@ -8506,7 +7734,6 @@ def test_customer_can_generate_yearly_report_10772():
         assert True
 
 
-@allure.id("10773")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10773():
@@ -8517,7 +7744,6 @@ def test_customer_can_export_report_pdf_10773():
         assert True
 
 
-@allure.id("10774")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10774():
@@ -8528,7 +7754,6 @@ def test_customer_can_export_report_xlsx_10774():
         assert True
 
 
-@allure.id("10775")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10775():
@@ -8539,7 +7764,6 @@ def test_customer_can_filter_report_by_period_10775():
         assert True
 
 
-@allure.id("10776")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10776():
@@ -8550,7 +7774,6 @@ def test_customer_can_filter_report_by_account_10776():
         assert True
 
 
-@allure.id("10777")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10777():
@@ -8561,7 +7784,6 @@ def test_customer_can_download_tax_report_10777():
         assert True
 
 
-@allure.id("10778")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10778():
@@ -8572,7 +7794,6 @@ def test_customer_can_generate_spending_report_10778():
         assert True
 
 
-@allure.id("10779")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10779():
@@ -8583,7 +7804,6 @@ def test_customer_can_generate_income_report_10779():
         assert True
 
 
-@allure.id("10780")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10780():
@@ -8594,7 +7814,6 @@ def test_customer_can_schedule_report_10780():
         assert True
 
 
-@allure.id("10781")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10781():
@@ -8605,7 +7824,6 @@ def test_customer_can_view_portfolio_10781():
         assert True
 
 
-@allure.id("10782")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10782():
@@ -8616,7 +7834,6 @@ def test_customer_can_buy_asset_10782():
         assert True
 
 
-@allure.id("10783")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10783():
@@ -8627,7 +7844,6 @@ def test_customer_can_sell_asset_10783():
         assert True
 
 
-@allure.id("10784")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10784():
@@ -8638,7 +7854,6 @@ def test_customer_can_view_asset_price_10784():
         assert True
 
 
-@allure.id("10785")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10785():
@@ -8649,7 +7864,6 @@ def test_customer_can_view_portfolio_performance_10785():
         assert True
 
 
-@allure.id("10786")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10786():
@@ -8660,7 +7874,6 @@ def test_customer_can_view_dividend_history_10786():
         assert True
 
 
-@allure.id("10787")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10787():
@@ -8671,7 +7884,6 @@ def test_customer_can_download_portfolio_report_10787():
         assert True
 
 
-@allure.id("10788")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10788():
@@ -8682,7 +7894,6 @@ def test_customer_can_filter_assets_10788():
         assert True
 
 
-@allure.id("10789")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10789():
@@ -8693,7 +7904,6 @@ def test_customer_can_search_asset_10789():
         assert True
 
 
-@allure.id("10790")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10790():
@@ -8704,7 +7914,6 @@ def test_customer_can_view_asset_details_10790():
         assert True
 
 
-@allure.id("10791")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10791():
@@ -8715,7 +7924,6 @@ def test_customer_can_create_support_ticket_10791():
         assert True
 
 
-@allure.id("10792")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10792():
@@ -8726,7 +7934,6 @@ def test_customer_can_view_ticket_status_10792():
         assert True
 
 
-@allure.id("10793")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10793():
@@ -8737,7 +7944,6 @@ def test_customer_can_add_ticket_comment_10793():
         assert True
 
 
-@allure.id("10794")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10794():
@@ -8748,7 +7954,6 @@ def test_customer_can_close_ticket_10794():
         assert True
 
 
-@allure.id("10795")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10795():
@@ -8759,7 +7964,6 @@ def test_customer_can_reopen_ticket_10795():
         assert True
 
 
-@allure.id("10796")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10796():
@@ -8770,7 +7974,6 @@ def test_customer_can_upload_attachment_10796():
         assert True
 
 
-@allure.id("10797")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10797():
@@ -8781,7 +7984,6 @@ def test_customer_can_download_attachment_10797():
         assert True
 
 
-@allure.id("10798")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10798():
@@ -8792,7 +7994,6 @@ def test_customer_can_rate_support_request_10798():
         assert True
 
 
-@allure.id("10799")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10799():
@@ -8803,7 +8004,6 @@ def test_customer_can_view_support_history_10799():
         assert True
 
 
-@allure.id("10800")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10800():
@@ -8814,7 +8014,6 @@ def test_customer_can_contact_support_10800():
         assert True
 
 
-@allure.id("10801")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10801():
@@ -8825,7 +8024,6 @@ def test_customer_can_view_account_details_10801():
         assert True
 
 
-@allure.id("10802")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10802():
@@ -8836,7 +8034,6 @@ def test_customer_can_download_statement_10802():
         assert True
 
 
-@allure.id("10803")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10803():
@@ -8847,7 +8044,6 @@ def test_customer_can_filter_transactions_10803():
         assert True
 
 
-@allure.id("10804")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10804():
@@ -8858,7 +8054,6 @@ def test_customer_can_search_transaction_history_10804():
         assert True
 
 
-@allure.id("10805")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10805():
@@ -8869,7 +8064,6 @@ def test_customer_can_view_account_balance_10805():
         assert True
 
 
-@allure.id("10806")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10806():
@@ -8880,7 +8074,6 @@ def test_customer_can_view_account_currency_10806():
         assert True
 
 
-@allure.id("10807")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10807():
@@ -8891,7 +8084,6 @@ def test_customer_can_view_account_iban_10807():
         assert True
 
 
-@allure.id("10808")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10808():
@@ -8902,7 +8094,6 @@ def test_customer_can_rename_account_10808():
         assert True
 
 
-@allure.id("10809")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10809():
@@ -8913,7 +8104,6 @@ def test_customer_can_archive_account_10809():
         assert True
 
 
-@allure.id("10810")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10810():
@@ -8924,7 +8114,6 @@ def test_customer_can_restore_account_10810():
         assert True
 
 
-@allure.id("10811")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10811():
@@ -8935,7 +8124,6 @@ def test_cardholder_can_block_card_10811():
         assert True
 
 
-@allure.id("10812")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10812():
@@ -8946,7 +8134,6 @@ def test_cardholder_can_unblock_card_10812():
         assert True
 
 
-@allure.id("10813")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10813():
@@ -8957,7 +8144,6 @@ def test_cardholder_can_change_pin_10813():
         assert True
 
 
-@allure.id("10814")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10814():
@@ -8968,7 +8154,6 @@ def test_cardholder_can_view_card_limits_10814():
         assert True
 
 
-@allure.id("10815")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10815():
@@ -8979,7 +8164,6 @@ def test_cardholder_can_enable_online_payments_10815():
         assert True
 
 
-@allure.id("10816")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10816():
@@ -8990,7 +8174,6 @@ def test_cardholder_can_disable_online_payments_10816():
         assert True
 
 
-@allure.id("10817")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10817():
@@ -9001,7 +8184,6 @@ def test_cardholder_can_view_card_details_10817():
         assert True
 
 
-@allure.id("10818")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10818():
@@ -9012,7 +8194,6 @@ def test_cardholder_can_replace_card_10818():
         assert True
 
 
-@allure.id("10819")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10819():
@@ -9023,7 +8204,6 @@ def test_cardholder_can_set_spending_limit_10819():
         assert True
 
 
-@allure.id("10820")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10820():
@@ -9034,7 +8214,6 @@ def test_cardholder_can_view_card_transactions_10820():
         assert True
 
 
-@allure.id("10821")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10821():
@@ -9045,7 +8224,6 @@ def test_customer_can_make_internal_transfer_10821():
         assert True
 
 
-@allure.id("10822")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10822():
@@ -9056,7 +8234,6 @@ def test_customer_can_make_external_transfer_10822():
         assert True
 
 
-@allure.id("10823")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10823():
@@ -9067,7 +8244,6 @@ def test_customer_can_pay_utility_bill_10823():
         assert True
 
 
-@allure.id("10824")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10824():
@@ -9078,7 +8254,6 @@ def test_customer_can_schedule_payment_10824():
         assert True
 
 
-@allure.id("10825")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10825():
@@ -9089,7 +8264,6 @@ def test_customer_can_cancel_scheduled_payment_10825():
         assert True
 
 
-@allure.id("10826")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10826():
@@ -9100,7 +8274,6 @@ def test_customer_can_repeat_payment_10826():
         assert True
 
 
-@allure.id("10827")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10827():
@@ -9111,7 +8284,6 @@ def test_customer_can_save_payment_template_10827():
         assert True
 
 
-@allure.id("10828")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10828():
@@ -9122,7 +8294,6 @@ def test_customer_can_delete_payment_template_10828():
         assert True
 
 
-@allure.id("10829")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10829():
@@ -9133,7 +8304,6 @@ def test_customer_can_view_payment_status_10829():
         assert True
 
 
-@allure.id("10830")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10830():
@@ -9144,7 +8314,6 @@ def test_customer_can_download_payment_receipt_10830():
         assert True
 
 
-@allure.id("10831")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10831():
@@ -9155,7 +8324,6 @@ def test_customer_can_transfer_between_own_accounts_10831():
         assert True
 
 
-@allure.id("10832")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10832():
@@ -9166,7 +8334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10832():
         assert True
 
 
-@allure.id("10833")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10833():
@@ -9177,7 +8344,6 @@ def test_customer_can_add_beneficiary_10833():
         assert True
 
 
-@allure.id("10834")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10834():
@@ -9188,7 +8354,6 @@ def test_customer_can_delete_beneficiary_10834():
         assert True
 
 
-@allure.id("10835")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10835():
@@ -9199,7 +8364,6 @@ def test_customer_can_edit_beneficiary_10835():
         assert True
 
 
-@allure.id("10836")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10836():
@@ -9210,7 +8374,6 @@ def test_customer_can_view_transfer_history_10836():
         assert True
 
 
-@allure.id("10837")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10837():
@@ -9221,7 +8384,6 @@ def test_customer_can_export_transfer_history_10837():
         assert True
 
 
-@allure.id("10838")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10838():
@@ -9232,7 +8394,6 @@ def test_customer_can_search_transfer_10838():
         assert True
 
 
-@allure.id("10839")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10839():
@@ -9243,7 +8404,6 @@ def test_customer_can_repeat_transfer_10839():
         assert True
 
 
-@allure.id("10840")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10840():
@@ -9254,7 +8414,6 @@ def test_customer_can_cancel_transfer_10840():
         assert True
 
 
-@allure.id("10841")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10841():
@@ -9265,7 +8424,6 @@ def test_customer_can_view_loan_schedule_10841():
         assert True
 
 
-@allure.id("10842")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10842():
@@ -9276,7 +8434,6 @@ def test_customer_can_make_loan_payment_10842():
         assert True
 
 
-@allure.id("10843")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10843():
@@ -9287,7 +8444,6 @@ def test_customer_can_download_loan_statement_10843():
         assert True
 
 
-@allure.id("10844")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10844():
@@ -9298,7 +8454,6 @@ def test_customer_can_view_interest_rate_10844():
         assert True
 
 
-@allure.id("10845")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10845():
@@ -9309,7 +8464,6 @@ def test_customer_can_request_early_repayment_10845():
         assert True
 
 
-@allure.id("10846")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10846():
@@ -9320,7 +8474,6 @@ def test_customer_can_view_remaining_balance_10846():
         assert True
 
 
-@allure.id("10847")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10847():
@@ -9331,7 +8484,6 @@ def test_customer_can_view_next_payment_date_10847():
         assert True
 
 
-@allure.id("10848")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10848():
@@ -9342,7 +8494,6 @@ def test_customer_can_download_amortization_table_10848():
         assert True
 
 
-@allure.id("10849")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10849():
@@ -9353,7 +8504,6 @@ def test_customer_can_request_loan_certificate_10849():
         assert True
 
 
-@allure.id("10850")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10850():
@@ -9364,7 +8514,6 @@ def test_customer_can_view_loan_history_10850():
         assert True
 
 
-@allure.id("10851")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10851():
@@ -9375,7 +8524,6 @@ def test_customer_receives_sms_notification_10851():
         assert True
 
 
-@allure.id("10852")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10852():
@@ -9386,7 +8534,6 @@ def test_customer_receives_email_notification_10852():
         assert True
 
 
-@allure.id("10853")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10853():
@@ -9397,7 +8544,6 @@ def test_customer_receives_push_notification_10853():
         assert True
 
 
-@allure.id("10854")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10854():
@@ -9408,7 +8554,6 @@ def test_customer_can_manage_notification_preferences_10854():
         assert True
 
 
-@allure.id("10855")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10855():
@@ -9419,7 +8564,6 @@ def test_customer_can_disable_marketing_messages_10855():
         assert True
 
 
-@allure.id("10856")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10856():
@@ -9430,7 +8574,6 @@ def test_customer_can_enable_security_alerts_10856():
         assert True
 
 
-@allure.id("10857")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10857():
@@ -9441,7 +8584,6 @@ def test_customer_can_disable_security_alerts_10857():
         assert True
 
 
-@allure.id("10858")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10858():
@@ -9452,7 +8594,6 @@ def test_customer_can_view_notification_history_10858():
         assert True
 
 
-@allure.id("10859")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10859():
@@ -9463,7 +8604,6 @@ def test_customer_can_mark_notification_as_read_10859():
         assert True
 
 
-@allure.id("10860")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10860():
@@ -9474,7 +8614,6 @@ def test_customer_can_delete_notification_10860():
         assert True
 
 
-@allure.id("10861")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10861():
@@ -9485,7 +8624,6 @@ def test_customer_can_enable_two_factor_authentication_10861():
         assert True
 
 
-@allure.id("10862")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10862():
@@ -9496,7 +8634,6 @@ def test_customer_can_disable_two_factor_authentication_10862():
         assert True
 
 
-@allure.id("10863")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10863():
@@ -9507,7 +8644,6 @@ def test_customer_can_reset_password_10863():
         assert True
 
 
-@allure.id("10864")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10864():
@@ -9518,7 +8654,6 @@ def test_customer_can_change_password_10864():
         assert True
 
 
-@allure.id("10865")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10865():
@@ -9529,7 +8664,6 @@ def test_customer_can_change_security_question_10865():
         assert True
 
 
-@allure.id("10866")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10866():
@@ -9540,7 +8674,6 @@ def test_customer_can_view_login_history_10866():
         assert True
 
 
-@allure.id("10867")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10867():
@@ -9551,7 +8684,6 @@ def test_customer_session_expires_after_timeout_10867():
         assert True
 
 
-@allure.id("10868")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10868():
@@ -9562,7 +8694,6 @@ def test_customer_can_logout_from_all_devices_10868():
         assert True
 
 
-@allure.id("10869")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10869():
@@ -9573,7 +8704,6 @@ def test_customer_can_register_trusted_device_10869():
         assert True
 
 
-@allure.id("10870")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10870():
@@ -9584,7 +8714,6 @@ def test_customer_can_remove_trusted_device_10870():
         assert True
 
 
-@allure.id("10871")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10871():
@@ -9595,7 +8724,6 @@ def test_customer_can_generate_monthly_report_10871():
         assert True
 
 
-@allure.id("10872")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10872():
@@ -9606,7 +8734,6 @@ def test_customer_can_generate_yearly_report_10872():
         assert True
 
 
-@allure.id("10873")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10873():
@@ -9617,7 +8744,6 @@ def test_customer_can_export_report_pdf_10873():
         assert True
 
 
-@allure.id("10874")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10874():
@@ -9628,7 +8754,6 @@ def test_customer_can_export_report_xlsx_10874():
         assert True
 
 
-@allure.id("10875")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10875():
@@ -9639,7 +8764,6 @@ def test_customer_can_filter_report_by_period_10875():
         assert True
 
 
-@allure.id("10876")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10876():
@@ -9650,7 +8774,6 @@ def test_customer_can_filter_report_by_account_10876():
         assert True
 
 
-@allure.id("10877")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10877():
@@ -9661,7 +8784,6 @@ def test_customer_can_download_tax_report_10877():
         assert True
 
 
-@allure.id("10878")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10878():
@@ -9672,7 +8794,6 @@ def test_customer_can_generate_spending_report_10878():
         assert True
 
 
-@allure.id("10879")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10879():
@@ -9683,7 +8804,6 @@ def test_customer_can_generate_income_report_10879():
         assert True
 
 
-@allure.id("10880")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10880():
@@ -9694,7 +8814,6 @@ def test_customer_can_schedule_report_10880():
         assert True
 
 
-@allure.id("10881")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10881():
@@ -9705,7 +8824,6 @@ def test_customer_can_view_portfolio_10881():
         assert True
 
 
-@allure.id("10882")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10882():
@@ -9716,7 +8834,6 @@ def test_customer_can_buy_asset_10882():
         assert True
 
 
-@allure.id("10883")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10883():
@@ -9727,7 +8844,6 @@ def test_customer_can_sell_asset_10883():
         assert True
 
 
-@allure.id("10884")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10884():
@@ -9738,7 +8854,6 @@ def test_customer_can_view_asset_price_10884():
         assert True
 
 
-@allure.id("10885")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10885():
@@ -9749,7 +8864,6 @@ def test_customer_can_view_portfolio_performance_10885():
         assert True
 
 
-@allure.id("10886")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10886():
@@ -9760,7 +8874,6 @@ def test_customer_can_view_dividend_history_10886():
         assert True
 
 
-@allure.id("10887")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10887():
@@ -9771,7 +8884,6 @@ def test_customer_can_download_portfolio_report_10887():
         assert True
 
 
-@allure.id("10888")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10888():
@@ -9782,7 +8894,6 @@ def test_customer_can_filter_assets_10888():
         assert True
 
 
-@allure.id("10889")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10889():
@@ -9793,7 +8904,6 @@ def test_customer_can_search_asset_10889():
         assert True
 
 
-@allure.id("10890")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10890():
@@ -9804,7 +8914,6 @@ def test_customer_can_view_asset_details_10890():
         assert True
 
 
-@allure.id("10891")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10891():
@@ -9815,7 +8924,6 @@ def test_customer_can_create_support_ticket_10891():
         assert True
 
 
-@allure.id("10892")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10892():
@@ -9826,7 +8934,6 @@ def test_customer_can_view_ticket_status_10892():
         assert True
 
 
-@allure.id("10893")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10893():
@@ -9837,7 +8944,6 @@ def test_customer_can_add_ticket_comment_10893():
         assert True
 
 
-@allure.id("10894")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10894():
@@ -9848,7 +8954,6 @@ def test_customer_can_close_ticket_10894():
         assert True
 
 
-@allure.id("10895")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10895():
@@ -9859,7 +8964,6 @@ def test_customer_can_reopen_ticket_10895():
         assert True
 
 
-@allure.id("10896")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10896():
@@ -9870,7 +8974,6 @@ def test_customer_can_upload_attachment_10896():
         assert True
 
 
-@allure.id("10897")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10897():
@@ -9881,7 +8984,6 @@ def test_customer_can_download_attachment_10897():
         assert True
 
 
-@allure.id("10898")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10898():
@@ -9892,7 +8994,6 @@ def test_customer_can_rate_support_request_10898():
         assert True
 
 
-@allure.id("10899")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10899():
@@ -9903,7 +9004,6 @@ def test_customer_can_view_support_history_10899():
         assert True
 
 
-@allure.id("10900")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_10900():
@@ -9914,7 +9014,6 @@ def test_customer_can_contact_support_10900():
         assert True
 
 
-@allure.id("10901")
 @allure.feature("Accounts")
 @allure.title("Customer can view account details")
 def test_customer_can_view_account_details_10901():
@@ -9925,7 +9024,6 @@ def test_customer_can_view_account_details_10901():
         assert True
 
 
-@allure.id("10902")
 @allure.feature("Accounts")
 @allure.title("Customer can download statement")
 def test_customer_can_download_statement_10902():
@@ -9936,7 +9034,6 @@ def test_customer_can_download_statement_10902():
         assert True
 
 
-@allure.id("10903")
 @allure.feature("Accounts")
 @allure.title("Customer can filter transactions")
 def test_customer_can_filter_transactions_10903():
@@ -9947,7 +9044,6 @@ def test_customer_can_filter_transactions_10903():
         assert True
 
 
-@allure.id("10904")
 @allure.feature("Accounts")
 @allure.title("Customer can search transaction history")
 def test_customer_can_search_transaction_history_10904():
@@ -9958,7 +9054,6 @@ def test_customer_can_search_transaction_history_10904():
         assert True
 
 
-@allure.id("10905")
 @allure.feature("Accounts")
 @allure.title("Customer can view account balance")
 def test_customer_can_view_account_balance_10905():
@@ -9969,7 +9064,6 @@ def test_customer_can_view_account_balance_10905():
         assert True
 
 
-@allure.id("10906")
 @allure.feature("Accounts")
 @allure.title("Customer can view account currency")
 def test_customer_can_view_account_currency_10906():
@@ -9980,7 +9074,6 @@ def test_customer_can_view_account_currency_10906():
         assert True
 
 
-@allure.id("10907")
 @allure.feature("Accounts")
 @allure.title("Customer can view account iban")
 def test_customer_can_view_account_iban_10907():
@@ -9991,7 +9084,6 @@ def test_customer_can_view_account_iban_10907():
         assert True
 
 
-@allure.id("10908")
 @allure.feature("Accounts")
 @allure.title("Customer can rename account")
 def test_customer_can_rename_account_10908():
@@ -10002,7 +9094,6 @@ def test_customer_can_rename_account_10908():
         assert True
 
 
-@allure.id("10909")
 @allure.feature("Accounts")
 @allure.title("Customer can archive account")
 def test_customer_can_archive_account_10909():
@@ -10013,7 +9104,6 @@ def test_customer_can_archive_account_10909():
         assert True
 
 
-@allure.id("10910")
 @allure.feature("Accounts")
 @allure.title("Customer can restore account")
 def test_customer_can_restore_account_10910():
@@ -10024,7 +9114,6 @@ def test_customer_can_restore_account_10910():
         assert True
 
 
-@allure.id("10911")
 @allure.feature("Cards")
 @allure.title("Cardholder can block card")
 def test_cardholder_can_block_card_10911():
@@ -10035,7 +9124,6 @@ def test_cardholder_can_block_card_10911():
         assert True
 
 
-@allure.id("10912")
 @allure.feature("Cards")
 @allure.title("Cardholder can unblock card")
 def test_cardholder_can_unblock_card_10912():
@@ -10046,7 +9134,6 @@ def test_cardholder_can_unblock_card_10912():
         assert True
 
 
-@allure.id("10913")
 @allure.feature("Cards")
 @allure.title("Cardholder can change pin")
 def test_cardholder_can_change_pin_10913():
@@ -10057,7 +9144,6 @@ def test_cardholder_can_change_pin_10913():
         assert True
 
 
-@allure.id("10914")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card limits")
 def test_cardholder_can_view_card_limits_10914():
@@ -10068,7 +9154,6 @@ def test_cardholder_can_view_card_limits_10914():
         assert True
 
 
-@allure.id("10915")
 @allure.feature("Cards")
 @allure.title("Cardholder can enable online payments")
 def test_cardholder_can_enable_online_payments_10915():
@@ -10079,7 +9164,6 @@ def test_cardholder_can_enable_online_payments_10915():
         assert True
 
 
-@allure.id("10916")
 @allure.feature("Cards")
 @allure.title("Cardholder can disable online payments")
 def test_cardholder_can_disable_online_payments_10916():
@@ -10090,7 +9174,6 @@ def test_cardholder_can_disable_online_payments_10916():
         assert True
 
 
-@allure.id("10917")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card details")
 def test_cardholder_can_view_card_details_10917():
@@ -10101,7 +9184,6 @@ def test_cardholder_can_view_card_details_10917():
         assert True
 
 
-@allure.id("10918")
 @allure.feature("Cards")
 @allure.title("Cardholder can replace card")
 def test_cardholder_can_replace_card_10918():
@@ -10112,7 +9194,6 @@ def test_cardholder_can_replace_card_10918():
         assert True
 
 
-@allure.id("10919")
 @allure.feature("Cards")
 @allure.title("Cardholder can set spending limit")
 def test_cardholder_can_set_spending_limit_10919():
@@ -10123,7 +9204,6 @@ def test_cardholder_can_set_spending_limit_10919():
         assert True
 
 
-@allure.id("10920")
 @allure.feature("Cards")
 @allure.title("Cardholder can view card transactions")
 def test_cardholder_can_view_card_transactions_10920():
@@ -10134,7 +9214,6 @@ def test_cardholder_can_view_card_transactions_10920():
         assert True
 
 
-@allure.id("10921")
 @allure.feature("Payments")
 @allure.title("Customer can make internal transfer")
 def test_customer_can_make_internal_transfer_10921():
@@ -10145,7 +9224,6 @@ def test_customer_can_make_internal_transfer_10921():
         assert True
 
 
-@allure.id("10922")
 @allure.feature("Payments")
 @allure.title("Customer can make external transfer")
 def test_customer_can_make_external_transfer_10922():
@@ -10156,7 +9234,6 @@ def test_customer_can_make_external_transfer_10922():
         assert True
 
 
-@allure.id("10923")
 @allure.feature("Payments")
 @allure.title("Customer can pay utility bill")
 def test_customer_can_pay_utility_bill_10923():
@@ -10167,7 +9244,6 @@ def test_customer_can_pay_utility_bill_10923():
         assert True
 
 
-@allure.id("10924")
 @allure.feature("Payments")
 @allure.title("Customer can schedule payment")
 def test_customer_can_schedule_payment_10924():
@@ -10178,7 +9254,6 @@ def test_customer_can_schedule_payment_10924():
         assert True
 
 
-@allure.id("10925")
 @allure.feature("Payments")
 @allure.title("Customer can cancel scheduled payment")
 def test_customer_can_cancel_scheduled_payment_10925():
@@ -10189,7 +9264,6 @@ def test_customer_can_cancel_scheduled_payment_10925():
         assert True
 
 
-@allure.id("10926")
 @allure.feature("Payments")
 @allure.title("Customer can repeat payment")
 def test_customer_can_repeat_payment_10926():
@@ -10200,7 +9274,6 @@ def test_customer_can_repeat_payment_10926():
         assert True
 
 
-@allure.id("10927")
 @allure.feature("Payments")
 @allure.title("Customer can save payment template")
 def test_customer_can_save_payment_template_10927():
@@ -10211,7 +9284,6 @@ def test_customer_can_save_payment_template_10927():
         assert True
 
 
-@allure.id("10928")
 @allure.feature("Payments")
 @allure.title("Customer can delete payment template")
 def test_customer_can_delete_payment_template_10928():
@@ -10222,7 +9294,6 @@ def test_customer_can_delete_payment_template_10928():
         assert True
 
 
-@allure.id("10929")
 @allure.feature("Payments")
 @allure.title("Customer can view payment status")
 def test_customer_can_view_payment_status_10929():
@@ -10233,7 +9304,6 @@ def test_customer_can_view_payment_status_10929():
         assert True
 
 
-@allure.id("10930")
 @allure.feature("Payments")
 @allure.title("Customer can download payment receipt")
 def test_customer_can_download_payment_receipt_10930():
@@ -10244,7 +9314,6 @@ def test_customer_can_download_payment_receipt_10930():
         assert True
 
 
-@allure.id("10931")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer between own accounts")
 def test_customer_can_transfer_between_own_accounts_10931():
@@ -10255,7 +9324,6 @@ def test_customer_can_transfer_between_own_accounts_10931():
         assert True
 
 
-@allure.id("10932")
 @allure.feature("Transfers")
 @allure.title("Customer can transfer to saved beneficiary")
 def test_customer_can_transfer_to_saved_beneficiary_10932():
@@ -10266,7 +9334,6 @@ def test_customer_can_transfer_to_saved_beneficiary_10932():
         assert True
 
 
-@allure.id("10933")
 @allure.feature("Transfers")
 @allure.title("Customer can add beneficiary")
 def test_customer_can_add_beneficiary_10933():
@@ -10277,7 +9344,6 @@ def test_customer_can_add_beneficiary_10933():
         assert True
 
 
-@allure.id("10934")
 @allure.feature("Transfers")
 @allure.title("Customer can delete beneficiary")
 def test_customer_can_delete_beneficiary_10934():
@@ -10288,7 +9354,6 @@ def test_customer_can_delete_beneficiary_10934():
         assert True
 
 
-@allure.id("10935")
 @allure.feature("Transfers")
 @allure.title("Customer can edit beneficiary")
 def test_customer_can_edit_beneficiary_10935():
@@ -10299,7 +9364,6 @@ def test_customer_can_edit_beneficiary_10935():
         assert True
 
 
-@allure.id("10936")
 @allure.feature("Transfers")
 @allure.title("Customer can view transfer history")
 def test_customer_can_view_transfer_history_10936():
@@ -10310,7 +9374,6 @@ def test_customer_can_view_transfer_history_10936():
         assert True
 
 
-@allure.id("10937")
 @allure.feature("Transfers")
 @allure.title("Customer can export transfer history")
 def test_customer_can_export_transfer_history_10937():
@@ -10321,7 +9384,6 @@ def test_customer_can_export_transfer_history_10937():
         assert True
 
 
-@allure.id("10938")
 @allure.feature("Transfers")
 @allure.title("Customer can search transfer")
 def test_customer_can_search_transfer_10938():
@@ -10332,7 +9394,6 @@ def test_customer_can_search_transfer_10938():
         assert True
 
 
-@allure.id("10939")
 @allure.feature("Transfers")
 @allure.title("Customer can repeat transfer")
 def test_customer_can_repeat_transfer_10939():
@@ -10343,7 +9404,6 @@ def test_customer_can_repeat_transfer_10939():
         assert True
 
 
-@allure.id("10940")
 @allure.feature("Transfers")
 @allure.title("Customer can cancel transfer")
 def test_customer_can_cancel_transfer_10940():
@@ -10354,7 +9414,6 @@ def test_customer_can_cancel_transfer_10940():
         assert True
 
 
-@allure.id("10941")
 @allure.feature("Loans")
 @allure.title("Customer can view loan schedule")
 def test_customer_can_view_loan_schedule_10941():
@@ -10365,7 +9424,6 @@ def test_customer_can_view_loan_schedule_10941():
         assert True
 
 
-@allure.id("10942")
 @allure.feature("Loans")
 @allure.title("Customer can make loan payment")
 def test_customer_can_make_loan_payment_10942():
@@ -10376,7 +9434,6 @@ def test_customer_can_make_loan_payment_10942():
         assert True
 
 
-@allure.id("10943")
 @allure.feature("Loans")
 @allure.title("Customer can download loan statement")
 def test_customer_can_download_loan_statement_10943():
@@ -10387,7 +9444,6 @@ def test_customer_can_download_loan_statement_10943():
         assert True
 
 
-@allure.id("10944")
 @allure.feature("Loans")
 @allure.title("Customer can view interest rate")
 def test_customer_can_view_interest_rate_10944():
@@ -10398,7 +9454,6 @@ def test_customer_can_view_interest_rate_10944():
         assert True
 
 
-@allure.id("10945")
 @allure.feature("Loans")
 @allure.title("Customer can request early repayment")
 def test_customer_can_request_early_repayment_10945():
@@ -10409,7 +9464,6 @@ def test_customer_can_request_early_repayment_10945():
         assert True
 
 
-@allure.id("10946")
 @allure.feature("Loans")
 @allure.title("Customer can view remaining balance")
 def test_customer_can_view_remaining_balance_10946():
@@ -10420,7 +9474,6 @@ def test_customer_can_view_remaining_balance_10946():
         assert True
 
 
-@allure.id("10947")
 @allure.feature("Loans")
 @allure.title("Customer can view next payment date")
 def test_customer_can_view_next_payment_date_10947():
@@ -10431,7 +9484,6 @@ def test_customer_can_view_next_payment_date_10947():
         assert True
 
 
-@allure.id("10948")
 @allure.feature("Loans")
 @allure.title("Customer can download amortization table")
 def test_customer_can_download_amortization_table_10948():
@@ -10442,7 +9494,6 @@ def test_customer_can_download_amortization_table_10948():
         assert True
 
 
-@allure.id("10949")
 @allure.feature("Loans")
 @allure.title("Customer can request loan certificate")
 def test_customer_can_request_loan_certificate_10949():
@@ -10453,7 +9504,6 @@ def test_customer_can_request_loan_certificate_10949():
         assert True
 
 
-@allure.id("10950")
 @allure.feature("Loans")
 @allure.title("Customer can view loan history")
 def test_customer_can_view_loan_history_10950():
@@ -10464,7 +9514,6 @@ def test_customer_can_view_loan_history_10950():
         assert True
 
 
-@allure.id("10951")
 @allure.feature("Notifications")
 @allure.title("Customer receives sms notification")
 def test_customer_receives_sms_notification_10951():
@@ -10475,7 +9524,6 @@ def test_customer_receives_sms_notification_10951():
         assert True
 
 
-@allure.id("10952")
 @allure.feature("Notifications")
 @allure.title("Customer receives email notification")
 def test_customer_receives_email_notification_10952():
@@ -10486,7 +9534,6 @@ def test_customer_receives_email_notification_10952():
         assert True
 
 
-@allure.id("10953")
 @allure.feature("Notifications")
 @allure.title("Customer receives push notification")
 def test_customer_receives_push_notification_10953():
@@ -10497,7 +9544,6 @@ def test_customer_receives_push_notification_10953():
         assert True
 
 
-@allure.id("10954")
 @allure.feature("Notifications")
 @allure.title("Customer can manage notification preferences")
 def test_customer_can_manage_notification_preferences_10954():
@@ -10508,7 +9554,6 @@ def test_customer_can_manage_notification_preferences_10954():
         assert True
 
 
-@allure.id("10955")
 @allure.feature("Notifications")
 @allure.title("Customer can disable marketing messages")
 def test_customer_can_disable_marketing_messages_10955():
@@ -10519,7 +9564,6 @@ def test_customer_can_disable_marketing_messages_10955():
         assert True
 
 
-@allure.id("10956")
 @allure.feature("Notifications")
 @allure.title("Customer can enable security alerts")
 def test_customer_can_enable_security_alerts_10956():
@@ -10530,7 +9574,6 @@ def test_customer_can_enable_security_alerts_10956():
         assert True
 
 
-@allure.id("10957")
 @allure.feature("Notifications")
 @allure.title("Customer can disable security alerts")
 def test_customer_can_disable_security_alerts_10957():
@@ -10541,7 +9584,6 @@ def test_customer_can_disable_security_alerts_10957():
         assert True
 
 
-@allure.id("10958")
 @allure.feature("Notifications")
 @allure.title("Customer can view notification history")
 def test_customer_can_view_notification_history_10958():
@@ -10552,7 +9594,6 @@ def test_customer_can_view_notification_history_10958():
         assert True
 
 
-@allure.id("10959")
 @allure.feature("Notifications")
 @allure.title("Customer can mark notification as read")
 def test_customer_can_mark_notification_as_read_10959():
@@ -10563,7 +9604,6 @@ def test_customer_can_mark_notification_as_read_10959():
         assert True
 
 
-@allure.id("10960")
 @allure.feature("Notifications")
 @allure.title("Customer can delete notification")
 def test_customer_can_delete_notification_10960():
@@ -10574,7 +9614,6 @@ def test_customer_can_delete_notification_10960():
         assert True
 
 
-@allure.id("10961")
 @allure.feature("Security")
 @allure.title("Customer can enable two factor authentication")
 def test_customer_can_enable_two_factor_authentication_10961():
@@ -10585,7 +9624,6 @@ def test_customer_can_enable_two_factor_authentication_10961():
         assert True
 
 
-@allure.id("10962")
 @allure.feature("Security")
 @allure.title("Customer can disable two factor authentication")
 def test_customer_can_disable_two_factor_authentication_10962():
@@ -10596,7 +9634,6 @@ def test_customer_can_disable_two_factor_authentication_10962():
         assert True
 
 
-@allure.id("10963")
 @allure.feature("Security")
 @allure.title("Customer can reset password")
 def test_customer_can_reset_password_10963():
@@ -10607,7 +9644,6 @@ def test_customer_can_reset_password_10963():
         assert True
 
 
-@allure.id("10964")
 @allure.feature("Security")
 @allure.title("Customer can change password")
 def test_customer_can_change_password_10964():
@@ -10618,7 +9654,6 @@ def test_customer_can_change_password_10964():
         assert True
 
 
-@allure.id("10965")
 @allure.feature("Security")
 @allure.title("Customer can change security question")
 def test_customer_can_change_security_question_10965():
@@ -10629,7 +9664,6 @@ def test_customer_can_change_security_question_10965():
         assert True
 
 
-@allure.id("10966")
 @allure.feature("Security")
 @allure.title("Customer can view login history")
 def test_customer_can_view_login_history_10966():
@@ -10640,7 +9674,6 @@ def test_customer_can_view_login_history_10966():
         assert True
 
 
-@allure.id("10967")
 @allure.feature("Security")
 @allure.title("Customer session expires after timeout")
 def test_customer_session_expires_after_timeout_10967():
@@ -10651,7 +9684,6 @@ def test_customer_session_expires_after_timeout_10967():
         assert True
 
 
-@allure.id("10968")
 @allure.feature("Security")
 @allure.title("Customer can logout from all devices")
 def test_customer_can_logout_from_all_devices_10968():
@@ -10662,7 +9694,6 @@ def test_customer_can_logout_from_all_devices_10968():
         assert True
 
 
-@allure.id("10969")
 @allure.feature("Security")
 @allure.title("Customer can register trusted device")
 def test_customer_can_register_trusted_device_10969():
@@ -10673,7 +9704,6 @@ def test_customer_can_register_trusted_device_10969():
         assert True
 
 
-@allure.id("10970")
 @allure.feature("Security")
 @allure.title("Customer can remove trusted device")
 def test_customer_can_remove_trusted_device_10970():
@@ -10684,7 +9714,6 @@ def test_customer_can_remove_trusted_device_10970():
         assert True
 
 
-@allure.id("10971")
 @allure.feature("Reports")
 @allure.title("Customer can generate monthly report")
 def test_customer_can_generate_monthly_report_10971():
@@ -10695,7 +9724,6 @@ def test_customer_can_generate_monthly_report_10971():
         assert True
 
 
-@allure.id("10972")
 @allure.feature("Reports")
 @allure.title("Customer can generate yearly report")
 def test_customer_can_generate_yearly_report_10972():
@@ -10706,7 +9734,6 @@ def test_customer_can_generate_yearly_report_10972():
         assert True
 
 
-@allure.id("10973")
 @allure.feature("Reports")
 @allure.title("Customer can export report pdf")
 def test_customer_can_export_report_pdf_10973():
@@ -10717,7 +9744,6 @@ def test_customer_can_export_report_pdf_10973():
         assert True
 
 
-@allure.id("10974")
 @allure.feature("Reports")
 @allure.title("Customer can export report xlsx")
 def test_customer_can_export_report_xlsx_10974():
@@ -10728,7 +9754,6 @@ def test_customer_can_export_report_xlsx_10974():
         assert True
 
 
-@allure.id("10975")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by period")
 def test_customer_can_filter_report_by_period_10975():
@@ -10739,7 +9764,6 @@ def test_customer_can_filter_report_by_period_10975():
         assert True
 
 
-@allure.id("10976")
 @allure.feature("Reports")
 @allure.title("Customer can filter report by account")
 def test_customer_can_filter_report_by_account_10976():
@@ -10750,7 +9774,6 @@ def test_customer_can_filter_report_by_account_10976():
         assert True
 
 
-@allure.id("10977")
 @allure.feature("Reports")
 @allure.title("Customer can download tax report")
 def test_customer_can_download_tax_report_10977():
@@ -10761,7 +9784,6 @@ def test_customer_can_download_tax_report_10977():
         assert True
 
 
-@allure.id("10978")
 @allure.feature("Reports")
 @allure.title("Customer can generate spending report")
 def test_customer_can_generate_spending_report_10978():
@@ -10772,7 +9794,6 @@ def test_customer_can_generate_spending_report_10978():
         assert True
 
 
-@allure.id("10979")
 @allure.feature("Reports")
 @allure.title("Customer can generate income report")
 def test_customer_can_generate_income_report_10979():
@@ -10783,7 +9804,6 @@ def test_customer_can_generate_income_report_10979():
         assert True
 
 
-@allure.id("10980")
 @allure.feature("Reports")
 @allure.title("Customer can schedule report")
 def test_customer_can_schedule_report_10980():
@@ -10794,7 +9814,6 @@ def test_customer_can_schedule_report_10980():
         assert True
 
 
-@allure.id("10981")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio")
 def test_customer_can_view_portfolio_10981():
@@ -10805,7 +9824,6 @@ def test_customer_can_view_portfolio_10981():
         assert True
 
 
-@allure.id("10982")
 @allure.feature("Investments")
 @allure.title("Customer can buy asset")
 def test_customer_can_buy_asset_10982():
@@ -10816,7 +9834,6 @@ def test_customer_can_buy_asset_10982():
         assert True
 
 
-@allure.id("10983")
 @allure.feature("Investments")
 @allure.title("Customer can sell asset")
 def test_customer_can_sell_asset_10983():
@@ -10827,7 +9844,6 @@ def test_customer_can_sell_asset_10983():
         assert True
 
 
-@allure.id("10984")
 @allure.feature("Investments")
 @allure.title("Customer can view asset price")
 def test_customer_can_view_asset_price_10984():
@@ -10838,7 +9854,6 @@ def test_customer_can_view_asset_price_10984():
         assert True
 
 
-@allure.id("10985")
 @allure.feature("Investments")
 @allure.title("Customer can view portfolio performance")
 def test_customer_can_view_portfolio_performance_10985():
@@ -10849,7 +9864,6 @@ def test_customer_can_view_portfolio_performance_10985():
         assert True
 
 
-@allure.id("10986")
 @allure.feature("Investments")
 @allure.title("Customer can view dividend history")
 def test_customer_can_view_dividend_history_10986():
@@ -10860,7 +9874,6 @@ def test_customer_can_view_dividend_history_10986():
         assert True
 
 
-@allure.id("10987")
 @allure.feature("Investments")
 @allure.title("Customer can download portfolio report")
 def test_customer_can_download_portfolio_report_10987():
@@ -10871,7 +9884,6 @@ def test_customer_can_download_portfolio_report_10987():
         assert True
 
 
-@allure.id("10988")
 @allure.feature("Investments")
 @allure.title("Customer can filter assets")
 def test_customer_can_filter_assets_10988():
@@ -10882,7 +9894,6 @@ def test_customer_can_filter_assets_10988():
         assert True
 
 
-@allure.id("10989")
 @allure.feature("Investments")
 @allure.title("Customer can search asset")
 def test_customer_can_search_asset_10989():
@@ -10893,7 +9904,6 @@ def test_customer_can_search_asset_10989():
         assert True
 
 
-@allure.id("10990")
 @allure.feature("Investments")
 @allure.title("Customer can view asset details")
 def test_customer_can_view_asset_details_10990():
@@ -10904,7 +9914,6 @@ def test_customer_can_view_asset_details_10990():
         assert True
 
 
-@allure.id("10991")
 @allure.feature("Support")
 @allure.title("Customer can create support ticket")
 def test_customer_can_create_support_ticket_10991():
@@ -10915,7 +9924,6 @@ def test_customer_can_create_support_ticket_10991():
         assert True
 
 
-@allure.id("10992")
 @allure.feature("Support")
 @allure.title("Customer can view ticket status")
 def test_customer_can_view_ticket_status_10992():
@@ -10926,7 +9934,6 @@ def test_customer_can_view_ticket_status_10992():
         assert True
 
 
-@allure.id("10993")
 @allure.feature("Support")
 @allure.title("Customer can add ticket comment")
 def test_customer_can_add_ticket_comment_10993():
@@ -10937,7 +9944,6 @@ def test_customer_can_add_ticket_comment_10993():
         assert True
 
 
-@allure.id("10994")
 @allure.feature("Support")
 @allure.title("Customer can close ticket")
 def test_customer_can_close_ticket_10994():
@@ -10948,7 +9954,6 @@ def test_customer_can_close_ticket_10994():
         assert True
 
 
-@allure.id("10995")
 @allure.feature("Support")
 @allure.title("Customer can reopen ticket")
 def test_customer_can_reopen_ticket_10995():
@@ -10959,7 +9964,6 @@ def test_customer_can_reopen_ticket_10995():
         assert True
 
 
-@allure.id("10996")
 @allure.feature("Support")
 @allure.title("Customer can upload attachment")
 def test_customer_can_upload_attachment_10996():
@@ -10970,7 +9974,6 @@ def test_customer_can_upload_attachment_10996():
         assert True
 
 
-@allure.id("10997")
 @allure.feature("Support")
 @allure.title("Customer can download attachment")
 def test_customer_can_download_attachment_10997():
@@ -10981,7 +9984,6 @@ def test_customer_can_download_attachment_10997():
         assert True
 
 
-@allure.id("10998")
 @allure.feature("Support")
 @allure.title("Customer can rate support request")
 def test_customer_can_rate_support_request_10998():
@@ -10992,7 +9994,6 @@ def test_customer_can_rate_support_request_10998():
         assert True
 
 
-@allure.id("10999")
 @allure.feature("Support")
 @allure.title("Customer can view support history")
 def test_customer_can_view_support_history_10999():
@@ -11003,7 +10004,6 @@ def test_customer_can_view_support_history_10999():
         assert True
 
 
-@allure.id("11000")
 @allure.feature("Support")
 @allure.title("Customer can contact support")
 def test_customer_can_contact_support_11000():

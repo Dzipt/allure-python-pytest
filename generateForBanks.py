@@ -151,7 +151,6 @@ for index in range(TOTAL_TESTS):
 
     lines.extend(
         [
-            f'@allure.id("{case_id}")',
             f'@allure.feature("{feature.title()}")',
             f'@allure.title("{title}")',
             f"def test_{scenario}_{case_id}():",
