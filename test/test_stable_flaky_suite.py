@@ -1,57 +1,53 @@
 import random
+import time
 
 import allure
 import pytest
 from allure_commons.types import Severity
 
 
-def _create_stable_pass_test(value: int):
-    def test_func():
-        allure.dynamic.id(f"stable_pass_{value}")
-        allure.dynamic.title(f"Stable passing test {value}")
-        with allure.step("Prepare test data"):
-            test_input = value
-        with allure.step("Compute expected output"):
-            expected = test_input + test_input
-        with allure.step("Validate result"):
-            assert expected == test_input * 2
-
-    test_func.__name__ = f"test_stable_pass_{value}"
-    return test_func
+def unstable_api_response() -> None:
+    if random.random() < 0.5:
+        pytest.fail("Flaky response: intermittent timeout or inconsistent payload")
 
 
-def _create_failure_test(value: int):
-    def test_func():
-        allure.dynamic.id(f"failed_{value}")
-        allure.dynamic.title(f"Deterministic failing test {value}")
-        with allure.step("Prepare failure condition"):
-            reason = f"Failed deterministic test number {value}"
-        with allure.step("Trigger failure"):
-            pytest.fail(reason)
-
-    test_func.__name__ = f"test_failed_{value}"
-    return test_func
+@pytest.mark.parametrize("value", list(range(1, 1001)))
+def test_stable_pass(value):
+    time.sleep(1)
+    assert value * 2 == value + value
 
 
-def _create_flaky_test(value: int):
-    def test_func():
-        allure.dynamic.id(f"flaky_{value}")
-        allure.dynamic.title(f"Flaky test {value}")
-        with allure.step("Run unstable check"):
-            if random.random() < 0.5:
-                pytest.fail(f"Flaky failure in test {value}")
-        with allure.step("Confirm stability"):
-            assert value > 0
-
-    test_func.__name__ = f"test_flaky_{value}"
-    return test_func
+@allure.title("Broken test: internal system error")
+@allure.severity(Severity.CRITICAL)
+def test_broken_internal_error():
+    raise RuntimeError("Broken: internal system error occurred")
 
 
-for value in range(1, 1001):
-    globals()[f"test_stable_pass_{value}"] = _create_stable_pass_test(value)
+@allure.title("Broken test: type conversion failure")
+@allure.severity(Severity.CRITICAL)
+def test_broken_type_error():
+    raise TypeError("Broken: invalid type conversion in test")
 
-for value in range(1, 41):
-    globals()[f"test_failed_{value}"] = _create_failure_test(value)
 
-for value in range(1, 11):
-    globals()[f"test_flaky_{value}"] = _create_flaky_test(value)
+@allure.title("Failed test: validation mismatch")
+@allure.severity(Severity.NORMAL)
+def test_failed_validation_mismatch():
+    pytest.fail("Failed: validation mismatch detected")
+
+
+@allure.title("Failed test: expected result not matched")
+@allure.severity(Severity.NORMAL)
+def test_failed_expected_result():
+    pytest.fail("Failed: expected result does not match actual output")
+
+
+@allure.title("Failed test: permission denied")
+@allure.severity(Severity.NORMAL)
+def test_failed_permission_denied():
+    pytest.fail("Failed: permission denied for action")
+
+
+@allure.title("Flaky test: intermittent API response")
+@allure.severity(Severity.MINOR)
+def test_flaky_intermittent_api_response():
+    unstable_api_response()
