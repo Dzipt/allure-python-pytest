@@ -36,6 +36,7 @@ env:
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
   ALLURE_RESULTS: "allure-results"
+  RUN_NUMBER: ${{ github.run_number }}
 
 jobs:
   stable_flaky_suite:
