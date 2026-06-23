@@ -129,6 +129,7 @@ FLAKY_TESTS = 10
 
 lines = [
     "import os",
+    "import time",
     "import pytest",
     "import allure",
     "",
@@ -149,13 +150,26 @@ for index in range(TOTAL_TESTS):
 
     title = scenario.replace("_", " ").capitalize()
 
+    # Средняя длительность ~3.6 сек
+    if feature in ("accounts", "cards"):
+        sleep_time = 1
+
+    elif feature in ("payments", "transfers", "loans"):
+        sleep_time = 3
+
+    else:
+        sleep_time = 5
+
     lines.extend(
         [
             f'@allure.feature("{feature.title()}")',
             f'@allure.title("{title}")',
             f"def test_{scenario}_{case_id}():",
             "    with allure.step('Prepare test data'):",
-            "        assert True",
+            f'        allure.attach("{case_id}", "Case ID", allure.attachment_type.TEXT)',
+            "",
+            "    with allure.step('Execute business operation'):",
+            f"        time.sleep({sleep_time})",
             "",
         ]
     )
@@ -194,3 +208,5 @@ Path("test_banking_demo.py").write_text(
 )
 
 print("Generated 1000 test cases")
+print("Expected duration: ~60 minutes")
+print("950 PASS / 40 FAIL / 10 FLAKY")

@@ -59,7 +59,7 @@ jobs:
         uses: allure-framework/setup-allurectl@v1
 
       - name: Run stable flaky test suite
-        run: allurectl watch -- pytest test/test_banking_demo.py --alluredir=${ALLURE_RESULTS} --capture=no
+        run: allurectl watch -- pytest test/test_banking_demo1.py --alluredir=${ALLURE_RESULTS} --capture=no
         env:
           ENDPOINT: ${{ github.event.inputs.ENDPOINT}}
           BROWSER: ${{ github.event.inputs.BROWSER}}
