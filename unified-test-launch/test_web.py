@@ -26,7 +26,6 @@ FORM_VALIDATIONS = [
 @allure.label("Team", "Web")
 class TestWebAuth:
 
-    @allure.id("web_001")
     @allure.title("Страница входа загружается и содержит форму авторизации")
     @allure.story("Авторизация в браузере")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -42,7 +41,6 @@ class TestWebAuth:
             form_elements = ["input[name='email']", "input[name='password']", "button[type='submit']"]
             assert len(form_elements) == 3
 
-    @allure.id("web_002")
     @allure.title("Успешная авторизация перенаправляет на дашборд")
     @allure.story("Авторизация в браузере")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -57,7 +55,6 @@ class TestWebAuth:
             current_url = "https://app.finapp.demo/dashboard"
             assert "/dashboard" in current_url
 
-    @allure.id("web_003")
     @allure.title("Валидация формы показывает корректные ошибки")
     @allure.story("Валидация формы входа")
     @allure.severity(allure.severity_level.NORMAL)
@@ -72,7 +69,6 @@ class TestWebAuth:
             with allure.step(f"Отображается ошибка: '{expected_error}'"):
                 assert error_message == expected_error
 
-    @allure.id("web_004")
     @allure.title("Веб-приложение работает в разных браузерах")
     @allure.story("Кросс-браузерность")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -85,7 +81,6 @@ class TestWebAuth:
             assert result["loaded"] is True
             assert result["js_errors"] == 0
 
-    @allure.id("web_005")
     @allure.title("Адаптивная вёрстка корректна на всех разрешениях")
     @allure.story("Адаптивный дизайн")
     @allure.severity(allure.severity_level.NORMAL)
@@ -108,7 +103,6 @@ class TestWebAuth:
 @allure.label("Team", "Web")
 class TestWebTransfer:
 
-    @allure.id("web_010")
     @allure.title("Форма перевода отображает актуальный баланс")
     @allure.story("Переводы через веб")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -121,7 +115,6 @@ class TestWebTransfer:
             displayed = {"balance": balance, "currency": "₽"}
             assert displayed["balance"] == balance
 
-    @allure.id("web_011")
     @allure.title("Перевод через веб-форму проходит успешно")
     @allure.story("Переводы через веб")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -135,7 +128,6 @@ class TestWebTransfer:
         with allure.step("Перевод выполнен"):
             assert result["status"] == "success"
 
-    @allure.id("web_012")
     @allure.title("Локализация интерфейса работает для всех поддерживаемых языков")
     @allure.story("Локализация")
     @allure.severity(allure.severity_level.MINOR)
@@ -155,7 +147,6 @@ class TestWebTransfer:
 @allure.label("Team", "Web")
 class TestWebFlaky:
 
-    @allure.id("web_flaky_001")
     @allure.title("Страница дашборда загружается за < 2 сек (нестабильно)")
     @allure.story("Производительность")
     @allure.severity(allure.severity_level.NORMAL)
@@ -166,7 +157,6 @@ class TestWebFlaky:
         with allure.step(f"Время загрузки: {load_ms}ms (лимит: 1500ms)"):
             assert load_ms < 1500, f"Медленная загрузка дашборда: {load_ms}ms"
 
-    @allure.id("web_flaky_002")
     @allure.title("WebSocket соединение для котировок устанавливается (нестабильно)")
     @allure.story("Котировки в реальном времени")
     @allure.severity(allure.severity_level.NORMAL)
@@ -176,3 +166,4 @@ class TestWebFlaky:
             connected = random.choice([True, True, True, False, True, False, True])
         with allure.step("Соединение установлено"):
             assert connected, "WebSocket не подключился (нестабильность сети)"
+

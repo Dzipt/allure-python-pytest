@@ -14,7 +14,6 @@ SCREEN_SIZES = ["360x800", "390x844", "412x915", "480x1040"]
 @allure.label("Team", "Android")
 class TestAndroidAuth:
 
-    @allure.id("and_001")
     @allure.title("Экран входа отображается корректно при первом запуске")
     @allure.story("Авторизация на Android")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -30,7 +29,6 @@ class TestAndroidAuth:
             elements = ["et_email", "et_password", "btn_login", "tv_forgot_password"]
             assert len(elements) == 4
 
-    @allure.id("and_002")
     @allure.title("Fingerprint-аутентификация выполняется успешно")
     @allure.story("Биометрическая авторизация")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -47,7 +45,6 @@ class TestAndroidAuth:
             activity = {"name": "MainActivity", "visible": True}
             assert activity["visible"] is True
 
-    @allure.id("and_003")
     @allure.title("Приложение работает на разных устройствах Android")
     @allure.story("Совместимость устройств")
     @allure.severity(allure.severity_level.NORMAL)
@@ -61,7 +58,6 @@ class TestAndroidAuth:
             assert result["anr"] is False
             assert result["crash"] is False
 
-    @allure.id("and_004")
     @allure.title("Приложение поддерживает все целевые версии Android")
     @allure.story("Совместимость ОС")
     @allure.severity(allure.severity_level.NORMAL)
@@ -73,7 +69,6 @@ class TestAndroidAuth:
         with allure.step("Приложение совместимо"):
             assert result["compatible"] is True
 
-    @allure.id("and_005")
     @allure.title("Адаптивная вёрстка корректна на разных разрешениях")
     @allure.story("Адаптивность")
     @allure.severity(allure.severity_level.MINOR)
@@ -86,8 +81,7 @@ class TestAndroidAuth:
             assert result["overflow"] is False
             assert result["clipped"] is False
 
-    @allure.id("and_006")
-    @allure.title("Deep link на экран перевода открывается корректно")
+    @allure.title("Deep link на экран перевода открыается корректно")
     @allure.story("Deep links")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.tag("regression", "android", "deeplink")
@@ -99,7 +93,6 @@ class TestAndroidAuth:
             activity = {"name": "TransferActivity", "visible": True}
             assert activity["visible"] is True
 
-    @allure.id("and_007")
     @allure.title("Push-уведомление о переводе открывает нужный экран")
     @allure.story("Push-уведомления")
     @allure.severity(allure.severity_level.NORMAL)
@@ -122,7 +115,6 @@ class TestAndroidAuth:
 @allure.label("Team", "Android")
 class TestAndroidFlaky:
 
-    @allure.id("and_flaky_001")
     @allure.title("Время запуска приложения до первого экрана < 2 сек (нестабильно)")
     @allure.story("Производительность")
     @allure.severity(allure.severity_level.MINOR)
@@ -133,7 +125,6 @@ class TestAndroidFlaky:
         with allure.step(f"Время запуска: {launch_ms}ms (лимит: 1500ms)"):
             assert launch_ms < 1500, f"Медленный холодный старт: {launch_ms}ms"
 
-    @allure.id("and_flaky_002")
     @allure.title("Синхронизация баланса после перевода < 3 сек (нестабильно)")
     @allure.story("Синхронизация данных")
     @allure.severity(allure.severity_level.NORMAL)

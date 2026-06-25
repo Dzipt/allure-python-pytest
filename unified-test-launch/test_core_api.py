@@ -15,7 +15,6 @@ CARD_MASKS = ["4111", "5500", "3782", "6011"]
 @allure.label("Team", "core-api")
 class TestTransfers:
 
-    @allure.id("core_001")
     @allure.title("Перевод между счетами выполняется успешно")
     @allure.story("Внутренние переводы")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -33,7 +32,6 @@ class TestTransfers:
             new_balance = sender_balance - amount
             assert new_balance == sender_balance - amount
 
-    @allure.id("core_002")
     @allure.title("Перевод с недостаточным балансом отклоняется")
     @allure.story("Внутренние переводы")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -47,7 +45,6 @@ class TestTransfers:
             assert response["status"] == "rejected"
             assert response["reason"] == "insufficient_funds"
 
-    @allure.id("core_003")
     @allure.title("Перевод на разные суммы выполняется корректно")
     @allure.story("Внутренние переводы")
     @allure.severity(allure.severity_level.NORMAL)
@@ -59,7 +56,6 @@ class TestTransfers:
         with allure.step("Сумма в транзакции корректна"):
             assert response["amount"] == amount
 
-    @allure.id("core_004")
     @allure.title("Перевод с отрицательной суммой отклоняется")
     @allure.story("Валидация переводов")
     @allure.severity(allure.severity_level.NORMAL)
@@ -71,7 +67,6 @@ class TestTransfers:
         with allure.step("Запрос отклонён с ошибкой валидации"):
             assert response["status"] == 400
 
-    @allure.id("core_005")
     @allure.title("Мультивалютный перевод конвертирует корректно")
     @allure.story("Валютные переводы")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -92,7 +87,6 @@ class TestTransfers:
 @allure.label("Team", "core-api")
 class TestAuthentication:
 
-    @allure.id("core_010")
     @allure.title("Авторизация по логину и паролю возвращает JWT-токен")
     @allure.story("Вход в систему")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -107,7 +101,6 @@ class TestAuthentication:
         with allure.step("Время жизни токена указано"):
             assert response["expires_in"] > 0
 
-    @allure.id("core_011")
     @allure.title("Refresh токена выдаёт новый access token")
     @allure.story("Управление сессией")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -120,7 +113,6 @@ class TestAuthentication:
             assert response["token"] != old_token
             assert response["status"] == 200
 
-    @allure.id("core_012")
     @allure.title("Истёкший токен возвращает 401")
     @allure.story("Управление сессией")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -131,7 +123,6 @@ class TestAuthentication:
         with allure.step("Ответ 401 Unauthorized"):
             assert response["status"] == 401
 
-    @allure.id("core_013")
     @allure.title("Блокировка аккаунта после 5 неверных паролей")
     @allure.story("Защита от перебора")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -152,7 +143,6 @@ class TestAuthentication:
 @allure.label("Team", "core-api")
 class TestAccounts:
 
-    @allure.id("core_020")
     @allure.title("Получение баланса счёта возвращает актуальные данные")
     @allure.story("Просмотр счетов")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -165,7 +155,6 @@ class TestAccounts:
         with allure.step("Валюта указана"):
             assert response["currency"] == "RUB"
 
-    @allure.id("core_021")
     @allure.title("История транзакций возвращает записи в хронологическом порядке")
     @allure.story("История операций")
     @allure.severity(allure.severity_level.NORMAL)
@@ -181,7 +170,6 @@ class TestAccounts:
             dates = [t["date"] for t in transactions]
             assert dates == sorted(dates, reverse=True)
 
-    @allure.id("core_022")
     @allure.title("Открытие счёта разных типов выполняется успешно")
     @allure.story("Управление счетами")
     @allure.severity(allure.severity_level.NORMAL)
@@ -193,3 +181,4 @@ class TestAccounts:
         with allure.step("Счёт открыт и активен"):
             assert account["status"] == "active"
             assert account["type"] == account_type
+

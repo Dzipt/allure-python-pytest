@@ -16,7 +16,6 @@ TIMEFRAMES = ["1m", "5m", "15m", "1h", "4h", "1d"]
 @allure.label("Team", "trading")
 class TestOrders:
 
-    @allure.id("trd_001")
     @allure.title("Рыночная заявка на покупку исполняется немедленно")
     @allure.story("Выставление заявок")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -31,7 +30,6 @@ class TestOrders:
         with allure.step("Количество исполнено полностью"):
             assert result["filled_qty"] == order["qty"]
 
-    @allure.id("trd_002")
     @allure.title("Лимитная заявка выставляется и ожидает исполнения")
     @allure.story("Выставление заявок")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -46,7 +44,6 @@ class TestOrders:
         with allure.step("Order ID присвоен"):
             assert result["order_id"].startswith("ORD-")
 
-    @allure.id("trd_003")
     @allure.title("Заявка на разные инструменты принимается")
     @allure.story("Выставление заявок")
     @allure.severity(allure.severity_level.NORMAL)
@@ -58,7 +55,6 @@ class TestOrders:
         with allure.step("Заявка принята"):
             assert response["status"] == "accepted"
 
-    @allure.id("trd_004")
     @allure.title("Все типы заявок принимаются системой")
     @allure.story("Типы заявок")
     @allure.severity(allure.severity_level.NORMAL)
@@ -70,7 +66,6 @@ class TestOrders:
         with allure.step("Тип заявки поддерживается"):
             assert response["status"] == "accepted"
 
-    @allure.id("trd_005")
     @allure.title("Отмена активной заявки выполняется успешно")
     @allure.story("Управление заявками")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -92,7 +87,6 @@ class TestOrders:
 @allure.label("Team", "trading")
 class TestPortfolio:
 
-    @allure.id("trd_010")
     @allure.title("Стоимость портфеля рассчитывается корректно")
     @allure.story("Портфель")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -103,7 +97,6 @@ class TestPortfolio:
         with allure.step("Стоимость рассчитана и положительна"):
             assert response["portfolio_value"] > 0
 
-    @allure.id("trd_011")
     @allure.title("Доходность позиции рассчитывается с учётом комиссий")
     @allure.story("Аналитика портфеля")
     @allure.severity(allure.severity_level.NORMAL)
@@ -118,7 +111,6 @@ class TestPortfolio:
         with allure.step("Чистый P&L меньше валового на размер комиссии"):
             assert net_pnl == gross_pnl - commission
 
-    @allure.id("trd_012")
     @allure.title("Исторические котировки возвращаются для всех таймфреймов")
     @allure.story("Котировки и графики")
     @allure.severity(allure.severity_level.NORMAL)
@@ -144,7 +136,6 @@ class TestTradingFlaky:
     Имитируют флаки при интеграции с биржей.
     """
 
-    @allure.id("trd_flaky_001")
     @allure.title("Котировки обновляются в течение 1 секунды (нестабильно)")
     @allure.story("Котировки и графики")
     @allure.severity(allure.severity_level.NORMAL)
@@ -157,7 +148,6 @@ class TestTradingFlaky:
         with allure.step(f"Задержка обновления: {latency_ms}ms (лимит: 500ms)"):
             assert latency_ms < 500, f"Задержка биржи: {latency_ms}ms"
 
-    @allure.id("trd_flaky_002")
     @allure.title("Рыночная заявка исполняется в течение 200ms (нестабильно)")
     @allure.story("Выставление заявок")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -169,3 +159,4 @@ class TestTradingFlaky:
             exec_ms = random.choice([45, 62, 38, 350, 71, 420, 55, 88])
         with allure.step(f"Время исполнения: {exec_ms}ms (лимит: 200ms)"):
             assert exec_ms < 200, f"Медленное исполнение: {exec_ms}ms"
+
