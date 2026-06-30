@@ -28,7 +28,7 @@ on:
 
 env:
   ALLURE_ENDPOINT: https://demo.qatools.cloud
-  ALLURE_PROJECT_ID: 566
+  ALLURE_PROJECT_ID: ${{ secrets.ALLURE_PROJECT_ID }}
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_RESULTS: allure-results
 
@@ -37,6 +37,8 @@ jobs:
   core-api:
     name: core-api tests
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: "${{ github.run_id }}-core-api"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -55,13 +57,14 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
-          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
           ALLURE_JOB_NAME: "FinApp — core-api"
           ALLURE_LAUNCH_NAME: "FinApp — core-api — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   trading:
     name: trading tests
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: "${{ github.run_id }}-trading"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -80,7 +83,6 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
-          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
           ALLURE_JOB_NAME: "FinApp — trading"
           ALLURE_LAUNCH_NAME: "FinApp — trading — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
@@ -88,6 +90,8 @@ jobs:
   ios:
     name: iOS tests
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: "${{ github.run_id }}-ios"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -106,13 +110,14 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
-          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
           ALLURE_JOB_NAME: "FinApp — iOS"
           ALLURE_LAUNCH_NAME: "FinApp — iOS — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   android:
     name: Android tests
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: "${{ github.run_id }}-android"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -131,13 +136,14 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
-          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
           ALLURE_JOB_NAME: "FinApp — Android"
           ALLURE_LAUNCH_NAME: "FinApp — Android — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   web:
     name: Web tests
     runs-on: ubuntu-latest
+    env:
+      GITHUB_RUN_ID: "${{ github.run_id }}-web"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -156,6 +162,5 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
-          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
           ALLURE_JOB_NAME: "FinApp — Web"
           ALLURE_LAUNCH_NAME: "FinApp — Web — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
