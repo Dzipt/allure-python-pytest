@@ -3,9 +3,9 @@ name: FinApp — Web
 on:
   workflow_dispatch:
     inputs:
-      ALLURE_JOB_RUN_ID:
-        description: "service parameter (leave blank)"
-        required: false
+    #   ALLURE_JOB_RUN_ID:
+    #     description: "service parameter (leave blank)"
+    #     required: false
       ALLURE_USERNAME:
         description: "service parameter (leave blank)"
         required: false
