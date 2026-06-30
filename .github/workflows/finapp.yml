@@ -9,10 +9,6 @@ on:
       ALLURE_USERNAME:
         description: "service parameter (leave blank)"
         required: false
-      PLATFORM:
-        description: "Platform to test"
-        required: false
-        default: "all"
       ENV:
         description: "Environment"
         required: false
@@ -34,7 +30,6 @@ env:
   ALLURE_ENDPOINT: https://demo.qatools.cloud
   ALLURE_PROJECT_ID: 566
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
-  ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
   ALLURE_RESULTS: allure-results
 
 jobs:
@@ -54,13 +49,15 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run core-api tests
-        run: allurectl watch -- pytest unified-test-launch/test_core_api.py -v --alluredir=allure-results
+        run: allurectl watch -- pytest tests/core_api/ -v --alluredir=allure-results
         env:
           PLATFORM: backend
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+          ALLURE_JOB_NAME: "FinApp — core-api"
+          ALLURE_LAUNCH_NAME: "FinApp — core-api — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   trading:
     name: trading tests
@@ -77,13 +74,15 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run trading tests
-        run: allurectl watch -- pytest unified-test-launch/test_trading.py -v --alluredir=allure-results
+        run: allurectl watch -- pytest tests/trading/ -v --alluredir=allure-results
         env:
           PLATFORM: backend
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+          ALLURE_JOB_NAME: "FinApp — trading"
+          ALLURE_LAUNCH_NAME: "FinApp — trading — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   # Клиентские команды
   ios:
@@ -101,13 +100,15 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run iOS tests
-        run: allurectl watch -- pytest unified-test-launch/test_ios.py -v --alluredir=allure-results
+        run: allurectl watch -- pytest tests/ios/ -v --alluredir=allure-results
         env:
           PLATFORM: iOS
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+          ALLURE_JOB_NAME: "FinApp — iOS"
+          ALLURE_LAUNCH_NAME: "FinApp — iOS — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   android:
     name: Android tests
@@ -124,13 +125,15 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run Android tests
-        run: allurectl watch -- pytest unified-test-launch/test_android.py -v --alluredir=allure-results
+        run: allurectl watch -- pytest tests/android/ -v --alluredir=allure-results
         env:
           PLATFORM: Android
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+          ALLURE_JOB_NAME: "FinApp — Android"
+          ALLURE_LAUNCH_NAME: "FinApp — Android — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   web:
     name: Web tests
@@ -147,10 +150,12 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run Web tests
-        run: allurectl watch -- pytest unified-test-launch/test_web.py -v --alluredir=allure-results
+        run: allurectl watch -- pytest tests/web/ -v --alluredir=allure-results
         env:
           PLATFORM: Web
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+          ALLURE_JOB_NAME: "FinApp — Web"
+          ALLURE_LAUNCH_NAME: "FinApp — Web — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
