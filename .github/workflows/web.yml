@@ -56,3 +56,4 @@ jobs:
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_LAUNCH_NAME: "FinApp — Web — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
+          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
