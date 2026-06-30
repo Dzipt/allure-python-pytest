@@ -28,7 +28,7 @@ on:
 
 env:
   ALLURE_ENDPOINT: https://demo.qatools.cloud
-  ALLURE_PROJECT_ID: ${{ secrets.ALLURE_PROJECT_ID }}
+  ALLURE_PROJECT_ID: 566
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_RESULTS: allure-results
 
