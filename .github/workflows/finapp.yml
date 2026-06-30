@@ -49,7 +49,7 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run core-api tests
-        run: allurectl watch -- pytest tests/core_api/ -v --alluredir=allure-results
+        run: allurectl watch -- pytest unified-test-launch/core_api/ -v --alluredir=allure-results
         env:
           PLATFORM: backend
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
@@ -74,7 +74,7 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run trading tests
-        run: allurectl watch -- pytest tests/trading/ -v --alluredir=allure-results
+        run: allurectl watch -- pytest unified-test-launch/trading/ -v --alluredir=allure-results
         env:
           PLATFORM: backend
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
@@ -100,7 +100,7 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run iOS tests
-        run: allurectl watch -- pytest tests/ios/ -v --alluredir=allure-results
+        run: allurectl watch -- pytest unified-test-launch/ios/ -v --alluredir=allure-results
         env:
           PLATFORM: iOS
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
@@ -125,7 +125,7 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run Android tests
-        run: allurectl watch -- pytest tests/android/ -v --alluredir=allure-results
+        run: allurectl watch -- pytest unified-test-launch/android/ -v --alluredir=allure-results
         env:
           PLATFORM: Android
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
@@ -150,7 +150,7 @@ jobs:
           wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
           chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
       - name: Run Web tests
-        run: allurectl watch -- pytest tests/web/ -v --alluredir=allure-results
+        run: allurectl watch -- pytest unified-test-launch/web/ -v --alluredir=allure-results
         env:
           PLATFORM: Web
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
