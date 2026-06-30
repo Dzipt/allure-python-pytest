@@ -58,6 +58,7 @@ jobs:
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_JOB_NAME: "FinApp — core-api"
+          ALLURE_JOB_UID: "finapp-core-api"
           ALLURE_LAUNCH_NAME: "FinApp — core-api — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   trading:
@@ -84,6 +85,7 @@ jobs:
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_JOB_NAME: "FinApp — trading"
+          ALLURE_JOB_UID: "finapp-trading"
           ALLURE_LAUNCH_NAME: "FinApp — trading — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
   # Клиентские команды
@@ -110,6 +112,7 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
+          ALLURE_JOB_UID: "finapp-ios"
           ALLURE_JOB_NAME: "FinApp — iOS"
           ALLURE_LAUNCH_NAME: "FinApp — iOS — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
@@ -136,6 +139,7 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
+          ALLURE_JOB_UID: "finapp-android"
           ALLURE_JOB_NAME: "FinApp — Android"
           ALLURE_LAUNCH_NAME: "FinApp — Android — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
 
@@ -162,5 +166,6 @@ jobs:
           ENV: ${{ github.event.inputs.ENV || 'staging' }}
           RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
+          ALLURE_JOB_UID: "finapp-web"
           ALLURE_JOB_NAME: "FinApp — Web"
           ALLURE_LAUNCH_NAME: "FinApp — Web — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
