@@ -1,0 +1,57 @@
+name: FinApp — core-api
+
+on:
+  workflow_dispatch:
+    inputs:
+      ALLURE_JOB_RUN_ID:
+        description: "service parameter (leave blank)"
+        required: false
+      ALLURE_USERNAME:
+        description: "service parameter (leave blank)"
+        required: false
+      ENV:
+        description: "Environment"
+        required: false
+        default: "staging"
+      RELEASE:
+        description: "Release version"
+        required: false
+        default: "1.0.0"
+      RUN_TYPE:
+        description: "Run type"
+        required: false
+        default: "regression"
+  schedule:
+    - cron: "0 */6 * * *"
+  push:
+    branches: [main]
+
+env:
+  ALLURE_ENDPOINT: https://demo.qatools.cloud
+  ALLURE_PROJECT_ID: 566
+  ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
+  ALLURE_RESULTS: allure-results
+
+jobs:
+  test:
+    name: core-api tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Install allurectl
+        run: |
+          wget -q https://github.com/allure-framework/allurectl/releases/latest/download/allurectl_linux_amd64 -O allurectl
+          chmod +x allurectl && sudo mv allurectl /usr/local/bin/allurectl
+      - name: Run core-api tests
+        run: allurectl watch -- pytest unified-test-launch/core_api/ -v --alluredir=allure-results
+        env:
+          PLATFORM: backend
+          ENV: ${{ github.event.inputs.ENV || 'staging' }}
+          RELEASE: ${{ github.event.inputs.RELEASE || '1.0.0' }}
+          RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
+          ALLURE_LAUNCH_NAME: "FinApp — core-api — ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
