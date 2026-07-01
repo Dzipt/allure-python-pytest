@@ -21,10 +21,7 @@ on:
         description: "Run type"
         required: false
         default: "regression"
-  schedule:
-    - cron: "0 */6 * * *"
-  push:
-    branches: [main]
+
 
 env:
   ALLURE_ENDPOINT: https://demo.qatools.cloud
