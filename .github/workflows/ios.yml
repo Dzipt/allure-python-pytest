@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       ALLURE_JOB_RUN_ID:
-        description: "service parameter (leave blank)"
+        description: ALLURE_JOB_RUN_ID - service parameter (leave blank)
         required: false
       ALLURE_USERNAME:
-        description: "service parameter (leave blank)"
+        description: ALLURE_USERNAME service parameter. Leave blank
         required: false
       ENV:
         description: "Environment"
@@ -22,10 +22,10 @@ on:
         required: false
         default: "regression"
 
-
 env:
   ALLURE_ENDPOINT: https://demo.qatools.cloud
   ALLURE_PROJECT_ID: 566
+  ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
   ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
   ALLURE_RESULTS: allure-results
 
