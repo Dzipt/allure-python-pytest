@@ -9,7 +9,7 @@ import pytest
 @allure.parent_suite("Release candidate")
 @allure.suite("Mobile")
 class TestMobileRelease:
-    @allure.id("TDS-MOB-001")
+    @allure.label("external_id", "TDS-MOB-001")
     @allure.title("Mobile app opens saved cart from push notification")
     @allure.story("Push notifications")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -28,7 +28,7 @@ class TestMobileRelease:
             current_screen = "Cart"
             assert current_screen == "Cart"
 
-    @allure.id("TDS-MOB-002")
+    @allure.label("external_id", "TDS-MOB-002")
     @allure.title("Flaky demo: biometric confirmation succeeds on repeat run")
     @allure.story("Biometric confirmation")
     @allure.severity(allure.severity_level.NORMAL)

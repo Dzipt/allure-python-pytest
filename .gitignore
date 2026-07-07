@@ -1,6 +1,9 @@
 .allure
 schema
+__pycache__/
+*/__pycache__/
 allure-results/
+verify-testops-results*/
 pytest-cache-files-*/
 /*/allure-results/
 out

@@ -12,7 +12,7 @@ import pytest
 @allure.parent_suite("Automated regression")
 @allure.suite("API")
 class TestCheckoutApi:
-    @allure.id("TDS-API-001")
+    @allure.label("external_id", "TDS-API-001")
     @allure.title("Checkout quote is created for a loyal customer")
     @allure.story("Quote calculation")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -55,7 +55,7 @@ class TestCheckoutApi:
             assert response["discount"] == 739
             assert response["total"] == 6651
 
-    @allure.id("TDS-API-002")
+    @allure.label("external_id", "TDS-API-002")
     @allure.title("Payment authorization is rejected when fraud score is high")
     @allure.story("Payment authorization")
     @allure.severity(allure.severity_level.BLOCKER)
@@ -85,7 +85,7 @@ class TestCheckoutApi:
             )
             assert decision["status"] == "approved", "Payment must be approved for gold customers"
 
-    @allure.id("TDS-API-003")
+    @allure.label("external_id", "TDS-API-003")
     @allure.title("Delivery partner contract contains required fields")
     @allure.story("Partner integration")
     @allure.severity(allure.severity_level.NORMAL)
@@ -111,7 +111,7 @@ class TestCheckoutApi:
                     f"Partner payload from {demo_context['environment']} does not contain courier data"
                 )
 
-    @allure.id("TDS-API-004")
+    @allure.label("external_id", "TDS-API-004")
     @allure.title("Catalog search response time stays below SLA")
     @allure.story("Catalog search")
     @allure.severity(allure.severity_level.NORMAL)

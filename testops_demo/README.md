@@ -9,6 +9,10 @@ readable and predictable during a live demo.
 - automated API, UI, and mobile tests in one launch;
 - 250+ collected pytest cases across generated regression and curated examples;
 - Allure labels: epic, feature, story, suite, owner, severity, tags, issue links;
+- unique pytest test functions for generated cases, so TestOps receives stable
+  `fullName` / `testCaseId` values instead of one parameterized autotest;
+- no fake `allure.id` values; demo IDs are sent as `external_id` labels so
+  TestOps can create/link autotests from stable code identities first;
 - attachments: JSON request/response, text browser state, CSV metrics;
 - result variety: passed, failed, broken, skipped manual case, and a controlled flaky demo;
 - parameterized tests for catalog filters;

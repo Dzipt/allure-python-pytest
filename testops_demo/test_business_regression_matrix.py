@@ -119,13 +119,13 @@ def case_marks(case):
     return marks
 
 
-def case_param(case):
-    return pytest.param(case, id=case["id"], marks=case_marks(case))
+def apply_case_marks(test_func, case):
+    for mark in reversed(case_marks(case)):
+        test_func = mark(test_func)
+    return test_func
 
 
-@pytest.mark.parametrize("case", [case_param(case) for case in REGRESSION_CASES])
-def test_business_regression_matrix(case, demo_context):
-    allure.dynamic.id(case["id"])
+def run_business_case(case, demo_context):
     allure.dynamic.title(case["title"])
     allure.dynamic.epic("QATools Demo Shop")
     allure.dynamic.feature(case["domain"])
@@ -133,6 +133,7 @@ def test_business_regression_matrix(case, demo_context):
     allure.dynamic.parent_suite("Generated regression")
     allure.dynamic.suite(case["layer"].upper())
     allure.dynamic.severity(case["severity"])
+    allure.dynamic.label("external_id", case["id"])
     allure.dynamic.label("owner", case["owner"])
     allure.dynamic.label("layer", case["layer"])
     allure.dynamic.label("risk", case["risk"])
@@ -184,3 +185,16 @@ def test_business_regression_matrix(case, demo_context):
         if case["outcome"] == "flaky" and demo_context["run_variant"] == "1":
             pytest.fail(f"Controlled flaky failure in {case['id']}: retry should pass")
         assert actual["status"] == "ok"
+
+
+def make_business_test(case):
+    def test_case(demo_context):
+        run_business_case(case, demo_context)
+
+    test_case.__name__ = f"test_{case['id'].lower().replace('-', '_')}"
+    test_case.__doc__ = case["title"]
+    return apply_case_marks(test_case, case)
+
+
+for regression_case in REGRESSION_CASES:
+    globals()[f"test_{regression_case['id'].lower().replace('-', '_')}"] = make_business_test(regression_case)

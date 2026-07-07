@@ -9,7 +9,7 @@ import pytest
 @allure.parent_suite("Automated regression")
 @allure.suite("Web UI")
 class TestCustomerWebJourney:
-    @allure.id("TDS-UI-001")
+    @allure.label("external_id", "TDS-UI-001")
     @allure.title("Guest sees personalized landing page after sign in")
     @allure.story("Authentication")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -28,21 +28,34 @@ class TestCustomerWebJourney:
             header = "Welcome back, gold customer"
             assert "gold customer" in header
 
-    @allure.id("TDS-UI-002")
-    @allure.title("Search results can be filtered by brand and price")
+    @allure.label("external_id", "TDS-UI-002")
+    @allure.title("Search results can be filtered by QATools brand and price")
     @allure.story("Product discovery")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "web-team")
     @allure.tag("regression", "ui", "search")
-    @pytest.mark.parametrize(
-        ("brand", "max_price", "expected_count"),
-        [
-            ("QATools", 5000, 4),
-            ("Allure", 8000, 7),
-            ("TestOps", 10000, 3),
-        ],
-    )
-    def test_search_filters(self, brand, max_price, expected_count):
+    def test_search_filters_qatools_brand(self):
+        self.check_search_filters("QATools", 5000, 4)
+
+    @allure.label("external_id", "TDS-UI-003")
+    @allure.title("Search results can be filtered by Allure brand and price")
+    @allure.story("Product discovery")
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.label("owner", "web-team")
+    @allure.tag("regression", "ui", "search")
+    def test_search_filters_allure_brand(self):
+        self.check_search_filters("Allure", 8000, 7)
+
+    @allure.label("external_id", "TDS-UI-004")
+    @allure.title("Search results can be filtered by TestOps brand and price")
+    @allure.story("Product discovery")
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.label("owner", "web-team")
+    @allure.tag("regression", "ui", "search")
+    def test_search_filters_testops_brand(self):
+        self.check_search_filters("TestOps", 10000, 3)
+
+    def check_search_filters(self, brand, max_price, expected_count):
         allure.dynamic.parameter("brand", brand)
         allure.dynamic.parameter("max_price", max_price)
 
@@ -57,7 +70,7 @@ class TestCustomerWebJourney:
         with allure.step("Verify filtered result count"):
             assert filtered_count > 0
 
-    @allure.id("TDS-UI-003")
+    @allure.label("external_id", "TDS-UI-005")
     @allure.title("Manual check: product card visual layout on desktop and mobile")
     @allure.manual(True)
     @allure.story("Visual quality")
