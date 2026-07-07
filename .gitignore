@@ -5,6 +5,7 @@ __pycache__/
 allure-results/
 verify-testops-results*/
 verify-russian-results*/
+verify-testops-no-duplicates*/
 pytest-cache-files-*/
 /*/allure-results/
 out

@@ -258,34 +258,53 @@ OUTCOME_TAGS = {
     "manual": "ручной",
 }
 
+CONTEXTS = [
+    "для нового покупателя из Москвы",
+    "для постоянного покупателя с уровнем Золотой",
+    "для гостевой сессии без сохраненного адреса",
+    "для покупателя из Санкт-Петербурга",
+    "для заказа с курьерской доставкой",
+    "для заказа с самовывозом из пункта выдачи",
+    "для товара с ограниченным остатком",
+    "для товара со скидкой по акции",
+    "для корзины с несколькими поставщиками",
+    "для мобильного приложения на Android",
+    "для мобильного приложения на iOS",
+    "для пользователя с неподтвержденным email",
+    "для клиента с включенными маркетинговыми согласиями",
+    "для клиента, отказавшегося от рассылок",
+    "для заказа с частичной оплатой бонусами",
+    "для заказа с промокодом на доставку",
+    "для ночного регламентного пересчета",
+    "для повторного запроса после временной ошибки",
+    "для товара из категории Электроника",
+    "для товара из категории Одежда",
+    "для клиента с корпоративным email",
+    "для сценария после очистки cookie",
+    "для заказа, переданного в сборку",
+    "для возврата одной позиции из заказа",
+    "для клиента с сохраненной банковской картой",
+    "для клиента без сохраненных способов оплаты",
+    "для региона с ограниченной доставкой",
+    "для витрины с включенным A/B-тестом",
+    "для первого запуска после релиза",
+    "для повторного запуска после исправления дефекта",
+]
+
 
 def build_description(case):
-    return f"""
-    ### Цель проверки
-    Убедиться, что сценарий "{case["action"]}" работает корректно для витрины QATools Demo Shop.
-
-    ### Предусловия
-    1. Тестовый стенд доступен и использует релиз `{case["release_hint"]}`.
-    2. В системе есть покупатель `{case["customer"]}` с подтвержденным телефоном и email.
-    3. Подготовлены тестовые товары, складские остатки и настройки программы лояльности.
-
-    ### Шаги
-    1. Открыть раздел "{case["domain"]}".
-    2. Выполнить действие: {case["action"].lower()}.
-    3. Проверить ответ сервиса или состояние интерфейса.
-    4. Убедиться, что данные сохранились и доступны в связанных системах.
-
-    ### Ожидаемый результат
-    {case["expected"]}
-
-    ### Постусловия
-    Созданные заказы, начисления и уведомления помечаются как демонстрационные.
-    """
+    return (
+        f"Проверка сценария «{case['action']}» {case['context']} в разделе "
+        f"«{case['domain']}». Кейс нужен для контроля критичного покупательского "
+        f"пути на релизе {case['release_hint']} и проверки согласованности данных "
+        "между витриной, backend-сервисами и связанными системами."
+    )
 
 
 def build_case(domain, number, global_number):
     story_name, actions = domain["stories"][(number - 1) % len(domain["stories"])]
     action = actions[(number - 1) % len(actions)]
+    context = CONTEXTS[(global_number - 1) % len(CONTEXTS)]
     severity_cycle = [
         allure.severity_level.CRITICAL,
         allure.severity_level.NORMAL,
@@ -307,10 +326,11 @@ def build_case(domain, number, global_number):
         "domain": domain["feature"],
         "story": story_name,
         "action": action,
+        "context": context,
         "owner": domain["owner"],
         "layer": domain["layer"],
         "severity": severity_cycle[number % len(severity_cycle)],
-        "title": action,
+        "title": f"{action} — {context}",
         "outcome": outcome,
         "global_number": global_number,
         "risk": "high" if outcome in {"failed", "broken"} else "medium",
@@ -319,6 +339,10 @@ def build_case(domain, number, global_number):
         "expected": (
             "Система выполняет бизнес-операцию без ошибок, показывает понятный результат пользователю "
             "и фиксирует изменения в связанных сервисах."
+        ),
+        "precondition": (
+            f"На стенде подготовлен пользователь {1000 + global_number}, тестовый товар, "
+            "складской остаток и необходимые настройки лояльности."
         ),
     }
     case["description"] = build_description(case)
@@ -380,6 +404,9 @@ def run_business_case(case, demo_context):
             "Раздел": case["domain"],
             "Сценарий": case["story"],
             "Действие": case["action"],
+            "Контекст": case["context"],
+            "Предусловие": case["precondition"],
+            "Ожидаемый результат": case["expected"],
             "Покупатель": case["customer"],
             "Стенд": demo_context["environment"],
             "Релиз": demo_context["release"],
@@ -396,12 +423,13 @@ def run_business_case(case, demo_context):
         with allure.step("Передать сценарий на ручное выполнение"):
             pytest.skip("Ручной демонстрационный сценарий: выполнить в TestOps")
 
-    with allure.step("Выполнить действие пользователя или системный запрос"):
+    with allure.step(f"Выполнить сценарий: {case['action'].lower()}"):
         actual = {
             "Статус": "успешно",
             "Время ответа, мс": 80 + (case["global_number"] % 90),
             "Трассировка": f"trace-{case['global_number']:05d}",
             "Сообщение пользователю": "Операция выполнена",
+            "Контекст обработки": case["context"],
         }
         allure.attach(
             json.dumps(actual, indent=2, ensure_ascii=False),
@@ -412,7 +440,7 @@ def run_business_case(case, demo_context):
         if case["outcome"] == "broken":
             raise RuntimeError(f"{case['id']}: сервис-поставщик вернул ответ без обязательных полей")
 
-    with allure.step("Сравнить фактический результат с ожидаемым"):
+    with allure.step("Проверить ожидаемый бизнес-результат"):
         if case["outcome"] == "failed":
             pytest.fail(f"{case['id']}: бизнес-правило выполнено некорректно")
         if case["outcome"] == "flaky" and demo_context["run_variant"] == "1":
