@@ -1,0 +1,79 @@
+name: TestOps Demo Suite
+
+on:
+  workflow_dispatch:
+    inputs:
+      ALLURE_JOB_RUN_ID:
+        description: "ALLURE_JOB_RUN_ID - service parameter (leave blank)"
+        required: false
+      ALLURE_USERNAME:
+        description: "ALLURE_USERNAME service parameter. Leave blank"
+        required: false
+      ENV:
+        description: "Environment"
+        required: false
+        default: "stage"
+      RELEASE:
+        description: "Release version"
+        required: false
+        default: "2026.07-demo"
+      RUN_TYPE:
+        description: "Run type"
+        required: false
+        default: "regression"
+      TESTOPS_DEMO_RUN:
+        description: "Use 1 for first red launch, 2 for repeat launch with flaky tests green"
+        required: false
+        default: "1"
+      PYTEST_ARGS:
+        description: "Additional pytest arguments"
+        required: false
+        default: ""
+
+env:
+  ALLURE_ENDPOINT: https://demo.qatools.cloud/
+  ALLURE_PROJECT_ID: 568
+  ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN }}
+  ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+  ALLURE_RESULTS: allure-results
+
+jobs:
+  testops_demo:
+    name: Run TestOps demo tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install allurectl
+        uses: allure-framework/setup-allurectl@v1
+
+      - name: Run TestOps demo suite
+        continue-on-error: true
+        run: |
+          allurectl watch -- pytest testops_demo/ -v --alluredir=${ALLURE_RESULTS} -p no:cacheprovider ${{ github.event.inputs.PYTEST_ARGS }}
+        env:
+          TESTOPS_DEMO_ENV: ${{ github.event.inputs.ENV || 'stage' }}
+          TESTOPS_DEMO_RELEASE: ${{ github.event.inputs.RELEASE || '2026.07-demo' }}
+          TESTOPS_DEMO_RUN: ${{ github.event.inputs.TESTOPS_DEMO_RUN || '1' }}
+          RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
+          ALLURE_LAUNCH_NAME: "TestOps demo - ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
+          ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
+          ALLURE_RESULTS: allure-results
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testops-demo-allure-results
+          path: ${{ env.ALLURE_RESULTS }}
+          if-no-files-found: warn
