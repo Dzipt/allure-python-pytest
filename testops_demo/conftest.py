@@ -20,7 +20,7 @@ def pytest_configure(config):
 def demo_context():
     run_variant = os.getenv("TESTOPS_DEMO_RUN", "1")
     context = {
-        "project": "QATools Demo Shop",
+        "project": "Демо-магазин QATools",
         "environment": os.getenv("TESTOPS_DEMO_ENV", "stage"),
         "release": os.getenv("TESTOPS_DEMO_RELEASE", "2026.07-demo"),
         "run_variant": run_variant,
@@ -29,8 +29,8 @@ def demo_context():
     allure.dynamic.label("environment", context["environment"])
     allure.dynamic.label("release", context["release"])
     allure.attach(
-        json.dumps(context, indent=2),
-        name="Demo launch context",
+        json.dumps(context, indent=2, ensure_ascii=False),
+        name="Контекст запуска",
         attachment_type=allure.attachment_type.JSON,
     )
     return context
@@ -41,12 +41,14 @@ def demo_user():
     user = {
         "id": "USR-1042",
         "email": "demo.customer@qatools.example",
-        "loyalty_tier": "gold",
+        "loyalty_tier": "Золотой",
         "cart_total": 7390,
+        "name": "Анна Смирнова",
+        "city": "Москва",
     }
     allure.attach(
-        json.dumps(user, indent=2),
-        name="Customer profile",
+        json.dumps(user, indent=2, ensure_ascii=False),
+        name="Профиль покупателя",
         attachment_type=allure.attachment_type.JSON,
     )
     return user

@@ -7,65 +7,285 @@ import pytest
 DOMAINS = [
     {
         "code": "AUTH",
-        "feature": "Authentication",
-        "stories": ["Registration", "Login", "Session refresh", "Password reset"],
-        "owner": "identity-team",
+        "feature": "Авторизация и профиль",
+        "stories": [
+            ("Регистрация покупателя", [
+                "Регистрация по номеру телефона с подтверждением SMS",
+                "Регистрация по email с подтверждением письма",
+                "Проверка запрета повторной регистрации",
+                "Создание профиля после принятия пользовательского соглашения",
+            ]),
+            ("Вход в личный кабинет", [
+                "Вход по телефону и одноразовому коду",
+                "Вход по email и паролю",
+                "Блокировка входа после нескольких неверных попыток",
+                "Восстановление сессии после обновления страницы",
+            ]),
+            ("Управление сессией", [
+                "Продление активной сессии при действиях пользователя",
+                "Завершение сессии после выхода из аккаунта",
+                "Отклонение запроса с просроченным access token",
+                "Обновление access token по refresh token",
+            ]),
+            ("Восстановление пароля", [
+                "Отправка ссылки восстановления на подтвержденный email",
+                "Запрет смены пароля по просроченной ссылке",
+                "Смена пароля с завершением старых сессий",
+                "Проверка сложности нового пароля",
+            ]),
+        ],
+        "owner": "Команда идентификации",
         "layer": "api",
         "count": 35,
     },
     {
         "code": "CAT",
-        "feature": "Catalog",
-        "stories": ["Search", "Filters", "Product details", "Recommendations"],
-        "owner": "catalog-team",
+        "feature": "Каталог товаров",
+        "stories": [
+            ("Поиск товаров", [
+                "Поиск товара по точному названию",
+                "Поиск товара с исправлением опечатки",
+                "Поиск по артикулу поставщика",
+                "Сортировка результатов по релевантности",
+            ]),
+            ("Фильтры и фасеты", [
+                "Фильтрация по бренду и диапазону цены",
+                "Комбинация фильтров категории, рейтинга и наличия",
+                "Сброс выбранных фильтров без потери поисковой строки",
+                "Отображение количества товаров в фасетах",
+            ]),
+            ("Карточка товара", [
+                "Отображение цены, скидки и срока доставки",
+                "Показ доступных размеров и цветов",
+                "Загрузка отзывов и рейтинга товара",
+                "Отображение предупреждения о малом остатке",
+            ]),
+            ("Рекомендации", [
+                "Показ похожих товаров на карточке",
+                "Персональные рекомендации для постоянного клиента",
+                "Исключение уже купленных товаров из блока рекомендаций",
+                "Рекомендации аксессуаров к выбранному товару",
+            ]),
+        ],
+        "owner": "Команда каталога",
         "layer": "api",
         "count": 45,
     },
     {
         "code": "CART",
-        "feature": "Cart",
-        "stories": ["Add item", "Remove item", "Promotions", "Inventory reservation"],
-        "owner": "cart-team",
+        "feature": "Корзина",
+        "stories": [
+            ("Добавление товара", [
+                "Добавление товара из карточки в пустую корзину",
+                "Увеличение количества уже добавленного товара",
+                "Добавление комплекта товаров одной кнопкой",
+                "Добавление товара с выбранным размером",
+            ]),
+            ("Редактирование корзины", [
+                "Удаление позиции из корзины",
+                "Изменение количества товара через степпер",
+                "Перенос товара из корзины в избранное",
+                "Очистка корзины с подтверждением действия",
+            ]),
+            ("Промокоды", [
+                "Применение действующего промокода",
+                "Отклонение промокода с истекшим сроком действия",
+                "Пересчет скидки после изменения состава корзины",
+                "Показ причины, почему промокод не применился",
+            ]),
+            ("Резервирование остатков", [
+                "Резервирование последнего товара на складе",
+                "Снятие резерва после удаления товара",
+                "Предупреждение о нехватке товара",
+                "Обновление остатка при возврате к корзине",
+            ]),
+        ],
+        "owner": "Команда корзины",
         "layer": "ui",
         "count": 35,
     },
     {
         "code": "CHK",
-        "feature": "Checkout",
-        "stories": ["Quote calculation", "Payment authorization", "Delivery selection", "Receipt"],
-        "owner": "checkout-team",
+        "feature": "Оформление заказа",
+        "stories": [
+            ("Расчет итоговой суммы", [
+                "Расчет скидки постоянного клиента",
+                "Пересчет доставки при смене города",
+                "Учет бонусных баллов в итоговой сумме",
+                "Округление копеек при оплате сертификатом",
+            ]),
+            ("Авторизация платежа", [
+                "Оплата сохраненной банковской картой",
+                "Отклонение платежа с высоким fraud score",
+                "Повторная попытка оплаты после отказа банка",
+                "Оплата заказа с частичным списанием бонусов",
+            ]),
+            ("Выбор доставки", [
+                "Выбор курьерской доставки на завтра",
+                "Выбор пункта выдачи на карте",
+                "Недоступность доставки для крупногабаритного товара",
+                "Сохранение выбранного интервала доставки",
+            ]),
+            ("Подтверждение заказа", [
+                "Создание заказа после успешной оплаты",
+                "Отправка чека на email покупателя",
+                "Показ номера заказа на странице успеха",
+                "Передача заказа в систему сборки",
+            ]),
+        ],
+        "owner": "Команда оформления заказа",
         "layer": "api",
         "count": 45,
     },
     {
         "code": "ORD",
-        "feature": "Orders",
-        "stories": ["Order creation", "Order status", "Cancellation", "Refund request"],
-        "owner": "orders-team",
+        "feature": "Заказы",
+        "stories": [
+            ("Создание заказа", [
+                "Создание заказа из оплаченной корзины",
+                "Запрет дубля заказа при повторном callback от банка",
+                "Фиксация цены товаров на момент оформления",
+                "Привязка заказа к программе лояльности",
+            ]),
+            ("Статусы заказа", [
+                "Переход заказа из статуса Новый в Сборка",
+                "Отображение трека доставки в личном кабинете",
+                "Обновление статуса после передачи в доставку",
+                "Скрытие внутренних статусов склада от клиента",
+            ]),
+            ("Отмена заказа", [
+                "Отмена заказа до начала сборки",
+                "Запрет отмены после передачи курьеру",
+                "Возврат бонусов после отмены заказа",
+                "Уведомление клиента об успешной отмене",
+            ]),
+            ("Возврат средств", [
+                "Создание заявки на возврат из личного кабинета",
+                "Частичный возврат по одной позиции заказа",
+                "Проверка статуса возврата после ответа банка",
+                "Формирование документа возврата",
+            ]),
+        ],
+        "owner": "Команда заказов",
         "layer": "api",
         "count": 35,
     },
     {
         "code": "LOY",
-        "feature": "Loyalty",
-        "stories": ["Points accrual", "Tier benefits", "Coupons", "Personal offers"],
-        "owner": "growth-team",
+        "feature": "Программа лояльности",
+        "stories": [
+            ("Начисление баллов", [
+                "Начисление баллов после доставки заказа",
+                "Отмена начисления при возврате товара",
+                "Начисление повышенных баллов по акции",
+                "Отложенное начисление после истечения периода возврата",
+            ]),
+            ("Уровни клиента", [
+                "Повышение уровня после достижения порога покупок",
+                "Сохранение уровня до конца расчетного периода",
+                "Пересчет привилегий после возврата крупного заказа",
+                "Показ преимуществ текущего уровня в профиле",
+            ]),
+            ("Купоны", [
+                "Активация персонального купона",
+                "Запрет повторного использования купона",
+                "Проверка срока действия купона",
+                "Списание купона после успешного заказа",
+            ]),
+            ("Персональные предложения", [
+                "Показ предложения на основе истории покупок",
+                "Скрытие предложения после отказа клиента",
+                "Применение персональной цены в корзине",
+                "Обновление предложения после смены города",
+            ]),
+        ],
+        "owner": "Команда роста",
         "layer": "api",
         "count": 25,
     },
     {
         "code": "NTF",
-        "feature": "Notifications",
-        "stories": ["Email", "Push", "SMS", "Marketing consent"],
-        "owner": "communications-team",
+        "feature": "Уведомления",
+        "stories": [
+            ("Email-уведомления", [
+                "Отправка письма с подтверждением заказа",
+                "Повторная отправка письма при временной ошибке провайдера",
+                "Подстановка имени клиента в шаблон письма",
+                "Не отправлять маркетинговые письма без согласия",
+            ]),
+            ("Push-уведомления", [
+                "Открытие корзины по push-уведомлению",
+                "Отправка push о смене статуса заказа",
+                "Не отправлять push после выхода из аккаунта",
+                "Локализация текста push по языку устройства",
+            ]),
+            ("SMS-уведомления", [
+                "Отправка SMS-кода для подтверждения телефона",
+                "Ограничение частоты повторной отправки SMS",
+                "Маскирование номера телефона в интерфейсе",
+                "Отправка SMS о прибытии заказа в пункт выдачи",
+            ]),
+            ("Согласия на коммуникации", [
+                "Сохранение согласия на маркетинговые рассылки",
+                "Отзыв согласия из личного кабинета",
+                "Синхронизация согласий с CRM",
+                "Аудит изменения согласий клиента",
+            ]),
+        ],
+        "owner": "Команда коммуникаций",
         "layer": "mobile",
         "count": 20,
     },
 ]
 
 
+LAYER_NAMES = {
+    "api": "API",
+    "ui": "Веб-интерфейс",
+    "mobile": "Мобильное приложение",
+}
+
+RISK_NAMES = {
+    "high": "высокий",
+    "medium": "средний",
+}
+
+OUTCOME_TAGS = {
+    "passed": "позитивный",
+    "failed": "дефект",
+    "broken": "ошибка-интеграции",
+    "flaky": "нестабильный",
+    "manual": "ручной",
+}
+
+
+def build_description(case):
+    return f"""
+    ### Цель проверки
+    Убедиться, что сценарий "{case["action"]}" работает корректно для витрины QATools Demo Shop.
+
+    ### Предусловия
+    1. Тестовый стенд доступен и использует релиз `{case["release_hint"]}`.
+    2. В системе есть покупатель `{case["customer"]}` с подтвержденным телефоном и email.
+    3. Подготовлены тестовые товары, складские остатки и настройки программы лояльности.
+
+    ### Шаги
+    1. Открыть раздел "{case["domain"]}".
+    2. Выполнить действие: {case["action"].lower()}.
+    3. Проверить ответ сервиса или состояние интерфейса.
+    4. Убедиться, что данные сохранились и доступны в связанных системах.
+
+    ### Ожидаемый результат
+    {case["expected"]}
+
+    ### Постусловия
+    Созданные заказы, начисления и уведомления помечаются как демонстрационные.
+    """
+
+
 def build_case(domain, number, global_number):
-    story = domain["stories"][(number - 1) % len(domain["stories"])]
+    story_name, actions = domain["stories"][(number - 1) % len(domain["stories"])]
+    action = actions[(number - 1) % len(actions)]
     severity_cycle = [
         allure.severity_level.CRITICAL,
         allure.severity_level.NORMAL,
@@ -82,18 +302,27 @@ def build_case(domain, number, global_number):
     elif global_number % 17 == 0:
         outcome = "failed"
 
-    return {
+    case = {
         "id": f"TDS-{domain['code']}-{number:03d}",
         "domain": domain["feature"],
-        "story": story,
+        "story": story_name,
+        "action": action,
         "owner": domain["owner"],
         "layer": domain["layer"],
         "severity": severity_cycle[number % len(severity_cycle)],
-        "title": f"{domain['feature']}: {story.lower()} scenario #{number:03d}",
+        "title": action,
         "outcome": outcome,
         "global_number": global_number,
         "risk": "high" if outcome in {"failed", "broken"} else "medium",
+        "customer": f"Покупатель DEMO-{1000 + global_number}",
+        "release_hint": "2026.07-demo",
+        "expected": (
+            "Система выполняет бизнес-операцию без ошибок, показывает понятный результат пользователю "
+            "и фиксирует изменения в связанных сервисах."
+        ),
     }
+    case["description"] = build_description(case)
+    return case
 
 
 def build_cases():
@@ -127,64 +356,68 @@ def apply_case_marks(test_func, case):
 
 def run_business_case(case, demo_context):
     allure.dynamic.title(case["title"])
-    allure.dynamic.epic("QATools Demo Shop")
+    allure.dynamic.description(case["description"])
+    allure.dynamic.epic("Интернет-магазин QATools")
     allure.dynamic.feature(case["domain"])
     allure.dynamic.story(case["story"])
-    allure.dynamic.parent_suite("Generated regression")
-    allure.dynamic.suite(case["layer"].upper())
+    allure.dynamic.parent_suite("Регрессионная проверка")
+    allure.dynamic.suite(LAYER_NAMES[case["layer"]])
     allure.dynamic.severity(case["severity"])
     allure.dynamic.label("external_id", case["id"])
     allure.dynamic.label("owner", case["owner"])
     allure.dynamic.label("layer", case["layer"])
-    allure.dynamic.label("risk", case["risk"])
-    allure.dynamic.tag("generated", "regression", case["layer"], case["outcome"])
+    allure.dynamic.label("risk", RISK_NAMES[case["risk"]])
+    allure.dynamic.tag("демо", "регресс", LAYER_NAMES[case["layer"]], OUTCOME_TAGS[case["outcome"]])
 
     if case["outcome"] == "failed":
-        allure.dynamic.issue(f"BUG-{case['global_number']:04d}", "Known demo defect")
+        allure.dynamic.issue(f"BUG-{case['global_number']:04d}", "Демонстрационный дефект")
     if case["outcome"] == "manual":
         allure.dynamic.manual()
 
-    with allure.step("Prepare business scenario"):
+    with allure.step("Подготовить данные для бизнес-сценария"):
         scenario = {
-            "caseId": case["id"],
-            "feature": case["domain"],
-            "story": case["story"],
-            "environment": demo_context["environment"],
-            "release": demo_context["release"],
-            "owner": case["owner"],
-            "layer": case["layer"],
+            "Идентификатор": case["id"],
+            "Раздел": case["domain"],
+            "Сценарий": case["story"],
+            "Действие": case["action"],
+            "Покупатель": case["customer"],
+            "Стенд": demo_context["environment"],
+            "Релиз": demo_context["release"],
+            "Ответственный": case["owner"],
+            "Слой": LAYER_NAMES[case["layer"]],
         }
         allure.attach(
-            json.dumps(scenario, indent=2),
-            name="Scenario metadata",
+            json.dumps(scenario, indent=2, ensure_ascii=False),
+            name="Данные сценария",
             attachment_type=allure.attachment_type.JSON,
         )
 
     if case["outcome"] == "manual":
-        with allure.step("Route case to manual execution"):
-            pytest.skip("Generated manual demo case: execute in TestOps")
+        with allure.step("Передать сценарий на ручное выполнение"):
+            pytest.skip("Ручной демонстрационный сценарий: выполнить в TestOps")
 
-    with allure.step("Execute simulated product behavior"):
+    with allure.step("Выполнить действие пользователя или системный запрос"):
         actual = {
-            "status": "ok",
-            "latencyMs": 80 + (case["global_number"] % 90),
-            "traceId": f"trace-{case['global_number']:05d}",
+            "Статус": "успешно",
+            "Время ответа, мс": 80 + (case["global_number"] % 90),
+            "Трассировка": f"trace-{case['global_number']:05d}",
+            "Сообщение пользователю": "Операция выполнена",
         }
         allure.attach(
-            json.dumps(actual, indent=2),
-            name="Execution result",
+            json.dumps(actual, indent=2, ensure_ascii=False),
+            name="Фактический результат",
             attachment_type=allure.attachment_type.JSON,
         )
 
         if case["outcome"] == "broken":
-            raise RuntimeError(f"Demo integration error in {case['id']}: upstream contract is unavailable")
+            raise RuntimeError(f"{case['id']}: сервис-поставщик вернул ответ без обязательных полей")
 
-    with allure.step("Verify business expectation"):
+    with allure.step("Сравнить фактический результат с ожидаемым"):
         if case["outcome"] == "failed":
-            pytest.fail(f"Demo assertion failure in {case['id']}: expected business rule was not met")
+            pytest.fail(f"{case['id']}: бизнес-правило выполнено некорректно")
         if case["outcome"] == "flaky" and demo_context["run_variant"] == "1":
-            pytest.fail(f"Controlled flaky failure in {case['id']}: retry should pass")
-        assert actual["status"] == "ok"
+            pytest.fail(f"{case['id']}: нестабильная ошибка таймаута, повторный запуск должен пройти")
+        assert actual["Статус"] == "успешно"
 
 
 def make_business_test(case):

@@ -4,54 +4,58 @@ import pytest
 
 @pytest.mark.testops_demo
 @pytest.mark.ui
-@allure.epic("QATools Demo Shop")
-@allure.feature("Customer web journey")
-@allure.parent_suite("Automated regression")
-@allure.suite("Web UI")
+@allure.epic("Интернет-магазин QATools")
+@allure.feature("Покупательский путь")
+@allure.parent_suite("Регрессионная проверка")
+@allure.suite("Веб-интерфейс")
 class TestCustomerWebJourney:
     @allure.label("external_id", "TDS-UI-001")
-    @allure.title("Guest sees personalized landing page after sign in")
-    @allure.story("Authentication")
+    @allure.title("Покупатель видит персонализированную главную страницу после входа")
+    @allure.description("""
+    Проверяем, что после авторизации покупатель попадает на главную страницу,
+    где отображаются его уровень лояльности и персональные предложения.
+    """)
+    @allure.story("Авторизация")
     @allure.severity(allure.severity_level.CRITICAL)
-    @allure.label("owner", "web-team")
-    @allure.tag("smoke", "ui")
+    @allure.label("owner", "Веб-команда")
+    @allure.tag("дымовой", "веб")
     def test_customer_lands_on_personalized_page(self, demo_user):
-        with allure.step("Open sign-in page and submit credentials"):
+        with allure.step("Открыть страницу входа и авторизоваться"):
             page_state = {
                 "url": "/login",
                 "user": demo_user["email"],
-                "result": "authenticated",
+                "result": "Пользователь авторизован",
             }
-            allure.attach(str(page_state), name="Browser state", attachment_type=allure.attachment_type.TEXT)
+            allure.attach(str(page_state), name="Состояние браузера", attachment_type=allure.attachment_type.TEXT)
 
-        with allure.step("Verify personalized landing page"):
-            header = "Welcome back, gold customer"
-            assert "gold customer" in header
+        with allure.step("Проверить персонализацию главной страницы"):
+            header = "Анна, ваш уровень лояльности: Золотой"
+            assert "Золотой" in header
 
     @allure.label("external_id", "TDS-UI-002")
-    @allure.title("Search results can be filtered by QATools brand and price")
-    @allure.story("Product discovery")
+    @allure.title("Фильтрация результатов поиска по бренду QATools и цене")
+    @allure.story("Поиск и фильтры")
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.label("owner", "web-team")
-    @allure.tag("regression", "ui", "search")
+    @allure.label("owner", "Веб-команда")
+    @allure.tag("регресс", "веб", "поиск")
     def test_search_filters_qatools_brand(self):
         self.check_search_filters("QATools", 5000, 4)
 
     @allure.label("external_id", "TDS-UI-003")
-    @allure.title("Search results can be filtered by Allure brand and price")
-    @allure.story("Product discovery")
+    @allure.title("Фильтрация результатов поиска по бренду Allure и цене")
+    @allure.story("Поиск и фильтры")
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.label("owner", "web-team")
-    @allure.tag("regression", "ui", "search")
+    @allure.label("owner", "Веб-команда")
+    @allure.tag("регресс", "веб", "поиск")
     def test_search_filters_allure_brand(self):
         self.check_search_filters("Allure", 8000, 7)
 
     @allure.label("external_id", "TDS-UI-004")
-    @allure.title("Search results can be filtered by TestOps brand and price")
-    @allure.story("Product discovery")
+    @allure.title("Фильтрация результатов поиска по бренду TestOps и цене")
+    @allure.story("Поиск и фильтры")
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.label("owner", "web-team")
-    @allure.tag("regression", "ui", "search")
+    @allure.label("owner", "Веб-команда")
+    @allure.tag("регресс", "веб", "поиск")
     def test_search_filters_testops_brand(self):
         self.check_search_filters("TestOps", 10000, 3)
 
@@ -59,39 +63,39 @@ class TestCustomerWebJourney:
         allure.dynamic.parameter("brand", brand)
         allure.dynamic.parameter("max_price", max_price)
 
-        with allure.step("Apply catalog filters"):
+        with allure.step("Применить фильтры каталога"):
             filtered_count = expected_count
             allure.attach(
                 f"brand={brand}\nmax_price={max_price}\ncount={filtered_count}",
-                name="Filter result",
+                name="Результат фильтрации",
                 attachment_type=allure.attachment_type.TEXT,
             )
 
-        with allure.step("Verify filtered result count"):
+        with allure.step("Проверить, что найден хотя бы один товар"):
             assert filtered_count > 0
 
     @allure.label("external_id", "TDS-UI-005")
-    @allure.title("Manual check: product card visual layout on desktop and mobile")
+    @allure.title("Ручная проверка карточки товара на десктопе и смартфоне")
     @allure.manual(True)
-    @allure.story("Visual quality")
+    @allure.story("Визуальное качество")
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.label("owner", "design-qa")
-    @allure.tag("manual", "visual", "ui")
+    @allure.label("owner", "Дизайн QA")
+    @allure.tag("ручной", "визуальный", "веб")
     @allure.description(
         """
-        Preconditions:
-        1. Open the staging storefront.
-        2. Use a customer account with gold loyalty tier.
+        Предусловия:
+        1. Открыта витрина тестового стенда.
+        2. Используется покупатель с уровнем лояльности "Золотой".
 
-        Steps:
-        1. Open a product card from search results.
-        2. Check product image, price, delivery date, favorite button, and add-to-cart button.
-        3. Repeat the check on 1440px, 768px, and 390px viewport widths.
+        Шаги:
+        1. Открыть карточку товара из результатов поиска.
+        2. Проверить изображение, цену, срок доставки, кнопку избранного и кнопку добавления в корзину.
+        3. Повторить проверку на ширинах 1440px, 768px и 390px.
 
-        Expected result:
-        Product card is readable, no controls overlap, and the add-to-cart action is visible.
+        Ожидаемый результат:
+        Карточка товара читается, элементы не перекрываются, действие добавления в корзину доступно.
         """
     )
-    @pytest.mark.skip(reason="Manual TestOps case: execute during exploratory session")
+    @pytest.mark.skip(reason="Ручной сценарий TestOps: выполнить в исследовательской сессии")
     def test_product_card_visual_layout_manual(self):
         pass

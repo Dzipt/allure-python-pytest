@@ -1,4 +1,4 @@
-name: TestOps Demo Suite
+name: Демо-набор TestOps
 
 on:
   workflow_dispatch:
@@ -22,11 +22,11 @@ on:
         required: false
         default: "regression"
       TESTOPS_DEMO_RUN:
-        description: "Use 1 for first red launch, 2 for repeat launch with flaky tests green"
+        description: "1 - первый красный запуск, 2 - повторный запуск с зелеными нестабильными тестами"
         required: false
         default: "1"
       PYTEST_ARGS:
-        description: "Additional pytest arguments"
+        description: "Дополнительные аргументы pytest"
         required: false
         default: ""
 
@@ -39,25 +39,25 @@ env:
 
 jobs:
   testops_demo:
-    name: Run TestOps demo tests
+    name: Запуск демо-тестов TestOps
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Настроить Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
+      - name: Установить зависимости
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install allurectl
+      - name: Установить allurectl
         uses: allure-framework/setup-allurectl@v1
 
-      - name: Run TestOps demo suite
+      - name: Запустить демо-набор TestOps
         continue-on-error: true
         run: |
           allurectl watch -- pytest testops_demo/ -v --alluredir=${ALLURE_RESULTS} -p no:cacheprovider ${{ github.event.inputs.PYTEST_ARGS }}
@@ -66,11 +66,11 @@ jobs:
           TESTOPS_DEMO_RELEASE: ${{ github.event.inputs.RELEASE || '2026.07-demo' }}
           TESTOPS_DEMO_RUN: ${{ github.event.inputs.TESTOPS_DEMO_RUN || '1' }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
-          ALLURE_LAUNCH_NAME: "TestOps demo - ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
+          ALLURE_LAUNCH_NAME: "Демо TestOps - ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
           ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}
           ALLURE_RESULTS: allure-results
 
-      - name: Upload Allure results
+      - name: Загрузить результаты Allure
         if: always()
         uses: actions/upload-artifact@v4
         with:

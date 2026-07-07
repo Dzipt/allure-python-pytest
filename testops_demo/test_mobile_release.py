@@ -4,44 +4,49 @@ import pytest
 
 @pytest.mark.testops_demo
 @pytest.mark.mobile
-@allure.epic("QATools Demo Shop")
-@allure.feature("Mobile checkout")
-@allure.parent_suite("Release candidate")
-@allure.suite("Mobile")
+@allure.epic("Интернет-магазин QATools")
+@allure.feature("Мобильное оформление заказа")
+@allure.parent_suite("Релиз-кандидат")
+@allure.suite("Мобильное приложение")
 class TestMobileRelease:
     @allure.label("external_id", "TDS-MOB-001")
-    @allure.title("Mobile app opens saved cart from push notification")
-    @allure.story("Push notifications")
+    @allure.title("Мобильное приложение открывает сохраненную корзину из push-уведомления")
+    @allure.description("Проверяем диплинк из push-уведомления о брошенной корзине.")
+    @allure.story("Push-уведомления")
     @allure.severity(allure.severity_level.CRITICAL)
-    @allure.label("owner", "mobile-team")
-    @allure.tag("mobile", "smoke", "release")
+    @allure.label("owner", "Мобильная команда")
+    @allure.tag("мобильный", "дымовой", "релиз")
     def test_open_cart_from_push_notification(self, demo_user):
-        with allure.step("Receive push notification"):
+        with allure.step("Получить push-уведомление"):
             push = {
-                "title": "Your cart is waiting",
+                "title": "Ваша корзина ждет оформления",
                 "deeplink": "qatools-demo://cart",
                 "userId": demo_user["id"],
             }
-            allure.attach(str(push), name="Push payload", attachment_type=allure.attachment_type.TEXT)
+            allure.attach(str(push), name="Payload push-уведомления", attachment_type=allure.attachment_type.TEXT)
 
-        with allure.step("Open cart screen"):
-            current_screen = "Cart"
-            assert current_screen == "Cart"
+        with allure.step("Открыть экран корзины по диплинку"):
+            current_screen = "Корзина"
+            assert current_screen == "Корзина"
 
     @allure.label("external_id", "TDS-MOB-002")
-    @allure.title("Flaky demo: biometric confirmation succeeds on repeat run")
-    @allure.story("Biometric confirmation")
+    @allure.title("Нестабильный сценарий: подтверждение оплаты биометрией проходит при повторном запуске")
+    @allure.description("""
+    Демонстрационный нестабильный сценарий: первый запуск имитирует таймаут биометрического датчика,
+    повторный запуск проходит успешно.
+    """)
+    @allure.story("Биометрическое подтверждение")
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.label("owner", "mobile-team")
-    @allure.tag("mobile", "flaky-demo")
+    @allure.label("owner", "Мобильная команда")
+    @allure.tag("мобильный", "нестабильный")
     def test_biometric_confirmation_flaky_demo(self, demo_context):
-        with allure.step("Read simulated launch variant"):
+        with allure.step("Определить вариант демонстрационного запуска"):
             run_variant = demo_context["run_variant"]
             allure.attach(
                 f"TESTOPS_DEMO_RUN={run_variant}",
-                name="Flaky demo switch",
+                name="Переключатель нестабильного сценария",
                 attachment_type=allure.attachment_type.TEXT,
             )
 
-        with allure.step("Confirm payment by biometrics"):
-            assert run_variant != "1", "Simulated flaky failure: biometric sensor timeout"
+        with allure.step("Подтвердить оплату биометрией"):
+            assert run_variant != "1", "Имитация нестабильной ошибки: таймаут биометрического датчика"

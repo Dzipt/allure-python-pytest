@@ -1,39 +1,36 @@
-# TestOps demo project
+# Демо-проект для TestOps
 
-This folder contains a focused demo suite for a TestOps product presentation.
-It is intentionally broad enough to look like a real project, while still being
-readable and predictable during a live demo.
+Папка содержит демонстрационный набор тестов для презентации TestOps.
+Набор достаточно большой, чтобы быть похожим на настоящий проект, но при этом
+остается предсказуемым для живого демо.
 
-## What to show
+## Что показывать
 
-- automated API, UI, and mobile tests in one launch;
-- 250+ collected pytest cases across generated regression and curated examples;
-- Allure labels: epic, feature, story, suite, owner, severity, tags, issue links;
-- unique pytest test functions for generated cases, so TestOps receives stable
-  `fullName` / `testCaseId` values instead of one parameterized autotest;
-- no fake `allure.id` values; demo IDs are sent as `external_id` labels so
-  TestOps can create/link autotests from stable code identities first;
-- attachments: JSON request/response, text browser state, CSV metrics;
-- result variety: passed, failed, broken, skipped manual case, and a controlled flaky demo;
-- parameterized tests for catalog filters;
-- environment and release labels from launch variables.
+- автоматизированные API, веб- и мобильные проверки в одном запуске;
+- 250+ pytest-сценариев с реалистичными русскими названиями и описаниями;
+- Allure-метки: epic, feature, story, suite, owner, severity, tags, issue links;
+- уникальные pytest-функции для generated-кейсов, чтобы TestOps получал стабильные `fullName` и `testCaseId`;
+- без фиктивных `allure.id`: демонстрационные идентификаторы передаются как `external_id`;
+- вложения: JSON запросов и ответов, состояние браузера, CSV-метрики;
+- разные результаты: passed, failed, broken, skipped ручной кейс и управляемый нестабильный сценарий;
+- метки окружения и релиза из переменных запуска.
 
-## Run locally
+## Локальный запуск
 
 ```bash
 python -m pytest testops_demo --alluredir=allure-results --clean-alluredir -p no:cacheprovider
 ```
 
-The first run intentionally contains failures. Use it to show failed, broken,
-manual, and flaky-looking tests.
+Первый запуск намеренно содержит падения. Используйте его, чтобы показать
+failed, broken, ручные и нестабильные проверки.
 
-For a second run where the flaky demo test passes:
+Для повторного запуска, где нестабильные сценарии становятся зелеными:
 
 ```bash
 TESTOPS_DEMO_RUN=2 python -m pytest testops_demo --alluredir=allure-results --clean-alluredir -p no:cacheprovider
 ```
 
-On Windows PowerShell:
+В Windows PowerShell:
 
 ```powershell
 $env:TESTOPS_DEMO_RUN="2"
@@ -42,12 +39,12 @@ python -m pytest testops_demo --alluredir=allure-results --clean-alluredir -p no
 
 ## GitHub Actions
 
-Use the `TestOps Demo Suite` workflow. It follows the same project pattern:
-checkout, Python setup, dependencies, `allurectl watch`, and an uploaded
-`allure-results` artifact. The test step allows intentional red tests so the
-workflow can still publish results to TestOps.
+Используйте workflow `TestOps Demo Suite`. Он следует общему стилю проекта:
+checkout, настройка Python, установка зависимостей, `allurectl watch` и загрузка
+артефакта `allure-results`. Шаг тестов допускает намеренно красные сценарии,
+чтобы результаты все равно публиковались в TestOps.
 
-Optional launch metadata:
+Дополнительные метаданные запуска:
 
 ```powershell
 $env:TESTOPS_DEMO_ENV="stage"
