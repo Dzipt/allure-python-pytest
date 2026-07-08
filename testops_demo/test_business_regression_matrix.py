@@ -258,6 +258,17 @@ OUTCOME_TAGS = {
     "manual": "ручной",
 }
 
+
+def priority_for_case(outcome, severity):
+    if outcome in {"failed", "broken"}:
+        return "Высокий"
+    if severity == allure.severity_level.CRITICAL:
+        return "Критический"
+    if severity == allure.severity_level.MINOR:
+        return "Низкий"
+    return "Средний"
+
+
 CONTEXTS = [
     "для нового покупателя из Москвы",
     "для постоянного покупателя с уровнем Золотой",
@@ -334,6 +345,7 @@ def build_case(domain, number, global_number):
         "outcome": outcome,
         "global_number": global_number,
         "risk": "high" if outcome in {"failed", "broken"} else "medium",
+        "priority": priority_for_case(outcome, severity_cycle[number % len(severity_cycle)]),
         "customer": f"Покупатель DEMO-{1000 + global_number}",
         "release_hint": "2026.07-demo",
         "expected": (
@@ -391,6 +403,7 @@ def run_business_case(case, demo_context):
     allure.dynamic.label("owner", case["owner"])
     allure.dynamic.label("layer", case["layer"])
     allure.dynamic.label("risk", RISK_NAMES[case["risk"]])
+    allure.dynamic.label("Приоритет", case["priority"])
     allure.dynamic.tag("демо", "регресс", LAYER_NAMES[case["layer"]], OUTCOME_TAGS[case["outcome"]])
 
     if case["outcome"] == "failed":
@@ -407,6 +420,7 @@ def run_business_case(case, demo_context):
             "Контекст": case["context"],
             "Предусловие": case["precondition"],
             "Ожидаемый результат": case["expected"],
+            "Приоритет": case["priority"],
             "Покупатель": case["customer"],
             "Стенд": demo_context["environment"],
             "Релиз": demo_context["release"],

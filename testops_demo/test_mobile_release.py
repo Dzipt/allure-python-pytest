@@ -15,6 +15,7 @@ class TestMobileRelease:
     @allure.story("Push-уведомления")
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Мобильная команда")
+    @allure.label("Приоритет", "Высокий")
     @allure.tag("мобильный", "дымовой", "релиз")
     def test_open_cart_from_push_notification(self, demo_user):
         with allure.step("Получить push-уведомление"):
@@ -38,6 +39,7 @@ class TestMobileRelease:
     @allure.story("Биометрическое подтверждение")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Мобильная команда")
+    @allure.label("Приоритет", "Средний")
     @allure.tag("мобильный", "нестабильный")
     def test_biometric_confirmation_flaky_demo(self, demo_context):
         with allure.step("Определить вариант демонстрационного запуска"):

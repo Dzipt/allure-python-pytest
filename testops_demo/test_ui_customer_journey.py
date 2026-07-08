@@ -18,6 +18,7 @@ class TestCustomerWebJourney:
     @allure.story("Авторизация")
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Веб-команда")
+    @allure.label("Приоритет", "Высокий")
     @allure.tag("дымовой", "веб")
     def test_customer_lands_on_personalized_page(self, demo_user):
         with allure.step("Открыть страницу входа и авторизоваться"):
@@ -37,6 +38,7 @@ class TestCustomerWebJourney:
     @allure.story("Поиск и фильтры")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Веб-команда")
+    @allure.label("Приоритет", "Средний")
     @allure.tag("регресс", "веб", "поиск")
     def test_search_filters_qatools_brand(self):
         self.check_search_filters("QATools", 5000, 4)
@@ -46,6 +48,7 @@ class TestCustomerWebJourney:
     @allure.story("Поиск и фильтры")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Веб-команда")
+    @allure.label("Приоритет", "Средний")
     @allure.tag("регресс", "веб", "поиск")
     def test_search_filters_allure_brand(self):
         self.check_search_filters("Allure", 8000, 7)
@@ -55,6 +58,7 @@ class TestCustomerWebJourney:
     @allure.story("Поиск и фильтры")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Веб-команда")
+    @allure.label("Приоритет", "Низкий")
     @allure.tag("регресс", "веб", "поиск")
     def test_search_filters_testops_brand(self):
         self.check_search_filters("TestOps", 10000, 3)
@@ -80,6 +84,7 @@ class TestCustomerWebJourney:
     @allure.story("Визуальное качество")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Дизайн QA")
+    @allure.label("Приоритет", "Низкий")
     @allure.tag("ручной", "визуальный", "веб")
     @allure.description(
         """
