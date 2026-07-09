@@ -35,7 +35,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда идентификации",
-        "layer": "backend",
+        "layer": "unit",
         "count": 35,
     },
     {
@@ -101,7 +101,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда корзины",
-        "layer": "web",
+        "layer": "e2e",
         "count": 35,
     },
     {
@@ -167,7 +167,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда заказов",
-        "layer": "integration",
+        "layer": "api",
         "count": 35,
     },
     {
@@ -200,7 +200,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда роста",
-        "layer": "business",
+        "layer": "unit",
         "count": 25,
     },
     {
@@ -233,20 +233,16 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда коммуникаций",
-        "layer": "mobile",
+        "layer": "unit",
         "count": 20,
     },
 ]
 
 
 LAYER_NAMES = {
+    "unit": "Unit",
     "api": "API",
-    "backend": "Backend",
-    "web": "Веб-интерфейс",
     "e2e": "E2E",
-    "integration": "Интеграции",
-    "business": "Бизнес-правила",
-    "mobile": "Мобильное приложение",
 }
 
 RISK_NAMES = {
@@ -312,7 +308,7 @@ def build_description(case):
         f"Проверка сценария «{case['action']}» {case['context']} в разделе "
         f"«{case['domain']}». Кейс нужен для контроля критичного покупательского "
         f"пути на релизе {case['release_hint']} и проверки согласованности данных "
-        "между витриной, backend-сервисами и связанными системами."
+        "между витриной, API-сервисами и связанными системами."
     )
 
 

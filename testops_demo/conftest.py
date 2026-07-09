@@ -8,15 +8,9 @@ import pytest
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "testops_demo: demo suite for TestOps presentations")
+    config.addinivalue_line("markers", "unit: unit checks")
     config.addinivalue_line("markers", "api: API checks")
-    config.addinivalue_line("markers", "ui: UI checks")
-    config.addinivalue_line("markers", "web: web UI checks")
-    config.addinivalue_line("markers", "backend: backend checks")
     config.addinivalue_line("markers", "e2e: end-to-end checks")
-    config.addinivalue_line("markers", "integration: integration checks")
-    config.addinivalue_line("markers", "business: business rule checks")
-    config.addinivalue_line("markers", "mobile: mobile checks")
-    config.addinivalue_line("markers", "contract: contract checks")
     config.addinivalue_line("markers", "flaky_demo: controlled flaky checks for demo launches")
     config.addinivalue_line("markers", "manual_demo: generated manual checks for demo launches")
 

@@ -106,10 +106,9 @@ class TestCheckoutApi:
     @allure.story("Интеграция со службой доставки")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Команда интеграций")
-    @allure.label("layer", "contract")
+    @allure.label("layer", "api")
     @allure.label("Приоритет", "Высокий")
     @allure.tag("контракт", "доставка")
-    @pytest.mark.contract
     def test_delivery_partner_contract(self, demo_context):
         with allure.step("Получить ответ партнера доставки"):
             payload = {

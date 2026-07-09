@@ -3,12 +3,12 @@ import pytest
 
 
 @pytest.mark.testops_demo
-@pytest.mark.mobile
+@pytest.mark.e2e
 @allure.epic("Интернет-магазин QATools")
 @allure.feature("Мобильное оформление заказа")
 @allure.parent_suite("Релиз-кандидат")
 @allure.suite("Мобильное приложение")
-@allure.label("layer", "mobile")
+@allure.label("layer", "e2e")
 class TestMobileRelease:
     @allure.label("external_id", "TDS-MOB-001")
     @allure.title("Мобильное приложение открывает сохраненную корзину из push-уведомления")

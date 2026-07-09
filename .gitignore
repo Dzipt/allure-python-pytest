@@ -8,6 +8,7 @@ verify-russian-results*/
 verify-testops-no-duplicates*/
 verify-testops-priority*/
 verify-testops-layers*/
+verify-testops-three-layers*/
 pytest-cache-files-*/
 /*/allure-results/
 out
