@@ -68,8 +68,29 @@ jobs:
       - name: Запустить демо-набор TestOps
         continue-on-error: true
         run: |
-          allurectl watch -- pytest testops_demo/ -v --alluredir=${ALLURE_RESULTS} -p no:cacheprovider ${{ github.event.inputs.PYTEST_ARGS }}
+          allurectl watch -- bash -c '
+            python -m pytest testops_demo/ -v --alluredir="${ALLURE_RESULTS}" -p no:cacheprovider ${{ github.event.inputs.PYTEST_ARGS }}
+            test_status=$?
+
+            mkdir -p "${ALLURE_RESULTS}"
+            {
+              printf "Build_number=%s\n" "${BUILD_NUMBER}"
+              printf "Commit=%s\n" "${COMMIT}"
+              printf "Python_version=%s\n" "$(python --version | awk "{print \$2}")"
+              printf "Worker_OS=%s\n" "$(uname -a)"
+              printf "Environment=%s\n" "${ENV}"
+              printf "Browser=%s\n" "${BROWSER}"
+              printf "Platform=%s\n" "${PLATFORM}"
+              printf "Release=%s\n" "${RELEASE}"
+              printf "Run_type=%s\n" "${RUN_TYPE}"
+              printf "Branch=%s\n" "${BRANCH}"
+            } > "${ALLURE_RESULTS}/environment.properties"
+
+            exit "${test_status}"
+          '
         env:
+          BUILD_NUMBER: ${{ github.run_number }}
+          COMMIT: ${{ github.sha }}
           ENV: ${{ github.event.inputs.ENV || 'stage' }}
           BROWSER: ${{ github.event.inputs.BROWSER || 'chrome' }}
           PLATFORM: ${{ github.event.inputs.PLATFORM || 'ubuntu-latest' }}
