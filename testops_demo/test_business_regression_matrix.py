@@ -35,7 +35,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда идентификации",
-        "layer": "api",
+        "layer": "backend",
         "count": 35,
     },
     {
@@ -101,7 +101,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда корзины",
-        "layer": "ui",
+        "layer": "web",
         "count": 35,
     },
     {
@@ -134,7 +134,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда оформления заказа",
-        "layer": "api",
+        "layer": "e2e",
         "count": 45,
     },
     {
@@ -167,7 +167,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда заказов",
-        "layer": "api",
+        "layer": "integration",
         "count": 35,
     },
     {
@@ -200,7 +200,7 @@ DOMAINS = [
             ]),
         ],
         "owner": "Команда роста",
-        "layer": "api",
+        "layer": "business",
         "count": 25,
     },
     {
@@ -241,7 +241,11 @@ DOMAINS = [
 
 LAYER_NAMES = {
     "api": "API",
-    "ui": "Веб-интерфейс",
+    "backend": "Backend",
+    "web": "Веб-интерфейс",
+    "e2e": "E2E",
+    "integration": "Интеграции",
+    "business": "Бизнес-правила",
     "mobile": "Мобильное приложение",
 }
 

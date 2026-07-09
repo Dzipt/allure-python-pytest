@@ -8,6 +8,7 @@ import pytest
 @allure.feature("Мобильное оформление заказа")
 @allure.parent_suite("Релиз-кандидат")
 @allure.suite("Мобильное приложение")
+@allure.label("layer", "mobile")
 class TestMobileRelease:
     @allure.label("external_id", "TDS-MOB-001")
     @allure.title("Мобильное приложение открывает сохраненную корзину из push-уведомления")

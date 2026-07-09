@@ -21,6 +21,7 @@ class TestCheckoutApi:
     @allure.story("Расчет итоговой суммы")
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Платформа качества")
+    @allure.label("layer", "api")
     @allure.label("Приоритет", "Критический")
     @allure.tag("дымовой", "api", "оформление")
     def test_checkout_quote_created(self, demo_context, demo_user):
@@ -69,6 +70,7 @@ class TestCheckoutApi:
     @allure.story("Авторизация платежа")
     @allure.severity(allure.severity_level.BLOCKER)
     @allure.label("owner", "Платежная команда")
+    @allure.label("layer", "api")
     @allure.label("Приоритет", "Критический")
     @allure.issue("PAY-1845", "Антифрод возвращает устаревший риск-профиль")
     @allure.tag("регресс", "платежи", "известный-дефект")
@@ -104,6 +106,7 @@ class TestCheckoutApi:
     @allure.story("Интеграция со службой доставки")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Команда интеграций")
+    @allure.label("layer", "contract")
     @allure.label("Приоритет", "Высокий")
     @allure.tag("контракт", "доставка")
     @pytest.mark.contract
@@ -132,6 +135,7 @@ class TestCheckoutApi:
     @allure.story("Поиск товаров")
     @allure.severity(allure.severity_level.NORMAL)
     @allure.label("owner", "Команда каталога")
+    @allure.label("layer", "api")
     @allure.label("Приоритет", "Средний")
     @allure.tag("производительность", "api")
     def test_catalog_search_response_time(self, demo_context):

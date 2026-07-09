@@ -8,6 +8,7 @@ import pytest
 @allure.feature("Покупательский путь")
 @allure.parent_suite("Регрессионная проверка")
 @allure.suite("Веб-интерфейс")
+@allure.label("layer", "web")
 class TestCustomerWebJourney:
     @allure.label("external_id", "TDS-UI-001")
     @allure.title("Покупатель видит персонализированную главную страницу после входа")

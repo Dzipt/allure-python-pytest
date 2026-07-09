@@ -7,6 +7,7 @@ verify-testops-results*/
 verify-russian-results*/
 verify-testops-no-duplicates*/
 verify-testops-priority*/
+verify-testops-layers*/
 pytest-cache-files-*/
 /*/allure-results/
 out
