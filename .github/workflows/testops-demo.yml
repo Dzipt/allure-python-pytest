@@ -13,6 +13,14 @@ on:
         description: "Environment"
         required: false
         default: "stage"
+      BROWSER:
+        description: "Browser"
+        required: false
+        default: "chrome"
+      PLATFORM:
+        description: "Platform"
+        required: false
+        default: "ubuntu-latest"
       RELEASE:
         description: "Release version"
         required: false
@@ -62,6 +70,15 @@ jobs:
         run: |
           allurectl watch -- pytest testops_demo/ -v --alluredir=${ALLURE_RESULTS} -p no:cacheprovider ${{ github.event.inputs.PYTEST_ARGS }}
         env:
+          ENV: ${{ github.event.inputs.ENV || 'stage' }}
+          BROWSER: ${{ github.event.inputs.BROWSER || 'chrome' }}
+          PLATFORM: ${{ github.event.inputs.PLATFORM || 'ubuntu-latest' }}
+          RELEASE: ${{ github.event.inputs.RELEASE || '2026.07-demo' }}
+          BRANCH: ${{ github.ref_name }}
+          GIT_SHA: ${{ github.sha }}
+          TESTOPS_DEMO_BRANCH: ${{ github.ref_name }}
+          TESTOPS_DEMO_BROWSER: ${{ github.event.inputs.BROWSER || 'chrome' }}
+          TESTOPS_DEMO_PLATFORM: ${{ github.event.inputs.PLATFORM || 'ubuntu-latest' }}
           TESTOPS_DEMO_ENV: ${{ github.event.inputs.ENV || 'stage' }}
           TESTOPS_DEMO_RELEASE: ${{ github.event.inputs.RELEASE || '2026.07-demo' }}
           TESTOPS_DEMO_RUN: ${{ github.event.inputs.TESTOPS_DEMO_RUN || '1' }}

@@ -51,3 +51,31 @@ $env:TESTOPS_DEMO_ENV="stage"
 $env:TESTOPS_DEMO_RELEASE="2026.07-demo"
 python -m pytest testops_demo --alluredir=allure-results --clean-alluredir -p no:cacheprovider
 ```
+
+## Переменные окружения в TestOps
+
+Во вкладке «Запуски» эти значения отображаются как окружение запуска. Для этого в
+TestOps нужно один раз создать переменные окружения и связать их с переменными,
+которые приходят из GitHub Actions.
+
+Рекомендуемый набор для демо:
+
+| Переменная в TestOps | Маппинг в GitHub Actions |
+| --- | --- |
+| ENV | ENV |
+| Browser | BROWSER |
+| Platform | PLATFORM |
+| Release | RELEASE |
+| Run type | RUN_TYPE |
+| Branch | BRANCH |
+
+Настройка в TestOps:
+
+1. Администратор инстанса создает переменные в разделе «Администрирование» -> «Окружения».
+2. В проекте открыть «Настройки» -> «Окружение».
+3. Для каждой переменной добавить маппинг на имя переменной окружения из GitHub Actions.
+4. Запустить workflow «Демо-набор TestOps» и указать значения `ENV`, `BROWSER`,
+   `PLATFORM`, `RELEASE`, `RUN_TYPE`.
+
+Workflow передает эти значения в процесс `allurectl watch`, поэтому TestOps сможет
+прикрепить их к результатам запуска после настройки маппинга.

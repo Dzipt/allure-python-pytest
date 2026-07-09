@@ -21,8 +21,12 @@ def demo_context():
     context = {
         "project": "Демо-магазин QATools",
         "environment": os.getenv("TESTOPS_DEMO_ENV", "stage"),
+        "browser": os.getenv("TESTOPS_DEMO_BROWSER", os.getenv("BROWSER", "chrome")),
+        "platform": os.getenv("TESTOPS_DEMO_PLATFORM", os.getenv("PLATFORM", "ubuntu-latest")),
         "release": os.getenv("TESTOPS_DEMO_RELEASE", "2026.07-demo"),
+        "run_type": os.getenv("RUN_TYPE", "regression"),
         "run_variant": run_variant,
+        "branch": os.getenv("TESTOPS_DEMO_BRANCH", os.getenv("BRANCH", "local")),
         "started_at": datetime.now(timezone.utc).isoformat(),
     }
     allure.dynamic.label("environment", context["environment"])
