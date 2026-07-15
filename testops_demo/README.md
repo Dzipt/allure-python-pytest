@@ -39,6 +39,10 @@ python -m pytest testops_demo --alluredir=allure-results --clean-alluredir -p no
 
 ## GitHub Actions
 
+Номер запуска GitHub Actions передается в тесты через `TESTOPS_DEMO_RUN_NUMBER`.
+Тест `test_catalog_search_response_time` проходит на нечетных номерах и намеренно падает на четных.
+Для локальной проверки задайте `TESTOPS_DEMO_RUN_NUMBER=1` или `TESTOPS_DEMO_RUN_NUMBER=2`.
+
 Используйте workflow `TestOps Demo Suite`. Он следует общему стилю проекта:
 checkout, настройка Python, установка зависимостей, `allurectl watch` и загрузка
 артефакта `allure-results`. Шаг тестов допускает намеренно красные сценарии,

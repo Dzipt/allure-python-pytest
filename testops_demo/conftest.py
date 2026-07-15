@@ -18,6 +18,8 @@ def pytest_configure(config):
 @pytest.fixture
 def demo_context():
     run_variant = os.getenv("TESTOPS_DEMO_RUN", "1")
+    run_number_raw = os.getenv("TESTOPS_DEMO_RUN_NUMBER", run_variant)
+    run_number = int(run_number_raw) if run_number_raw.isdigit() else 1
     context = {
         "project": "Демо-магазин QATools",
         "environment": os.getenv("TESTOPS_DEMO_ENV", "stage"),
@@ -26,6 +28,7 @@ def demo_context():
         "release": os.getenv("TESTOPS_DEMO_RELEASE", "2026.07-demo"),
         "run_type": os.getenv("RUN_TYPE", "regression"),
         "run_variant": run_variant,
+        "run_number": run_number,
         "branch": os.getenv("TESTOPS_DEMO_BRANCH", os.getenv("BRANCH", "local")),
         "started_at": datetime.now(timezone.utc).isoformat(),
     }

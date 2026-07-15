@@ -42,6 +42,7 @@ class TestCheckoutApi:
             )
 
         with allure.step("Получить расчет от сервиса оформления"):
+            time.sleep(5)
             response = {
                 "status": "created",
                 "quoteId": "Q-20260707-001",
@@ -136,7 +137,8 @@ class TestCheckoutApi:
     @allure.label("owner", "Команда каталога")
     @allure.label("layer", "api")
     @allure.label("Приоритет", "Средний")
-    @allure.tag("производительность", "api")
+    @allure.tag("производительность", "api", "периодический-сбой")
+    @pytest.mark.flaky_demo
     def test_catalog_search_response_time(self, demo_context):
         with allure.step("Выполнить поисковый запрос"):
             started = time.perf_counter()
@@ -147,3 +149,14 @@ class TestCheckoutApi:
 
         with allure.step("Проверить выполнение SLA"):
             assert elapsed_ms < 250
+
+        with allure.step("Проверить результат периодического демо-сценария"):
+            run_number = demo_context["run_number"]
+            allure.attach(
+                str(run_number),
+                name="Номер демо-прогона",
+                attachment_type=allure.attachment_type.TEXT,
+            )
+            assert run_number % 2 == 1, (
+                f"Имитация периодического сбоя в каждом втором прогоне: запуск №{run_number}"
+            )

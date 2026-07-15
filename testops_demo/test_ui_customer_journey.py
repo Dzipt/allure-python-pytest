@@ -1,3 +1,5 @@
+import time
+
 import allure
 import pytest
 
@@ -23,6 +25,7 @@ class TestCustomerWebJourney:
     @allure.tag("дымовой", "веб")
     def test_customer_lands_on_personalized_page(self, demo_user):
         with allure.step("Открыть страницу входа и авторизоваться"):
+            time.sleep(5)
             page_state = {
                 "url": "/login",
                 "user": demo_user["email"],

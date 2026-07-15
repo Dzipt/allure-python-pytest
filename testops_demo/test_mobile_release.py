@@ -1,3 +1,5 @@
+import time
+
 import allure
 import pytest
 
@@ -20,6 +22,7 @@ class TestMobileRelease:
     @allure.tag("мобильный", "дымовой", "релиз")
     def test_open_cart_from_push_notification(self, demo_user):
         with allure.step("Получить push-уведомление"):
+            time.sleep(5)
             push = {
                 "title": "Ваша корзина ждет оформления",
                 "deeplink": "qatools-demo://cart",
