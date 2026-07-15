@@ -75,7 +75,6 @@ jobs:
             mkdir -p "${ALLURE_RESULTS}"
             {
               printf "Build_number=%s\n" "${BUILD_NUMBER}"
-              printf "Demo_run_number=%s\n" "${TESTOPS_DEMO_RUN_NUMBER}"
               printf "Commit=%s\n" "${COMMIT}"
               printf "Python_version=%s\n" "$(python --version | awk "{print \$2}")"
               printf "Worker_OS=%s\n" "$(uname -a)"
@@ -104,7 +103,6 @@ jobs:
           TESTOPS_DEMO_ENV: ${{ github.event.inputs.ENV || 'stage' }}
           TESTOPS_DEMO_RELEASE: ${{ github.event.inputs.RELEASE || '2026.07-demo' }}
           TESTOPS_DEMO_RUN: ${{ github.event.inputs.TESTOPS_DEMO_RUN || '1' }}
-          TESTOPS_DEMO_RUN_NUMBER: ${{ github.run_number }}
           RUN_TYPE: ${{ github.event.inputs.RUN_TYPE || 'regression' }}
           ALLURE_LAUNCH_NAME: "Демо TestOps - ${{ github.event.inputs.RUN_TYPE || 'regression' }}"
           ALLURE_JOB_RUN_ID: ${{ github.event.inputs.ALLURE_JOB_RUN_ID }}

@@ -1,4 +1,5 @@
 import json
+import random
 import time
 
 import allure
@@ -137,9 +138,9 @@ class TestCheckoutApi:
     @allure.label("owner", "Команда каталога")
     @allure.label("layer", "api")
     @allure.label("Приоритет", "Средний")
-    @allure.tag("производительность", "api", "периодический-сбой")
+    @allure.tag("производительность", "api", "нестабильный")
     @pytest.mark.flaky_demo
-    def test_catalog_search_response_time(self, demo_context):
+    def test_catalog_search_response_time(self):
         with allure.step("Выполнить поисковый запрос"):
             started = time.perf_counter()
             time.sleep(0.03)
@@ -150,13 +151,13 @@ class TestCheckoutApi:
         with allure.step("Проверить выполнение SLA"):
             assert elapsed_ms < 250
 
-        with allure.step("Проверить результат периодического демо-сценария"):
-            run_number = demo_context["run_number"]
+        with allure.step("Проверить результат нестабильного демо-сценария"):
+            failure_roll = random.random()
             allure.attach(
-                str(run_number),
-                name="Номер демо-прогона",
+                f"{failure_roll:.6f}",
+                name="Случайное значение нестабильного сценария",
                 attachment_type=allure.attachment_type.TEXT,
             )
-            assert run_number % 2 == 1, (
-                f"Имитация периодического сбоя в каждом втором прогоне: запуск №{run_number}"
+            assert failure_roll >= 0.5, (
+                f"Имитация нестабильного сбоя с вероятностью 50%: значение {failure_roll:.6f}"
             )
