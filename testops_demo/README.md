@@ -39,8 +39,10 @@ python -m pytest testops_demo --alluredir=allure-results --clean-alluredir -p no
 
 ## GitHub Actions
 
-Тест `test_catalog_search_response_time` имитирует нестабильность и независимо в каждом прогоне
-падает с вероятностью 50%. Используйте его для демонстрации flaky-результатов и повторного запуска.
+Четыре теста имитируют нестабильность и независимо в каждом прогоне падают с вероятностью 50%:
+`test_checkout_quote_created`, `test_catalog_search_response_time`,
+`test_customer_lands_on_personalized_page` и `test_open_cart_from_push_notification`.
+Используйте их для демонстрации flaky-результатов и повторного запуска.
 
 Используйте workflow `TestOps Demo Suite`. Он следует общему стилю проекта:
 checkout, настройка Python, установка зависимостей, `allurectl watch` и загрузка

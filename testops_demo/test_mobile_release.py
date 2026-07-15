@@ -19,8 +19,9 @@ class TestMobileRelease:
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Мобильная команда")
     @allure.label("Приоритет", "Высокий")
-    @allure.tag("мобильный", "дымовой", "релиз")
-    def test_open_cart_from_push_notification(self, demo_user):
+    @allure.tag("мобильный", "дымовой", "релиз", "нестабильный")
+    @pytest.mark.flaky_demo
+    def test_open_cart_from_push_notification(self, demo_user, flaky_demo_check):
         with allure.step("Получить push-уведомление"):
             time.sleep(5)
             push = {
@@ -33,6 +34,8 @@ class TestMobileRelease:
         with allure.step("Открыть экран корзины по диплинку"):
             current_screen = "Корзина"
             assert current_screen == "Корзина"
+
+        flaky_demo_check("Открытие корзины из push-уведомления")
 
     @allure.label("external_id", "TDS-MOB-002")
     @allure.title("Нестабильный сценарий: подтверждение оплаты биометрией проходит при повторном запуске")

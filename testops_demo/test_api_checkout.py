@@ -1,5 +1,4 @@
 import json
-import random
 import time
 
 import allure
@@ -24,8 +23,9 @@ class TestCheckoutApi:
     @allure.label("owner", "Платформа качества")
     @allure.label("layer", "api")
     @allure.label("Приоритет", "Критический")
-    @allure.tag("дымовой", "api", "оформление")
-    def test_checkout_quote_created(self, demo_context, demo_user):
+    @allure.tag("дымовой", "api", "оформление", "нестабильный")
+    @pytest.mark.flaky_demo
+    def test_checkout_quote_created(self, demo_context, demo_user, flaky_demo_check):
         with allure.step("Подготовить запрос на расчет заказа"):
             request = {
                 "userId": demo_user["id"],
@@ -62,6 +62,8 @@ class TestCheckoutApi:
             assert response["status"] == "created"
             assert response["discount"] == 739
             assert response["total"] == 6651
+
+        flaky_demo_check("Расчет итоговой суммы заказа")
 
     @allure.label("external_id", "TDS-API-002")
     @allure.title("Оплата постоянного покупателя не должна отклоняться из-за устаревшей оценки риска")
@@ -140,7 +142,7 @@ class TestCheckoutApi:
     @allure.label("Приоритет", "Средний")
     @allure.tag("производительность", "api", "нестабильный")
     @pytest.mark.flaky_demo
-    def test_catalog_search_response_time(self):
+    def test_catalog_search_response_time(self, flaky_demo_check):
         with allure.step("Выполнить поисковый запрос"):
             started = time.perf_counter()
             time.sleep(0.03)
@@ -151,13 +153,4 @@ class TestCheckoutApi:
         with allure.step("Проверить выполнение SLA"):
             assert elapsed_ms < 250
 
-        with allure.step("Проверить результат нестабильного демо-сценария"):
-            failure_roll = random.random()
-            allure.attach(
-                f"{failure_roll:.6f}",
-                name="Случайное значение нестабильного сценария",
-                attachment_type=allure.attachment_type.TEXT,
-            )
-            assert failure_roll >= 0.5, (
-                f"Имитация нестабильного сбоя с вероятностью 50%: значение {failure_roll:.6f}"
-            )
+        flaky_demo_check("Поиск по каталогу")

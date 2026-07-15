@@ -1,5 +1,6 @@
 import json
 import os
+import random
 from datetime import datetime, timezone
 
 import allure
@@ -55,3 +56,21 @@ def demo_user():
         attachment_type=allure.attachment_type.JSON,
     )
     return user
+
+
+@pytest.fixture
+def flaky_demo_check():
+    def check(scenario):
+        with allure.step("Проверить результат нестабильного демо-сценария"):
+            failure_roll = random.random()
+            allure.attach(
+                f"{failure_roll:.6f}",
+                name=f"Случайное значение: {scenario}",
+                attachment_type=allure.attachment_type.TEXT,
+            )
+            assert failure_roll >= 0.5, (
+                f"Имитация нестабильного сбоя с вероятностью 50%: "
+                f"{scenario}, значение {failure_roll:.6f}"
+            )
+
+    return check

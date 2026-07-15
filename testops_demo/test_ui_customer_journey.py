@@ -22,8 +22,9 @@ class TestCustomerWebJourney:
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.label("owner", "Веб-команда")
     @allure.label("Приоритет", "Высокий")
-    @allure.tag("дымовой", "веб")
-    def test_customer_lands_on_personalized_page(self, demo_user):
+    @allure.tag("дымовой", "веб", "нестабильный")
+    @pytest.mark.flaky_demo
+    def test_customer_lands_on_personalized_page(self, demo_user, flaky_demo_check):
         with allure.step("Открыть страницу входа и авторизоваться"):
             time.sleep(5)
             page_state = {
@@ -36,6 +37,8 @@ class TestCustomerWebJourney:
         with allure.step("Проверить персонализацию главной страницы"):
             header = "Анна, ваш уровень лояльности: Золотой"
             assert "Золотой" in header
+
+        flaky_demo_check("Персонализированная главная страница")
 
     @allure.label("external_id", "TDS-UI-002")
     @allure.title("Фильтрация результатов поиска по бренду QATools и цене")
