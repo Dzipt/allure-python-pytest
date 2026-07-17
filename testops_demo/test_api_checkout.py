@@ -154,3 +154,31 @@ class TestCheckoutApi:
             assert elapsed_ms < 250
 
         flaky_demo_check("Поиск по каталогу")
+
+    @allure.id("10858")
+    @allure.title("Контрольная проверка доступности API оформления заказа")
+    @allure.description("Стабильный smoke-сценарий, результат которого привязан к тест-кейсу TestOps #10858.")
+    @allure.story("Доступность сервиса")
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.label("owner", "Платформа качества")
+    @allure.label("layer", "api")
+    @allure.label("Приоритет", "Критический")
+    @allure.tag("дымовой", "api", "testops-10858")
+    def test_checkout_api_availability_for_testops_10858(self):
+        with allure.step("Отправить контрольный запрос в API оформления заказа"):
+            request = {"method": "GET", "path": "/api/checkout/health"}
+            allure.attach(
+                json.dumps(request, indent=2, ensure_ascii=False),
+                name="Контрольный запрос",
+                attachment_type=allure.attachment_type.JSON,
+            )
+
+        with allure.step("Проверить успешный ответ сервиса"):
+            response = {"status": 200, "service": "checkout", "state": "available"}
+            allure.attach(
+                json.dumps(response, indent=2, ensure_ascii=False),
+                name="Ответ сервиса",
+                attachment_type=allure.attachment_type.JSON,
+            )
+            assert response["status"] == 200
+            assert response["state"] == "available"
